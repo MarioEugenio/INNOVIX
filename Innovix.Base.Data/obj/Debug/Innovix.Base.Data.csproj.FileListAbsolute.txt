@@ -1,0 +1,16 @@
+c:\users\márioeugênio\documents\visual studio 2012\Projects\INNOVIX_RFIX\Innovix.Base.Data\bin\Innovix.Base.Data.dll
+c:\users\márioeugênio\documents\visual studio 2012\Projects\INNOVIX_RFIX\Innovix.Base.Data\bin\Innovix.Base.Data.pdb
+c:\users\márioeugênio\documents\visual studio 2012\Projects\INNOVIX_RFIX\Innovix.Base.Data\bin\Innovix.Base.Domain.dll
+c:\users\márioeugênio\documents\visual studio 2012\Projects\INNOVIX_RFIX\Innovix.Base.Data\bin\Innovix.Base.Infrastructure.dll
+c:\users\márioeugênio\documents\visual studio 2012\Projects\INNOVIX_RFIX\Innovix.Base.Data\bin\NHibernate.dll
+c:\users\márioeugênio\documents\visual studio 2012\Projects\INNOVIX_RFIX\Innovix.Base.Data\bin\Castle.Core.dll
+c:\users\márioeugênio\documents\visual studio 2012\Projects\INNOVIX_RFIX\Innovix.Base.Data\bin\FluentNHibernate.dll
+c:\users\márioeugênio\documents\visual studio 2012\Projects\INNOVIX_RFIX\Innovix.Base.Data\bin\Iesi.Collections.dll
+c:\users\márioeugênio\documents\visual studio 2012\Projects\INNOVIX_RFIX\Innovix.Base.Data\bin\Innovix.Base.Domain.pdb
+c:\users\márioeugênio\documents\visual studio 2012\Projects\INNOVIX_RFIX\Innovix.Base.Data\bin\Innovix.Base.Infrastructure.pdb
+c:\users\márioeugênio\documents\visual studio 2012\Projects\INNOVIX_RFIX\Innovix.Base.Data\bin\NHibernate.xml
+c:\users\márioeugênio\documents\visual studio 2012\Projects\INNOVIX_RFIX\Innovix.Base.Data\bin\Castle.Core.xml
+c:\users\márioeugênio\documents\visual studio 2012\Projects\INNOVIX_RFIX\Innovix.Base.Data\bin\FluentNHibernate.xml
+c:\users\márioeugênio\documents\visual studio 2012\Projects\INNOVIX_RFIX\Innovix.Base.Data\bin\Iesi.Collections.xml
+c:\users\márioeugênio\documents\visual studio 2012\Projects\INNOVIX_RFIX\Innovix.Base.Data\obj\Debug\Innovix.Base.Data.dll
+c:\users\márioeugênio\documents\visual studio 2012\Projects\INNOVIX_RFIX\Innovix.Base.Data\obj\Debug\Innovix.Base.Data.pdb
