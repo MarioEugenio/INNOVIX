@@ -1,0 +1,72 @@
+﻿
+@{
+    ViewBag.Title = "INNOVIX - RFIX";
+}
+      <!-- Static navbar -->
+      <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">RFIX</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cadastros <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#">Equipamentos</a></li>
+                <li><a href="#">Localidades</a></li>
+                <li><a href="#">Rotas</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Acesso / Perfil</li>
+                <li><a href="#">Usuários</a></li>
+              </ul>
+            </li>
+
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Relatórios <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#">Itens</a></li>
+                <li><a href="#">Lacres</a></li>
+                <li><a href="#">Embarques</a></li>
+                <li><a href="#">Logs de Usuário</a></li>
+              </ul>
+            </li>
+          </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                  <div class="btn-group navbar-btn">
+                    <button class="btn btn-primary"><span class="glyphicon glyphicon-user"></span> Mário Eugênio</button>
+                    <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle"><span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                      <li><a href="#">Logoff</a></li>
+                    </ul>
+                  </div>
+                </li>
+            </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+      <!-- Main component for a primary marketing message or call to action -->
+      
+
+
+    <!-- Begin page content -->
+    <div class="container">
+        <ng-view id="j-content"></ng-view>
+    </div> <!-- /container -->
+
+    <div class="footer">
+        <div class="container">
+            <p class="text-muted">Todos os direitos reservados</p>
+        </div>
+    </div>

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Cyclops</id>
+    <version>4.5.6000.9</version>
+    <title>Cyclops</title>
+    <authors>neutmute</authors>
+    <owners>neutmute</owners>
+    <projectUrl>https://github.com/neutmute/cyclops</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Fluent wrappings around DAAB 6 with advanced failure logging</description>
+    <dependencies>
+      <dependency id="Common.Logging" version="2.2.0" />
+      <dependency id="EnterpriseLibrary.Data" version="6.0.1304.0" />
+    </dependencies>
+    <references>
+      <reference file="Cyclops.dll" />
+    </references>
+  </metadata>
+</package>

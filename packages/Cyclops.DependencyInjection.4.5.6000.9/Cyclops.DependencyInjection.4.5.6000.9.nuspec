@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Cyclops.DependencyInjection</id>
+    <version>4.5.6000.9</version>
+    <title>Cyclops.DependencyInjection</title>
+    <authors>neutmute</authors>
+    <owners>neutmute</owners>
+    <projectUrl>https://github.com/neutmute/cyclops</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Autofac container builder extensions for Cyclops repositories</description>
+    <dependencies>
+      <dependency id="Autofac.Configuration" version="3.2.0" />
+      <dependency id="Common.Logging" version="2.2.0" />
+      <dependency id="EnterpriseLibrary.Data" version="6.0.1304.0" />
+      <dependency id="Cyclops" version="4.5.6000.9" />
+    </dependencies>
+    <references>
+      <reference file="Cyclops.DependencyInjection.dll" />
+    </references>
+  </metadata>
+</package>

@@ -27,3 +27,30 @@ C:\Users\MárioEugênio\Documents\Visual Studio 2012\Projects\INNOVIX_RFIX\Innov
 C:\Users\MárioEugênio\Documents\Visual Studio 2012\Projects\INNOVIX_RFIX\Innovix.Base.Web.Init\bin\NHibernate.xml
 C:\Users\MárioEugênio\Documents\Visual Studio 2012\Projects\INNOVIX_RFIX\Innovix.Base.Web.Init\obj\Debug\Innovix.Base.Web.Init.dll
 C:\Users\MárioEugênio\Documents\Visual Studio 2012\Projects\INNOVIX_RFIX\Innovix.Base.Web.Init\obj\Debug\Innovix.Base.Web.Init.pdb
+C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Web.Init\bin\Innovix.Base.Web.Init.dll
+C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Web.Init\bin\Innovix.Base.Web.Init.pdb
+C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Web.Init\bin\Autofac.dll
+C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Web.Init\bin\Autofac.Extras.DynamicProxy2.dll
+C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Web.Init\bin\Autofac.Integration.Mvc.dll
+C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Web.Init\bin\Iesi.Collections.dll
+C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Web.Init\bin\Innovix.Base.Data.dll
+C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Web.Init\bin\Innovix.Base.Domain.dll
+C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Web.Init\bin\Innovix.Base.Domain.Service.Impl.dll
+C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Web.Init\bin\Innovix.Base.Infrastructure.dll
+C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Web.Init\bin\Innovix.Base.Persistencia.NHibernate.dll
+C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Web.Init\bin\NHibernate.dll
+C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Web.Init\bin\Innovix.Base.Data.pdb
+C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Web.Init\bin\Innovix.Base.Domain.Service.Impl.pdb
+C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Web.Init\bin\Innovix.Base.Domain.pdb
+C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Web.Init\bin\Innovix.Base.Infrastructure.pdb
+C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Web.Init\bin\Innovix.Base.Persistencia.NHibernate.pdb
+C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Web.Init\bin\Autofac.xml
+C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Web.Init\bin\Autofac.Extras.DynamicProxy2.xml
+C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Web.Init\bin\Autofac.Integration.Mvc.xml
+C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Web.Init\bin\Castle.Core.xml
+C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Web.Init\bin\FluentNHibernate.xml
+C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Web.Init\bin\Iesi.Collections.xml
+C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Web.Init\bin\NHibernate.xml
+C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Web.Init\obj\Debug\Innovix.Base.Web.Init.csprojResolveAssemblyReference.cache
+C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Web.Init\obj\Debug\Innovix.Base.Web.Init.dll
+C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Web.Init\obj\Debug\Innovix.Base.Web.Init.pdb
