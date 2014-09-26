@@ -6,14 +6,15 @@ using System.Web.Mvc;
 
 namespace INNOVIX_RFIX.Controllers
 {
-    public class HomeController : Controller
+    public class BoardingController : Controller
     {
         //
-        // GET: /Home/
+        // GET: /Boarding/
 
-        public ActionResult Index()
+        public ActionResult List()
         {
             return View();
         }
+
     }
 }

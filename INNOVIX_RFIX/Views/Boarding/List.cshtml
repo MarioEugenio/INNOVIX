@@ -1,0 +1,37 @@
+﻿
+ <div ng-controller="BoardingListCtrl" class="page-header">
+    <h1>Painel Principal</h1>
+    <p class="lead"> Você está conectado como <span class="label label-info">Administrador</span> em <span class="label label-info">Mário Eugênio</span></p>
+    <p>Abaixo, um resumo dos embarques de hoje e seus status</p>
+    <p>
+        <div class="panel panel-default">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Embarque</th>
+                        <th>Origem</th>
+                        <th>Destino</th>
+                        <th>Rota</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>XXXXXX</td>
+                        <td>XXXXXX</td>
+                        <td>XXXXXX</td>
+                        <td>XXXXXX</td>
+                        <td>XXXXXX</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="center">
+            <pagination total-items="bigTotalItems" ng-model="bigCurrentPage" max-size="maxSize" class="pagination-sm" boundary-links="true" rotate="false" num-pages="numPages"></pagination>
+        </div>
+    </p>
+</div>
+
+
+
+

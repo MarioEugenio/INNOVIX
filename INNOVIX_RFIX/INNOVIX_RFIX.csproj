@@ -126,6 +126,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\BoardingController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -229,7 +230,7 @@
     <Content Include="Web\js\Externals\angular\ui\ui-grid.js" />
     <Content Include="Web\js\Externals\jquery\jquery.js" />
     <Content Include="Web\js\Routers\home-router.js" />
-    <Content Include="Web\js\Src\home-init-ctrl.js" />
+    <Content Include="Web\js\Src\boarding-list-ctrl.js" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -298,6 +299,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\Init.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Boarding\List.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
