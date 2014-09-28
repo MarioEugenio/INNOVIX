@@ -63,6 +63,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\Service.cs" />
     <Compile Include="Service\ServiceCRUD.cs" />
+    <Compile Include="Service\TbEquipamentoService.cs" />
+    <Compile Include="Service\TbLocalidadeService.cs" />
+    <Compile Include="Service\TbRotaService.cs" />
+    <Compile Include="Service\TbUsuarioService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Web.Debug.config">

@@ -38,6 +38,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FluentNHibernate, Version=1.4.0.0, Culture=neutral, PublicKeyToken=8aa435e3cb308880, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\FluentNHibernate.1.4.0.0\lib\net35\FluentNHibernate.dll</HintPath>
+    </Reference>
     <Reference Include="Iesi.Collections">
       <HintPath>..\packages\Iesi.Collections.4.0.1.4000\lib\net40\Iesi.Collections.dll</HintPath>
     </Reference>
@@ -66,9 +70,43 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Map\ClassMap.cs" />
+    <Compile Include="Map\RelEmpresaEquipamentoMap.cs" />
+    <Compile Include="Map\RelEmpresaItemMap.cs" />
+    <Compile Include="Map\RelEmpresaUsuarioMap.cs" />
+    <Compile Include="Map\RelLocalidadeRotaMap.cs" />
+    <Compile Include="Map\RelPerfilOperacaoMap.cs" />
+    <Compile Include="Map\TbControleMap.cs" />
+    <Compile Include="Map\TbEmpresaMap.cs" />
+    <Compile Include="Map\TbEquipamentoMap.cs" />
+    <Compile Include="Map\TbItemMap.cs" />
+    <Compile Include="Map\TbLacreMap.cs" />
+    <Compile Include="Map\TbLocalidadeMap.cs" />
+    <Compile Include="Map\TbLogitemMap.cs" />
+    <Compile Include="Map\TbLogloteMap.cs" />
+    <Compile Include="Map\TbLogsacoMap.cs" />
+    <Compile Include="Map\TbLogUsuarioMap.cs" />
+    <Compile Include="Map\TbLoteMap.cs" />
+    <Compile Include="Map\TbOperacaoMap.cs" />
+    <Compile Include="Map\TbPerfilMap.cs" />
+    <Compile Include="Map\TbRfidMap.cs" />
+    <Compile Include="Map\TbRotaMap.cs" />
+    <Compile Include="Map\TbSacoMap.cs" />
+    <Compile Include="Map\TbSincLocalidadeMap.cs" />
+    <Compile Include="Map\TbSincOperacaoMap.cs" />
+    <Compile Include="Map\TbSincPerfilMap.cs" />
+    <Compile Include="Map\TbSincRfidMap.cs" />
+    <Compile Include="Map\TbSincronizacaoMap.cs" />
+    <Compile Include="Map\TbSincRotaMap.cs" />
+    <Compile Include="Map\TbSincUsuarioMap.cs" />
+    <Compile Include="Map\TbStatusMap.cs" />
+    <Compile Include="Map\TbTipoUsuarioMap.cs" />
+    <Compile Include="Map\TbUsuarioMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\RepositoryNHibernate.cs" />
+    <Compile Include="Repository\TbEquipamentoRepository.cs" />
+    <Compile Include="Repository\TbLocalidadeRepository.cs" />
+    <Compile Include="Repository\TbRotaRepository.cs" />
+    <Compile Include="Repository\TbUsuarioRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

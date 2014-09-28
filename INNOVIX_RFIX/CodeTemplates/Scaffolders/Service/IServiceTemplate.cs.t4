@@ -1,0 +1,16 @@
+<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Innovix.Base.Domain.Entity;
+using System.Linq.Expressions;
+
+namespace Innovix.Base.Domain.Service
+{ 
+    public interface I<#= Model.EntityName #>Service : IServiceCRUD<<#= Model.EntityName #>>
+    {
+		
+	}
+}

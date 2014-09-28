@@ -9,13 +9,13 @@ using Innovix.Base.Data.Repository;
 
 namespace Innovix.Base.Persistencia.NHibernate.Repository
 {
-    public abstract class RepositorioNHibernate<T> : IRepository<T>
+    public abstract class RepositoryNHibernate<T> : IRepository<T>
        where T : EntityBase
     {
         protected ISession Session { get; set; }
 
         //A ISession é injetada pelo container no momento em que ele cria o objeto. Em caso de dúvidas, consulte o bootstrapper da aplicação.
-        public RepositorioNHibernate(ISession session)
+        public RepositoryNHibernate(ISession session)
         {
             this.Session = session;
         }
