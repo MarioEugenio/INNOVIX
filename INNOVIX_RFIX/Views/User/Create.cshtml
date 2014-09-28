@@ -1,8 +1,15 @@
-﻿<p ng-controller="UserCreateCtrl" ng-init="init()">
- <div  class="page-header">
-    <h1>Cadastro de Usuário</h1>
-    <h6>Os campos marcados com * são de preenchimento obrigatório</h6>
+﻿<div ng-controller="UserCreateCtrl" ng-init="init()">
+    <ol class="breadcrumb">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Usuário</a></li>
+      <li class="active">Cadastro</li>
+    </ol>
+
+    <div  class="page-header">
+        <h3>Cadastro de Usuário</h3>
+        <h6>Os campos marcados com * são de preenchimento obrigatório</h6>
     </div>
+
     <div>
         <form role="form">
           <div class="form-group">
@@ -11,7 +18,7 @@
           </div>
           <div class="form-group">
             <label>CPF / CNPJ</label>
-            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Digite CPF ou CNPJ">
+            <input type="text" style="width:30%;" class="form-control" id="exampleInputPassword1" placeholder="Digite CPF ou CNPJ">
           </div>
           <div class="form-group">
             <label for="exampleInputEmail1">E-mail</label>
@@ -19,22 +26,22 @@
           </div>
           <div class="form-group">
             <label>Telefone</label>
-            <input type="text" class="form-control input-small" id="exampleInputPassword1" placeholder="Digite Telefone">
+            <input type="text" style="width:30%;" class="form-control input-small" id="exampleInputPassword1" placeholder="Digite Telefone">
           </div>
           <div class="form-group">
             <label>Perfil</label>
-            <select class="form-control">
+            <select class="form-control" style="width:30%;">
                 <option value="">Selecione ...</option>
                 <option ng-repeat="item in listProfile" value="{{ item.Id }}">{{ item.noDesc }}</option>
             </select>
           </div>
               <div class="form-group">
                 <label>Senha</label>
-                <input type="password" class="form-control input-sm" id="exampleInputEmail2" placeholder="Digite Senha">
+                <input type="password" style="width:30%;" class="form-control input-sm" id="exampleInputEmail2" placeholder="Digite Senha">
               </div>
               <div class="form-group">
                 <label>Confirme Senha</label>
-                <input type="password" class="form-control input-sm" id="exampleInputEmail2" placeholder="Repita Senha">
+                <input type="password" style="width:30%;" class="form-control input-sm" id="exampleInputEmail2" placeholder="Repita Senha">
               </div> 
          <div class="modal-footer">
             <button type="submit" class="btn btn-default">Cancelar</button>
@@ -42,5 +49,4 @@
          </div>
           
         </form>
-    </p>
 </div>
