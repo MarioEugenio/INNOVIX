@@ -70,7 +70,5 @@ namespace INNOVIX_RFIX.Controllers
 
             return this.returnJson(result);
         }
-
-
     }
 }

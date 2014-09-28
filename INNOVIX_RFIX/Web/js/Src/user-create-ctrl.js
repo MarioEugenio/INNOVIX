@@ -19,4 +19,18 @@
                });
 
     }
+
+    $scope.enableForm = function () {
+        if (($scope.form.codSenha) && ($scope.form.confCodSenha)) {
+            if ($scope.form.codSenha == $scope.form.confCodSenha) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    $scope.save = function () {
+
+    }
 });
