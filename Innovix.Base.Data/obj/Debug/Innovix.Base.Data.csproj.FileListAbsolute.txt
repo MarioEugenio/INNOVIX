@@ -31,3 +31,15 @@ C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Data\bin\Iesi.Coll
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Data\obj\Debug\Innovix.Base.Data.csprojResolveAssemblyReference.cache
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Data\obj\Debug\Innovix.Base.Data.dll
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Data\obj\Debug\Innovix.Base.Data.pdb
+C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Data\bin\NHibernate.Validator.dll
+C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Data\bin\NHibernate.Validator.xml
+C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Data\bin\de\NHibernate.Validator.resources.dll
+C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Data\bin\es\NHibernate.Validator.resources.dll
+C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Data\bin\fa\NHibernate.Validator.resources.dll
+C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Data\bin\fr\NHibernate.Validator.resources.dll
+C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Data\bin\hr\NHibernate.Validator.resources.dll
+C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Data\bin\it\NHibernate.Validator.resources.dll
+C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Data\bin\lv\NHibernate.Validator.resources.dll
+C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Data\bin\nl\NHibernate.Validator.resources.dll
+C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Data\bin\pl\NHibernate.Validator.resources.dll
+C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Data\bin\pt-BR\NHibernate.Validator.resources.dll

@@ -1,0 +1,17 @@
+<#@ Template Language="C#" HostSpecific="True" Inherits="DynamicTransform" #>
+<#@ Output Extension="cs" #>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using Innovix.Base.Domain.Entity;
+using Innovix.Base.Domain.Service.Impl.Service;
+using Innovix.Base.Domain.Service;
+using Innovix.Base.Domain.Repository;
+
+namespace Innovix.Base.Domain.Service.Impl
+{ 
+    public class <#= Model.EntityName #>Service : ServiceCRUD<<#= Model.EntityName #>>, I<#= Model.EntityName #>Service
+    {
+		public <#= Model.EntityName #>Service(I<#= Model.EntityName #>Repository repository) : base(repository) { }
+	}
+}

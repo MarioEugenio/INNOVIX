@@ -54,3 +54,16 @@ C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Web.Init\bin\NHibe
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Web.Init\obj\Debug\Innovix.Base.Web.Init.csprojResolveAssemblyReference.cache
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Web.Init\obj\Debug\Innovix.Base.Web.Init.dll
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Web.Init\obj\Debug\Innovix.Base.Web.Init.pdb
+C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Web.Init\bin\NHibernate.Validator.dll
+C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Web.Init\bin\NHibernate.Validator.xml
+C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Web.Init\bin\de\NHibernate.Validator.resources.dll
+C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Web.Init\bin\es\NHibernate.Validator.resources.dll
+C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Web.Init\bin\fa\NHibernate.Validator.resources.dll
+C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Web.Init\bin\fr\NHibernate.Validator.resources.dll
+C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Web.Init\bin\hr\NHibernate.Validator.resources.dll
+C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Web.Init\bin\it\NHibernate.Validator.resources.dll
+C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Web.Init\bin\lv\NHibernate.Validator.resources.dll
+C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Web.Init\bin\nl\NHibernate.Validator.resources.dll
+C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Web.Init\bin\pl\NHibernate.Validator.resources.dll
+C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Web.Init\bin\pt-BR\NHibernate.Validator.resources.dll
+C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Web.Init\bin\FluentNHibernate.dll

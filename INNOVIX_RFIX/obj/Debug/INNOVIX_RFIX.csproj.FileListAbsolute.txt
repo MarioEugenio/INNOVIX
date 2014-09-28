@@ -121,3 +121,15 @@ C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\INNOVIX_RFIX\bin\Common.Logging
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\INNOVIX_RFIX\bin\Common.Logging.Core.xml
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\INNOVIX_RFIX\bin\Microsoft.Practices.EnterpriseLibrary.Common.xml
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\INNOVIX_RFIX\bin\Microsoft.Practices.EnterpriseLibrary.Data.xml
+C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\INNOVIX_RFIX\bin\NHibernate.Validator.dll
+C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\INNOVIX_RFIX\bin\NHibernate.Validator.xml
+C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\INNOVIX_RFIX\bin\de\NHibernate.Validator.resources.dll
+C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\INNOVIX_RFIX\bin\es\NHibernate.Validator.resources.dll
+C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\INNOVIX_RFIX\bin\fa\NHibernate.Validator.resources.dll
+C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\INNOVIX_RFIX\bin\fr\NHibernate.Validator.resources.dll
+C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\INNOVIX_RFIX\bin\hr\NHibernate.Validator.resources.dll
+C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\INNOVIX_RFIX\bin\it\NHibernate.Validator.resources.dll
+C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\INNOVIX_RFIX\bin\lv\NHibernate.Validator.resources.dll
+C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\INNOVIX_RFIX\bin\nl\NHibernate.Validator.resources.dll
+C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\INNOVIX_RFIX\bin\pl\NHibernate.Validator.resources.dll
+C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\INNOVIX_RFIX\bin\pt-BR\NHibernate.Validator.resources.dll
