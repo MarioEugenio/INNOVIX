@@ -40,15 +40,3 @@ C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Persistencia.NHibe
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Persistencia.NHibernate\obj\Debug\Innovix.Base.Data.NHibernate.csprojResolveAssemblyReference.cache
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Persistencia.NHibernate\obj\Debug\Innovix.Base.Persistencia.NHibernate.dll
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Persistencia.NHibernate\obj\Debug\Innovix.Base.Persistencia.NHibernate.pdb
-C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Persistencia.NHibernate\bin\NHibernate.Validator.dll
-C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Persistencia.NHibernate\bin\NHibernate.Validator.xml
-C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Persistencia.NHibernate\bin\de\NHibernate.Validator.resources.dll
-C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Persistencia.NHibernate\bin\es\NHibernate.Validator.resources.dll
-C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Persistencia.NHibernate\bin\fa\NHibernate.Validator.resources.dll
-C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Persistencia.NHibernate\bin\fr\NHibernate.Validator.resources.dll
-C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Persistencia.NHibernate\bin\hr\NHibernate.Validator.resources.dll
-C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Persistencia.NHibernate\bin\it\NHibernate.Validator.resources.dll
-C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Persistencia.NHibernate\bin\lv\NHibernate.Validator.resources.dll
-C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Persistencia.NHibernate\bin\nl\NHibernate.Validator.resources.dll
-C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Persistencia.NHibernate\bin\pl\NHibernate.Validator.resources.dll
-C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Persistencia.NHibernate\bin\pt-BR\NHibernate.Validator.resources.dll

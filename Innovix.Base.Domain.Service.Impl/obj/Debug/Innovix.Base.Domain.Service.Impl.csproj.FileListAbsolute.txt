@@ -36,15 +36,3 @@ C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Domain.Service.Imp
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Domain.Service.Impl\obj\Debug\Innovix.Base.Domain.Service.Impl.csprojResolveAssemblyReference.cache
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Domain.Service.Impl\obj\Debug\Innovix.Base.Domain.Service.Impl.dll
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Domain.Service.Impl\obj\Debug\Innovix.Base.Domain.Service.Impl.pdb
-C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Domain.Service.Impl\bin\NHibernate.Validator.dll
-C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Domain.Service.Impl\bin\NHibernate.Validator.xml
-C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Domain.Service.Impl\bin\de\NHibernate.Validator.resources.dll
-C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Domain.Service.Impl\bin\es\NHibernate.Validator.resources.dll
-C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Domain.Service.Impl\bin\fa\NHibernate.Validator.resources.dll
-C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Domain.Service.Impl\bin\fr\NHibernate.Validator.resources.dll
-C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Domain.Service.Impl\bin\hr\NHibernate.Validator.resources.dll
-C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Domain.Service.Impl\bin\it\NHibernate.Validator.resources.dll
-C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Domain.Service.Impl\bin\lv\NHibernate.Validator.resources.dll
-C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Domain.Service.Impl\bin\nl\NHibernate.Validator.resources.dll
-C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Domain.Service.Impl\bin\pl\NHibernate.Validator.resources.dll
-C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Domain.Service.Impl\bin\pt-BR\NHibernate.Validator.resources.dll
