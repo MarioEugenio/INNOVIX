@@ -12,7 +12,7 @@ namespace Innovix.Base.Persistencia.NHibernate.Map {
         public TbTipoUsuarioMap() {
 			Table("tb_tipo_usuario");
 			LazyLoad();
-			Id(x => x.idTipoUsuario).GeneratedBy.Identity().Column("id_tipo_usuario");
+			Id(x => x.Id).GeneratedBy.Identity().Column("id_tipo_usuario");
 			Map(x => x.noDesc).Column("no_desc").Length(30);
 			HasMany(x => x.tbUsuario).KeyColumn("id_tipo_usuario");
         }

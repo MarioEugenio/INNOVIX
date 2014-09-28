@@ -6,12 +6,12 @@ using System.Web.Mvc;
 
 namespace INNOVIX_RFIX.Controllers
 {
-    public class UserController : Controller
+    public class UserController : ControllerBase
     {
         //
         // GET: /User/
 
-        public ActionResult Index()
+        public ActionResult Create()
         {
             return View();
         }

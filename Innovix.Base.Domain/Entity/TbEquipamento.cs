@@ -9,7 +9,7 @@ namespace Innovix.Base.Domain.Entity {
     public class TbEquipamento : EntityBase
     {
         public TbEquipamento() {
-			relEmpresaEquipamento = new List<RelEmpresaEquipamento>();
+			/*relEmpresaEquipamento = new List<RelEmpresaEquipamento>();
 			tbLogitem = new List<TbLogitem>();
 			tbLoglote = new List<TbLoglote>();
 			tbLogsaco = new List<TbLogsaco>();
@@ -19,13 +19,12 @@ namespace Innovix.Base.Domain.Entity {
 			tbSincRfid = new List<TbSincRfid>();
 			tbSincRota = new List<TbSincRota>();
 			tbSincUsuario = new List<TbSincUsuario>();
-			tbSincronizacao = new List<TbSincronizacao>();
+			tbSincronizacao = new List<TbSincronizacao>();*/
         }
-        public virtual int idEquipamento { get; set; }
         public virtual TbLocalidade tbLocalidade { get; set; }
         [Length(50)]
         public virtual string noEquipamento { get; set; }
-        public virtual IList<RelEmpresaEquipamento> relEmpresaEquipamento { get; set; }
+        /*public virtual IList<RelEmpresaEquipamento> relEmpresaEquipamento { get; set; }
         public virtual IList<TbLogitem> tbLogitem { get; set; }
         public virtual IList<TbLoglote> tbLoglote { get; set; }
         public virtual IList<TbLogsaco> tbLogsaco { get; set; }
@@ -35,6 +34,6 @@ namespace Innovix.Base.Domain.Entity {
         public virtual IList<TbSincRfid> tbSincRfid { get; set; }
         public virtual IList<TbSincRota> tbSincRota { get; set; }
         public virtual IList<TbSincUsuario> tbSincUsuario { get; set; }
-        public virtual IList<TbSincronizacao> tbSincronizacao { get; set; }
+        public virtual IList<TbSincronizacao> tbSincronizacao { get; set; }*/
     }
 }

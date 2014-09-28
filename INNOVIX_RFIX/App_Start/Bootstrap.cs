@@ -45,7 +45,7 @@ namespace INNOVIX_RFIX.App_Start
 
             System.Web.HttpContext.Current.Application["DependencyResolver"] = DependencyResolver.Current;
 
-            //HibernatingRhinos.Profiler.Appender.NHibernate.NHibernateProfiler.Initialize();
+            HibernatingRhinos.Profiler.Appender.NHibernate.NHibernateProfiler.Initialize();
         }
     }
 }

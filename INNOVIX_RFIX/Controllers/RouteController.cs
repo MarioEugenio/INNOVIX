@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace INNOVIX_RFIX.Controllers
 {
-    public class RouteController : Controller
+    public class RouteController : ControllerBase
     {
         //
         // GET: /Route/

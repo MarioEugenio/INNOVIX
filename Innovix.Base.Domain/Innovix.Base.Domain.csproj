@@ -78,34 +78,14 @@
   <ItemGroup>
     <Compile Include="Entity\EntityBase.cs" />
     <Compile Include="Entity\IEntity.cs" />
-    <Compile Include="Entity\RelEmpresaEquipamento.cs" />
-    <Compile Include="Entity\RelEmpresaItem.cs" />
-    <Compile Include="Entity\RelEmpresaUsuario.cs" />
-    <Compile Include="Entity\RelLocalidadeRota.cs" />
-    <Compile Include="Entity\RelPerfilOperacao.cs" />
-    <Compile Include="Entity\TbControle.cs" />
     <Compile Include="Entity\TbEmpresa.cs" />
     <Compile Include="Entity\TbEquipamento.cs" />
     <Compile Include="Entity\TbItem.cs" />
-    <Compile Include="Entity\TbLacre.cs" />
     <Compile Include="Entity\TbLocalidade.cs" />
-    <Compile Include="Entity\TbLogitem.cs" />
-    <Compile Include="Entity\TbLoglote.cs" />
-    <Compile Include="Entity\TbLogsaco.cs" />
     <Compile Include="Entity\TbLogUsuario.cs" />
-    <Compile Include="Entity\TbLote.cs" />
     <Compile Include="Entity\TbOperacao.cs" />
     <Compile Include="Entity\TbPerfil.cs" />
-    <Compile Include="Entity\TbRfid.cs" />
     <Compile Include="Entity\TbRota.cs" />
-    <Compile Include="Entity\TbSaco.cs" />
-    <Compile Include="Entity\TbSincLocalidade.cs" />
-    <Compile Include="Entity\TbSincOperacao.cs" />
-    <Compile Include="Entity\TbSincPerfil.cs" />
-    <Compile Include="Entity\TbSincRfid.cs" />
-    <Compile Include="Entity\TbSincronizacao.cs" />
-    <Compile Include="Entity\TbSincRota.cs" />
-    <Compile Include="Entity\TbSincUsuario.cs" />
     <Compile Include="Entity\TbStatus.cs" />
     <Compile Include="Entity\TbTipoUsuario.cs" />
     <Compile Include="Entity\TbUsuario.cs" />
@@ -113,6 +93,7 @@
     <Compile Include="Service\IServiceCRUD.cs" />
     <Compile Include="Service\ITbEquipamentoService.cs" />
     <Compile Include="Service\ITbLocalidadeService.cs" />
+    <Compile Include="Service\ItbPerfilService.cs" />
     <Compile Include="Service\ITbRotaService.cs" />
     <Compile Include="Service\ITbUsuarioService.cs" />
   </ItemGroup>

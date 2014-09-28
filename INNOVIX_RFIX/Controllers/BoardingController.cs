@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace INNOVIX_RFIX.Controllers
 {
-    public class BoardingController : Controller
+    public class BoardingController : ControllerBase
     {
         //
         // GET: /Boarding/

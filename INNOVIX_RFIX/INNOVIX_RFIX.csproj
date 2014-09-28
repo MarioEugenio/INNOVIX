@@ -78,6 +78,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="HibernatingRhinos.Profiler.Appender">
+      <HintPath>..\..\..\..\Downloads\NHibernate.Profiler-v2.0-Build-2238\HibernatingRhinos.Profiler.Appender.dll</HintPath>
+    </Reference>
     <Reference Include="Iesi.Collections, Version=4.0.0.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Iesi.Collections.4.0.1.4000\lib\net40\Iesi.Collections.dll</HintPath>
@@ -171,9 +174,11 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\BoardingController.cs" />
+    <Compile Include="Controllers\ControllerBase.cs" />
     <Compile Include="Controllers\EquipmentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LocationController.cs" />
+    <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Controllers\RouteController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
@@ -278,14 +283,15 @@
     <Content Include="Web\js\Externals\angular\ui\ui-grid.js" />
     <Content Include="Web\js\Externals\jquery\jquery.js" />
     <Content Include="Web\js\Routers\home-router.js" />
+    <Content Include="Web\js\Routers\user-router.js" />
     <Content Include="Web\js\Src\boarding-list-ctrl.js" />
+    <Content Include="Web\js\Src\user-create-ctrl.js" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Equipment\" />
     <Folder Include="Views\Location\" />
     <Folder Include="Views\Route\" />
-    <Folder Include="Views\User\" />
     <Folder Include="Web\upload\" />
   </ItemGroup>
   <ItemGroup>
@@ -360,6 +366,7 @@
     <Content Include="CodeTemplates\Scaffolders\Service\Service.ps1" />
     <Content Include="CodeTemplates\Scaffolders\Service\ServiceImplTemplate.cs.t4" />
     <None Include="Properties\PublishProfiles\RFIX.pubxml" />
+    <Content Include="Views\User\Create.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

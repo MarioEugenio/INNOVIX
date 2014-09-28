@@ -7,12 +7,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Transactions;
-using Innovix.Base.Infrastructure.NHibernate;
 using Innovix.Base.Infrastructure.Transaction;
 using Itamaraty.Nucleo.Infraestrutura.Transacoes;
 using Innovix.Base.Domain.Service.Impl.Service;
 using Innovix.Base.Persistencia.NHibernate.Repository;
 using Innovix.Base.Domain.Entity;
+using Innovix.Base.Persistencia.NHibernate.Init;
 
 
 namespace Innovix.Base.Web.Init
@@ -41,7 +41,7 @@ namespace Innovix.Base.Web.Init
             });
 
             // Registrando no container os repositórios implementados com NHibernate
-            var dataAccess = typeof(RepositorioNHibernate<>).Assembly;
+            var dataAccess = typeof(RepositoryNHibernate<>).Assembly;
             builder.RegisterAssemblyTypes(dataAccess)
                 .Where(t => t.Name.EndsWith("Repository"))
                 .AsImplementedInterfaces();

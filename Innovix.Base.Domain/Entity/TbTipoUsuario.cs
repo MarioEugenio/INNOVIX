@@ -11,7 +11,6 @@ namespace Innovix.Base.Domain.Entity {
         public TbTipoUsuario() {
 			tbUsuario = new List<TbUsuario>();
         }
-        public virtual int idTipoUsuario { get; set; }
         [Length(30)]
         public virtual string noDesc { get; set; }
         public virtual IList<TbUsuario> tbUsuario { get; set; }

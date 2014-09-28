@@ -12,10 +12,10 @@ namespace Innovix.Base.Persistencia.NHibernate.Map {
         public TbPerfilMap() {
 			Table("tb_perfil");
 			LazyLoad();
-			Id(x => x.idPerfil).GeneratedBy.Identity().Column("id_perfil");
+			Id(x => x.Id).GeneratedBy.Identity().Column("id_perfil");
 			Map(x => x.noDesc).Column("no_desc").Not.Nullable().Length(50);
-			HasMany(x => x.relPerfilOperacao).KeyColumn("id_perfil");
-			HasMany(x => x.tbSincPerfil).KeyColumn("id_perfil");
+			//HasMany(x => x.relPerfilOperacao).KeyColumn("id_perfil");
+			//HasMany(x => x.tbSincPerfil).KeyColumn("id_perfil");
 			HasMany(x => x.tbUsuario).KeyColumn("id_perfil");
         }
     }

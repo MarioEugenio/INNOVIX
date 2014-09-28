@@ -12,14 +12,11 @@ namespace Innovix.Base.Persistencia.NHibernate.Map {
         public TbEmpresaMap() {
 			Table("tb_empresa");
 			LazyLoad();
-			Id(x => x.idEmpresa).GeneratedBy.Identity().Column("id_empresa");
+			Id(x => x.Id).GeneratedBy.Identity().Column("id_empresa");
 			Map(x => x.noEmpresa).Column("no_empresa").Not.Nullable().Length(50);
 			Map(x => x.noDesc).Column("no_desc").Length(200);
 			Map(x => x.noEndereco).Column("no_endereco").Length(100);
 			Map(x => x.noTelefone).Column("no_telefone").Length(15);
-			HasMany(x => x.relEmpresaEquipamento).KeyColumn("id_empresa");
-			HasMany(x => x.relEmpresaItem).KeyColumn("id_empresa");
-			HasMany(x => x.relEmpresaUsuario).KeyColumn("id_empresa");
         }
     }
 }

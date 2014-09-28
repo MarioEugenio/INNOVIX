@@ -65,6 +65,7 @@
     <Compile Include="Service\ServiceCRUD.cs" />
     <Compile Include="Service\TbEquipamentoService.cs" />
     <Compile Include="Service\TbLocalidadeService.cs" />
+    <Compile Include="Service\tbPerfilService.cs" />
     <Compile Include="Service\TbRotaService.cs" />
     <Compile Include="Service\TbUsuarioService.cs" />
   </ItemGroup>

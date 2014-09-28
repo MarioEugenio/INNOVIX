@@ -76,7 +76,6 @@
     <Compile Include="Exceptions\ExceptionRequired.cs" />
     <Compile Include="Exceptions\ExceptionService.cs" />
     <Compile Include="Log\ExceptionLogAttribute.cs" />
-    <Compile Include="NHibernate\FluentFactore.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Transaction\NHibernateInterceptor.cs" />
     <Compile Include="Transaction\ServiceLoggerInterceptor.cs" />

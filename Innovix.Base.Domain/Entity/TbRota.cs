@@ -9,18 +9,17 @@ namespace Innovix.Base.Domain.Entity {
     public class TbRota : EntityBase
     {
         public TbRota() {
-			relLocalidadeRota = new List<RelLocalidadeRota>();
-			tbLote = new List<TbLote>();
-			tbSincRota = new List<TbSincRota>();
+			//relLocalidadeRota = new List<RelLocalidadeRota>();
+			//tbLote = new List<TbLote>();
+			//tbSincRota = new List<TbSincRota>();
         }
-        public virtual int idRota { get; set; }
         [NotNullNotEmpty]
         [Length(50)]
         public virtual string noNome { get; set; }
         [Length(100)]
         public virtual string noDesc { get; set; }
-        public virtual IList<RelLocalidadeRota> relLocalidadeRota { get; set; }
-        public virtual IList<TbLote> tbLote { get; set; }
-        public virtual IList<TbSincRota> tbSincRota { get; set; }
+        //public virtual IList<RelLocalidadeRota> relLocalidadeRota { get; set; }
+        //public virtual IList<TbLote> tbLote { get; set; }
+        //public virtual IList<TbSincRota> tbSincRota { get; set; }
     }
 }
