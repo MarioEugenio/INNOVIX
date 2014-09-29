@@ -64,5 +64,10 @@ namespace Innovix.Base.Domain.Service.Impl.Service
         {
             return Repositorio.Pesquisar(where);
         }
+
+        public IEnumerable<TEntidade> Pagination(Expression<Func<TEntidade, bool>> where, int limit, int offset)
+        {
+            return Repositorio.Pagination(where, limit, offset);
+        }
     }
 }

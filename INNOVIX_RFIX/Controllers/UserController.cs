@@ -18,6 +18,16 @@ namespace INNOVIX_RFIX.Controllers
             this.service = service;
         }
 
+        public ViewResult List()
+        {
+            return View();
+        }
+
+        public ViewResult Create()
+        {
+            return View();
+        }
+
         public JsonResult Remove(int Id)
         {
             try
@@ -56,6 +66,7 @@ namespace INNOVIX_RFIX.Controllers
                    noEmail = x.noEmail,
                    noTelefone = x.noTelefone,
                    noUsuario = x.noUsuario,
+                   codCpfCnpj = x.codCpfCnpj,
                    coPerfil = x.tbPerfil.Id,
                    noPerfil = x.tbPerfil.noDesc,
                    coTipoPerfil = x.tbTipoUsuario.Id,
@@ -65,7 +76,7 @@ namespace INNOVIX_RFIX.Controllers
             return this.returnJson(result);
         }
 
-        public JsonResult GetAll()
+        public JsonResult GetAll(int limit, int offset)
         {
             var result = this.service
                 .Listar()
@@ -74,11 +85,25 @@ namespace INNOVIX_RFIX.Controllers
                     noEmail = x.noEmail,
                     noTelefone = x.noTelefone,
                     noUsuario = x.noUsuario,
-                    coPerfil = x.tbPerfil.Id,
-                    noPerfil = x.tbPerfil.noDesc,
-                    coTipoPerfil = x.tbTipoUsuario.Id,
-                    noTipoPerfil = x.tbTipoUsuario.noDesc
-            });
+                    codCpfCnpj = x.codCpfCnpj
+                }).Take(limit).Skip(offset);
+
+            return this.returnJson(result);
+        }
+
+        public JsonResult GetUser(string search, int limit, int offset)
+        {
+            var str = (search != "") ? search.ToLower() : null;
+            var result = this.service
+                .Pesquisar(x => x.noUsuario.ToLower().Equals(str))
+                .Select(x => new
+                {
+                    Id = x.Id,
+                    noEmail = x.noEmail,
+                    noTelefone = x.noTelefone,
+                    noUsuario = x.noUsuario,
+                    codCpfCnpj = x.codCpfCnpj
+                }).Take(limit).Skip(offset);
 
             return this.returnJson(result);
         }

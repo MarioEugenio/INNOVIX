@@ -17,6 +17,9 @@ namespace Innovix.Base.Data.Repository
         T ObterPorId(int id);
 
         //C[R]UD
+        IQueryable<T> Pagination(Expression<Func<T, bool>> predicate, int limit, int offset);
+
+        //C[R]UD
         IQueryable<T> Pesquisar(Expression<Func<T, bool>> predicate);
 
         //C[R]UD

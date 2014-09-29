@@ -26,6 +26,11 @@ namespace Innovix.Base.Persistencia.NHibernate.Repository
             return entidade;
         }
 
+        public virtual IQueryable<T> Pagination(System.Linq.Expressions.Expression<Func<T, bool>> predicado, int limit, int offset)
+        {
+            return Session.Query<T>().Where(predicado).Take(offset).Skip(limit);
+        }
+
         public virtual IQueryable<T> Pesquisar(System.Linq.Expressions.Expression<Func<T, bool>> predicado)
         {
             return Session.Query<T>().Where(predicado);

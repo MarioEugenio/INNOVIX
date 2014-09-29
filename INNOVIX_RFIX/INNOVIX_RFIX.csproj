@@ -286,6 +286,7 @@
     <Content Include="Web\js\Routers\user-router.js" />
     <Content Include="Web\js\Src\boarding-list-ctrl.js" />
     <Content Include="Web\js\Src\user-create-ctrl.js" />
+    <Content Include="Web\js\Src\user-list-ctrl.js" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -367,6 +368,7 @@
     <Content Include="CodeTemplates\Scaffolders\Service\ServiceImplTemplate.cs.t4" />
     <None Include="Properties\PublishProfiles\RFIX.pubxml" />
     <Content Include="Views\User\Create.cshtml" />
+    <Content Include="Views\User\List.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

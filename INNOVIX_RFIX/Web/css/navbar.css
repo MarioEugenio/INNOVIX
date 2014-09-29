@@ -67,3 +67,16 @@ em {
     color:red;
     margin-right: 2px;
 }
+
+.table-header {
+    background-color: #e5e5e5;
+}
+
+.table-count {
+    margin-top: 19px;
+}
+
+.table-footer {
+    text-align: center;
+    background-color: #f9f9f9;
+}

@@ -19,6 +19,7 @@ namespace Innovix.Base.Domain.Service
         TEntity ObterPorId(int id);
 
         IEnumerable<TEntity> Pesquisar(Expression<Func<TEntity, bool>> where);
+        IEnumerable<TEntity> Pagination(Expression<Func<TEntity, bool>> where, int limit, int offset);
 
         void Salvar(TEntity entidade);
 
