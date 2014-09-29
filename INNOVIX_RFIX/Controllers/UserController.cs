@@ -26,7 +26,7 @@ namespace INNOVIX_RFIX.Controllers
         public ViewResult Create()
         {
             return View();
-        }
+        } 
 
         public JsonResult Remove(int Id)
         {
@@ -66,11 +66,7 @@ namespace INNOVIX_RFIX.Controllers
                    noEmail = x.noEmail,
                    noTelefone = x.noTelefone,
                    noUsuario = x.noUsuario,
-                   codCpfCnpj = x.codCpfCnpj,
-                   coPerfil = x.tbPerfil.Id,
-                   noPerfil = x.tbPerfil.noDesc,
-                   coTipoPerfil = x.tbTipoUsuario.Id,
-                   noTipoPerfil = x.tbTipoUsuario.noDesc
+                   codCpfCnpj = x.codCpfCnpj
                });
 
             return this.returnJson(result);
@@ -95,7 +91,7 @@ namespace INNOVIX_RFIX.Controllers
         {
             var str = (search != "") ? search.ToLower() : null;
             var result = this.service
-                .Pesquisar(x => x.noUsuario.ToLower().Equals(str))
+                .Pesquisar(x => x.noUsuario.ToLower().Contains(str))
                 .Select(x => new
                 {
                     Id = x.Id,

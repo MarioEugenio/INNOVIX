@@ -18,6 +18,16 @@ namespace INNOVIX_RFIX.Controllers
             this.service = service;
         }
 
+        public ViewResult List()
+        {
+            return View();
+        }
+
+        public ViewResult Create()
+        {
+            return View();
+        } 
+
         public JsonResult Remove(int Id)
         {
             try

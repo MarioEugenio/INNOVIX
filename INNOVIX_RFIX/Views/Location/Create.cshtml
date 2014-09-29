@@ -1,0 +1,58 @@
+﻿<div ng-controller="UserCreateCtrl" ng-init="init()">
+    <ol class="breadcrumb">
+      <li><a href="#/home/init">Home</a></li>
+      <li><a href="#/location/list">Localidade</a></li>
+      <li class="active">Cadastro</li>
+    </ol>
+
+    <div  class="page-header">
+        <h3>Cadastro de Localidade</h3>
+        <h6>Os campos marcados com <em>*</em> são de preenchimento obrigatório</h6>
+    </div>
+
+    <div>
+        <form role="form" ng-submit="save()">
+          <div class="form-group">
+            <label><em>*</em> Usuário</label>
+            <input type="text" class="form-control" maxlength="50" ng-model="form.noUsuario" placeholder="Digite Nome do Usuário" required>
+          </div>
+          <div class="form-group">
+            <label><em>*</em> CPF / CNPJ</label>
+            <input type="text" class="form-control small" maxlength="18" ng-model="form.codCpfCnpj" placeholder="Digite CPF ou CNPJ" required>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">E-mail</label>
+            <input type="email" class="form-control" maxlength="30" ng-model="form.noEmail" placeholder="Digite E-mail">
+          </div>
+          <div class="form-group">
+            <label>Telefone</label>
+            <input type="text" class="form-control small" maxlength="20" ng-model="form.noTelefone" placeholder="Digite Telefone">
+          </div>
+          <div class="form-group">
+            <label><em>*</em> Perfil</label>
+            <select class="form-control medium" ng-model="form.TbPerfil.Id" required>
+                <option value="">Selecione ...</option>
+                <option ng-repeat="item in listProfile" value="{{ item.Id }}">{{ item.noDesc }}</option>
+            </select>
+          </div>
+            <div class="panel panel-default">
+              <div class="panel-heading">Digite e confirme sua senha, será aceito no máximo 35 caractéres</div>
+              <div class="panel-body">
+                <div class="form-group">
+                            <label><em>*</em> Senha</label>
+                            <input type="password" maxlength="35" class="form-control small" required ng-model="form.codSenha" id="exampleInputEmail2" placeholder="Digite Senha">
+                          </div>
+                          <div class="form-group">
+                            <label><em>*</em> Confirme Senha</label>
+                            <input type="password" maxlength="35" class="form-control small" required ng-model="form.confCodSenha" placeholder="Repita Senha">
+                          </div> 
+              </div>
+            </div>
+              
+         <div class="modal-footer">
+            <a href="#/user/list" class="btn btn-default">Cancelar</a>
+            <button type="submit" class="btn btn-primary" ng-disabled="enableForm()">Salvar</button>
+         </div>
+          
+        </form>
+</div>
