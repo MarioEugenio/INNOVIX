@@ -282,17 +282,23 @@
     <Content Include="Web\js\Externals\angular\ui\ui-grid-layout.js" />
     <Content Include="Web\js\Externals\angular\ui\ui-grid.js" />
     <Content Include="Web\js\Externals\jquery\jquery.js" />
+    <Content Include="Web\js\Routers\route-router.js" />
+    <Content Include="Web\js\Routers\equipment-router.js" />
+    <Content Include="Web\js\Routers\location-router.js" />
     <Content Include="Web\js\Routers\home-router.js" />
     <Content Include="Web\js\Routers\user-router.js" />
     <Content Include="Web\js\Src\boarding-list-ctrl.js" />
+    <Content Include="Web\js\Src\equipment-create-ctrl.js" />
+    <Content Include="Web\js\Src\equipment-list-ctrl.js" />
+    <Content Include="Web\js\Src\route-create-ctrl.js" />
+    <Content Include="Web\js\Src\route-list-ctrl.js" />
+    <Content Include="Web\js\Src\location-list-ctrl.js" />
+    <Content Include="Web\js\Src\location-create-ctrl.js" />
     <Content Include="Web\js\Src\user-create-ctrl.js" />
     <Content Include="Web\js\Src\user-list-ctrl.js" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Equipment\" />
-    <Folder Include="Views\Location\" />
-    <Folder Include="Views\Route\" />
     <Folder Include="Web\upload\" />
   </ItemGroup>
   <ItemGroup>
@@ -369,6 +375,12 @@
     <None Include="Properties\PublishProfiles\RFIX.pubxml" />
     <Content Include="Views\User\Create.cshtml" />
     <Content Include="Views\User\List.cshtml" />
+    <Content Include="Views\Equipment\Create.cshtml" />
+    <Content Include="Views\Equipment\List.cshtml" />
+    <Content Include="Views\Location\Create.cshtml" />
+    <Content Include="Views\Location\List.cshtml" />
+    <Content Include="Views\Route\Create.cshtml" />
+    <Content Include="Views\Route\List.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -82,7 +82,7 @@ namespace INNOVIX_RFIX.Controllers
                     noTelefone = x.noTelefone,
                     noUsuario = x.noUsuario,
                     codCpfCnpj = x.codCpfCnpj
-                }).Take(limit).Skip(offset);
+                }).Skip((offset - 1) * limit).Take(limit);
 
             return this.returnJson(result);
         }
@@ -99,7 +99,7 @@ namespace INNOVIX_RFIX.Controllers
                     noTelefone = x.noTelefone,
                     noUsuario = x.noUsuario,
                     codCpfCnpj = x.codCpfCnpj
-                }).Take(limit).Skip(offset);
+                }).Skip((offset - 1) * limit).Take(limit);
 
             return this.returnJson(result);
         }
