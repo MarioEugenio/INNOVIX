@@ -7,7 +7,7 @@
     };
 
     $scope.getEquipment = function (current) {
-        $http.post('equipment/GetAll', {
+        $http.post('equipment/getAll', {
             limit: global.limit,
             offset: current
         })
@@ -18,7 +18,7 @@
     }
 
     $scope.searchEquipment = function (current) {
-        $http.post('equipment/GetEquipment', {
+        $http.post('equipment/getEquipment', {
             search: $scope.search,
             limit: global.limit,
             offset: current

@@ -63,7 +63,8 @@ namespace INNOVIX_RFIX.Controllers
                .Select(x => new
                {
                    Id = x.Id,
-                   noEquipamento = x.noEquipamento
+                   noEquipamento = x.noEquipamento,
+                   idLocalidade = x.tbLocalidade.Id
                });
 
             return this.returnJson(result);
@@ -75,8 +76,24 @@ namespace INNOVIX_RFIX.Controllers
                 .Listar()
                 .Select(x => new {
                     Id = x.Id,
-                    noEquipamento = x.noEquipamento
+                    noEquipamento = x.noEquipamento,
+                    noLocalidade = x.tbLocalidade.noNome
             });
+
+            return this.returnJson(result);
+        }
+
+        public JsonResult GetEquipment(string search, int limit, int offset)
+        {
+            var str = (search != "") ? search.ToLower() : null;
+            var result = this.service
+                .Pesquisar(x => x.noEquipamento.ToLower().Contains(str))
+                .Select(x => new
+                {
+                    Id = x.Id,
+                    noEquipamento = x.noEquipamento,
+                    noLocalidade = x.tbLocalidade.noNome
+                }).Take(limit).Skip(offset);
 
             return this.returnJson(result);
         }

@@ -83,5 +83,20 @@ namespace INNOVIX_RFIX.Controllers
             return this.returnJson(result);
         }
 
+        public JsonResult GetRoute(string search, int limit, int offset)
+        {
+            var str = (search != "") ? search.ToLower() : null;
+            var result = this.service
+                .Pesquisar(x => x.noNome.ToLower().Contains(str))
+                .Select(x => new
+                {
+                    Id = x.Id,
+                    noDesc = x.noDesc,
+                    noNome = x.noNome
+                }).Take(limit).Skip(offset);
+
+            return this.returnJson(result);
+        }
+
     }
 }

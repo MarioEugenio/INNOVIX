@@ -1,4 +1,4 @@
-﻿<div ng-controller="UserListCtrl" ng-init="init()">
+﻿<div ng-controller="EquipmentListCtrl" ng-init="init()">
     <ol class="breadcrumb">
       <li><a href="#/home/init">Home</a></li>
       <li class="active">Equipamentos</li>
@@ -14,9 +14,9 @@
             <div class="row">
               <div class="col-lg-10">
                 <div class="input-group">
-                  <input type="text" class="form-control" ng-model="search" placeholder="Nome do usuário">
+                  <input type="text" class="form-control" ng-model="search" placeholder="Nome do equipamento">
                   <span class="input-group-btn">
-                    <button class="btn btn-default" ng-click="searchUser(1)" type="button"><span class="glyphicon glyphicon-search"></span> Pesquisar</button>
+                    <button class="btn btn-default" ng-click="searchEquipment(1)" type="button"><span class="glyphicon glyphicon-search"></span> Pesquisar</button>
                   </span>
                 </div><!-- /input-group -->
               </div><!-- /.col-lg-6 -->
@@ -29,31 +29,29 @@
           </div>
         </div>
 
-        <div ng-show="listUser.length == 0" class="alert alert-warning" role="alert">
+        <div ng-show="list.length == 0" class="alert alert-warning" role="alert">
             <a href="#" class="alert-link"><span class="glyphicon glyphicon-warning-sign"></span> Não houve retorno de registros</a>
         </div>
 
-        <div ng-show="listUser.length" class="panel panel-default">
+        <div ng-show="list.length" class="panel panel-default">
             <table class="table table-bordered table-striped">
                 <thead>
                     <tr class="table-header">
                         <th>Nome</th>
-                        <th>CPF / CNPJ</th>
-                        <th>E-mail</th>
-                        <th>Telefone</th>
-                        <th>Perfil</th>
+                        <th>Tipo</th>
+                        <th>Codigo</th>
+                        <th>Ult. Atualização</th>
                         <th></th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr ng-repeat="item in listUser">
-                        <td>{{ item.noUsuario }}</td>
-                        <td>{{ item.codCpfCnpj }}</td>
-                        <td>{{ item.noEmail }}</td>
-                        <td>{{ item.noTelefone }}</td>
-                        <td>{{ item.noPerfil }}</td>
+                    <tr ng-repeat="item in list">
+                        <td>{{ item.noEquipamento }}</td>
+                        <td>{{ item.noLocalidade }}</td>
+                        <td>{{ item.Id }}</td>
+                        <td></td>
                         <td style="width:110px;">
-                            <a class="btn btn-default btn-mini" href="#/user/{{ item.Id }}/alter"><span class="glyphicon glyphicon-edit"></span></a>
+                            <a class="btn btn-default btn-mini" href="#/equipment/{{ item.Id }}/alter"><span class="glyphicon glyphicon-edit"></span></a>
                             <a class="btn btn-default btn-mini"><span class="glyphicon glyphicon-trash"></span></a>
                         </td>
                     </tr>
@@ -65,7 +63,7 @@
                                 <pagination total-items="bigTotalItems" ng-model="bigCurrentPage" max-size="maxSize" class="pagination-sm" boundary-links="true" rotate="false" num-pages="numPages"></pagination>
                             </div>
                             <div class="pull-right table-count">
-                                <h5>Total de registros <span class="label label-primary">{{ listUser.length }}</span></h5>
+                                <h5>Total de registros <span class="label label-primary">{{ list.length }}</span></h5>
                             </div>
                         </td>
                     </tr>

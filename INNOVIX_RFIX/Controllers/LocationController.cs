@@ -91,5 +91,24 @@ namespace INNOVIX_RFIX.Controllers
             return this.returnJson(result);
         }
 
+        public JsonResult GetLocation(string search, int limit, int offset)
+        {
+            var str = (search != "") ? search.ToLower() : null;
+            var result = this.service
+                .Pesquisar(x => x.noNome.ToLower().Contains(str))
+                .Select(x => new
+                {
+                    Id = x.Id,
+                    noCidade = x.noCidade,
+                    noDesc = x.noDesc,
+                    noEstado = x.noEstado,
+                    noNome = x.noNome,
+                    noResponsavel = x.noResponsavel,
+                    noTelefone = x.noTelefone
+                }).Take(limit).Skip(offset);
+
+            return this.returnJson(result);
+        }
+
     }
 }

@@ -1,4 +1,4 @@
-﻿<div ng-controller="UserCreateCtrl" ng-init="init()">
+﻿<div ng-controller="EquipmentCreateCtrl" ng-init="init()">
     <ol class="breadcrumb">
       <li><a href="#/home/init">Home</a></li>
       <li><a href="#/equipment/list">Equipamentos</a></li>
@@ -13,44 +13,27 @@
     <div>
         <form role="form" ng-submit="save()">
           <div class="form-group">
-            <label><em>*</em> Usuário</label>
-            <input type="text" class="form-control" maxlength="50" ng-model="form.noUsuario" placeholder="Digite Nome do Usuário" required>
+            <label><em>*</em> Nome</label>
+            <input type="text" class="form-control" maxlength="50" ng-model="form.noEquipamento" placeholder="Digite Nome do Equipamento" required>
           </div>
           <div class="form-group">
-            <label><em>*</em> CPF / CNPJ</label>
-            <input type="text" class="form-control small" maxlength="18" ng-model="form.codCpfCnpj" placeholder="Digite CPF ou CNPJ" required>
-          </div>
-          <div class="form-group">
-            <label for="exampleInputEmail1">E-mail</label>
-            <input type="email" class="form-control" maxlength="30" ng-model="form.noEmail" placeholder="Digite E-mail">
-          </div>
-          <div class="form-group">
-            <label>Telefone</label>
-            <input type="text" class="form-control small" maxlength="20" ng-model="form.noTelefone" placeholder="Digite Telefone">
-          </div>
-          <div class="form-group">
-            <label><em>*</em> Perfil</label>
-            <select class="form-control medium" ng-model="form.TbPerfil.Id" required>
+            <label><em>*</em> Tipo</label>
+            <select class="form-control medium" ng-model="form.idLocalidade" required>
                 <option value="">Selecione ...</option>
-                <option ng-repeat="item in listProfile" value="{{ item.Id }}">{{ item.noDesc }}</option>
+                <option ng-repeat="item in listLocations" value="{{ item.Id }}">{{ item.noNome }}</option>
             </select>
           </div>
-            <div class="panel panel-default">
-              <div class="panel-heading">Digite e confirme sua senha, será aceito no máximo 35 caractéres</div>
-              <div class="panel-body">
-                <div class="form-group">
-                            <label><em>*</em> Senha</label>
-                            <input type="password" maxlength="35" class="form-control small" required ng-model="form.codSenha" id="exampleInputEmail2" placeholder="Digite Senha">
-                          </div>
-                          <div class="form-group">
-                            <label><em>*</em> Confirme Senha</label>
-                            <input type="password" maxlength="35" class="form-control small" required ng-model="form.confCodSenha" placeholder="Repita Senha">
-                          </div> 
-              </div>
-            </div>
+          <div class="form-group" ng-show="form.Id">
+            <label><em>*</em> Código</label>
+            <input type="text" class="form-control" maxlength="50" ng-model="form.Id" placeholder="Digite Nome do Equipamento" readonly>
+          </div>
+          <div class="form-group" ng-show="form.Id">
+            <label><em>*</em> Ult. Atualização</label>
+            <input type="text" class="form-control" maxlength="50" ng-model="form.dtAtualizacao" ng-required="form.Id" placeholder="Digite a data de atualização">
+          </div>
               
          <div class="modal-footer">
-            <a href="#/user/list" class="btn btn-default">Cancelar</a>
+            <a href="#/equipment/list" class="btn btn-default">Cancelar</a>
             <button type="submit" class="btn btn-primary" ng-disabled="enableForm()">Salvar</button>
          </div>
           
