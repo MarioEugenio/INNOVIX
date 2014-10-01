@@ -1,0 +1,11 @@
+C:\Users\Alienware\Documents\Visual Studio 2012\Projects\Relatorios\Relatorios\bin\Debug\Relatorios.exe.config
+C:\Users\Alienware\Documents\Visual Studio 2012\Projects\Relatorios\Relatorios\bin\Debug\Relatorios.exe
+C:\Users\Alienware\Documents\Visual Studio 2012\Projects\Relatorios\Relatorios\bin\Debug\Relatorios.pdb
+C:\Users\Alienware\Documents\Visual Studio 2012\Projects\Relatorios\Relatorios\obj\Debug\Relatorios.csprojResolveAssemblyReference.cache
+C:\Users\Alienware\Documents\Visual Studio 2012\Projects\Relatorios\Relatorios\obj\Debug\WindowsFormsApplication1.Relatorio.resources
+C:\Users\Alienware\Documents\Visual Studio 2012\Projects\Relatorios\Relatorios\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\Alienware\Documents\Visual Studio 2012\Projects\Relatorios\Relatorios\obj\Debug\Relatorios.csproj.GenerateResource.Cache
+C:\Users\Alienware\Documents\Visual Studio 2012\Projects\Relatorios\Relatorios\obj\Debug\RdlCompile.cache
+C:\Users\Alienware\Documents\Visual Studio 2012\Projects\Relatorios\Relatorios\obj\Debug\RdlCompile.compiled
+C:\Users\Alienware\Documents\Visual Studio 2012\Projects\Relatorios\Relatorios\obj\Debug\Relatorios.exe
+C:\Users\Alienware\Documents\Visual Studio 2012\Projects\Relatorios\Relatorios\obj\Debug\Relatorios.pdb
