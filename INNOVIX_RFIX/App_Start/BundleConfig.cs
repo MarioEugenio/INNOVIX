@@ -13,7 +13,8 @@ namespace INNOVIX_RFIX
 
             bundles.Add(new ScriptBundle("~/bundles/core").Include(
                         "~/Web/js/core.js",
-                        "~/Web/js/bootstrap.js"));
+                        "~/Web/js/bootstrap.js",
+                        "~/Web/js/modal.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/routers").Include(
                         "~/Web/js/Routers/*-router.js"));

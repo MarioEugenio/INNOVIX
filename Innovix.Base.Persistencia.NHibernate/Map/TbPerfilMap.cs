@@ -16,7 +16,12 @@ namespace Innovix.Base.Persistencia.NHibernate.Map {
 			Map(x => x.noDesc).Column("no_desc").Not.Nullable().Length(50);
 			//HasMany(x => x.relPerfilOperacao).KeyColumn("id_perfil");
 			//HasMany(x => x.tbSincPerfil).KeyColumn("id_perfil");
-			HasMany(x => x.tbUsuario).KeyColumn("id_perfil");
+            HasMany<TbUsuario>(x => x.tbUsuario)
+                .KeyColumn("id_perfil")
+              .LazyLoad()
+              .Generic()
+              .Cascade
+              .AllDeleteOrphan();
         }
     }
 }

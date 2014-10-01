@@ -62,10 +62,10 @@
                     <tr>
                         <td colspan="6" class="table-footer">
                             <div class="pull-left">
-                                <pagination total-items="bigTotalItems" ng-model="bigCurrentPage" max-size="maxSize" class="pagination-sm" boundary-links="true" rotate="false" num-pages="numPages"></pagination>
+                                <pagination  previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;" total-items="totalItems" ng-model="currentPage" max-size="maxSize" ng-change="pageChanged()" boundary-links="true" rotate="false" num-pages="numPages"></pagination>
                             </div>
                             <div class="pull-right table-count">
-                                <h5>Total de registros <span class="label label-primary">{{ listUser.length }}</span></h5>
+                                <h5>Total de registros <span class="label label-primary">{{ totalItems }}</span></h5>
                             </div>
                         </td>
                     </tr>

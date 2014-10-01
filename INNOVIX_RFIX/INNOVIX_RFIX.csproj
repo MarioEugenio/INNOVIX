@@ -282,6 +282,7 @@
     <Content Include="Web\js\Externals\angular\ui\ui-grid-layout.js" />
     <Content Include="Web\js\Externals\angular\ui\ui-grid.js" />
     <Content Include="Web\js\Externals\jquery\jquery.js" />
+    <Content Include="Web\js\modal.js" />
     <Content Include="Web\js\Routers\route-router.js" />
     <Content Include="Web\js\Routers\equipment-router.js" />
     <Content Include="Web\js\Routers\location-router.js" />

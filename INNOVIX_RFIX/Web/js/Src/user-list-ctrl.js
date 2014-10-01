@@ -11,8 +11,9 @@
             limit: global.limit,
             offset: current
         })
-        .success(function (data) {
-            $scope.listUser = data;
+        .success(function (response) {
+            $scope.listUser = response.data;
+            $scope.totalItems = response.total;
         });
 
     }
@@ -23,8 +24,9 @@
             limit: global.limit,
             offset: current
         })
-        .success(function (data) {
-            $scope.listUser = data;
+        .success(function (response) {
+            $scope.listUser = response.data;
+            $scope.totalItems = response.total;
         });
 
     }
@@ -36,6 +38,5 @@
     };
 
     $scope.maxSize = global.limit;
-    $scope.totalItems = $scope.listUser.length;
     $scope.currentPage = 1;
 });

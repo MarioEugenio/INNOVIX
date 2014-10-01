@@ -1,4 +1,4 @@
-﻿app.controller('UserCreateCtrl', function ($scope, $http, $routeParams) {
+﻿app.controller('UserCreateCtrl', function ($scope, $http, $routeParams, $location) {
     $scope.form = {};
     $scope.listProfile = [];
 
@@ -37,6 +37,19 @@
     }
 
     $scope.save = function () {
+        var form = angular.copy($scope.form);
 
+        $http.post('user/save', form)
+               .success(function (response) {
+                   if (response.success) {
+                       $location.path('/user/list');
+                   }
+
+                   Modal.alert(
+                          response.message,
+                          global.titleModal,
+                          response.success
+                       );
+            });
     }
 });

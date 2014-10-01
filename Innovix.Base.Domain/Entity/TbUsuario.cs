@@ -22,7 +22,8 @@ namespace Innovix.Base.Domain.Entity {
         [Length(50)]
         public virtual string noUsuario { get; set; }
         [NotNullNotEmpty]
-        public virtual byte[] codSenha { get; set; }
+        public virtual string codSenha { get; set; }
+
         [NotNullNotEmpty]
         [Length(18)]
         public virtual string codCpfCnpj { get; set; }

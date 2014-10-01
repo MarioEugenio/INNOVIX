@@ -16,7 +16,7 @@ namespace Innovix.Base.Persistencia.NHibernate.Map {
 			References(x => x.tbPerfil).Column("id_perfil");
 			References(x => x.tbTipoUsuario).Column("id_tipo_usuario");
 			Map(x => x.noUsuario).Column("no_usuario").Not.Nullable().Length(50);
-			Map(x => x.codSenha).Column("cod_senha").Not.Nullable().Length(35);
+			Map(x => x.codSenha).Column("co_senha").Not.Nullable().Length(35);
 			Map(x => x.codCpfCnpj).Column("cod_cpf_cnpj").Not.Nullable().Length(18);
 			Map(x => x.noEmail).Column("no_email").Length(30);
 			Map(x => x.noTelefone).Column("no_telefone").Length(20);

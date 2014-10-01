@@ -47,6 +47,7 @@ namespace INNOVIX_RFIX.Controllers
         {
             try
             {
+                entity.codSenha = this.getMD5Hash(entity.codSenha);
                 this.service.Salvar(entity);
 
                 return this.returnMenssage("Cadastro realizado com sucesso", true);
@@ -81,10 +82,12 @@ namespace INNOVIX_RFIX.Controllers
                     noEmail = x.noEmail,
                     noTelefone = x.noTelefone,
                     noUsuario = x.noUsuario,
-                    codCpfCnpj = x.codCpfCnpj
-                }).Skip((offset - 1) * limit).Take(limit);
+                    codCpfCnpj = x.codCpfCnpj,
+                    idPerfil = x.tbPerfil.Id,
+                    noPerfil = x.tbPerfil.noDesc
+                });
 
-            return this.returnJson(result);
+            return this.returnJson(result.Skip((offset - 1) * limit).Take(limit), result.Count());
         }
 
         public JsonResult GetUser(string search, int limit, int offset)
@@ -98,10 +101,12 @@ namespace INNOVIX_RFIX.Controllers
                     noEmail = x.noEmail,
                     noTelefone = x.noTelefone,
                     noUsuario = x.noUsuario,
-                    codCpfCnpj = x.codCpfCnpj
-                }).Skip((offset - 1) * limit).Take(limit);
+                    codCpfCnpj = x.codCpfCnpj,
+                    id_perfil = x.tbPerfil.Id,
+                    no_perfil = x.tbPerfil.noDesc
+                });
 
-            return this.returnJson(result);
+            return this.returnJson(result.Skip((offset - 1) * limit).Take(limit), result.Count());
         }
 
     }

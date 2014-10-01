@@ -15,6 +15,10 @@ namespace Innovix.Base.Infrastructure.Transaction
     /// </summary>
     public class NHibernateInterceptor : EmptyInterceptor
     {
-
+        public override NHibernate.SqlCommand.SqlString OnPrepareStatement(NHibernate.SqlCommand.SqlString sql)
+        {
+            Trace.WriteLine(sql.ToString());
+            return sql;
+        }
     }
 }

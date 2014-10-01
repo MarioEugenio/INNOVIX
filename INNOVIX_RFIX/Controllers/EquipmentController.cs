@@ -70,7 +70,7 @@ namespace INNOVIX_RFIX.Controllers
             return this.returnJson(result);
         }
 
-        public JsonResult GetAll()
+        public JsonResult GetAll(int limit, int offset)
         {
             var result = this.service
                 .Listar()
@@ -80,7 +80,7 @@ namespace INNOVIX_RFIX.Controllers
                     noLocalidade = x.tbLocalidade.noNome
             });
 
-            return this.returnJson(result);
+            return this.returnJson(result.Skip((offset - 1) * limit).Take(limit), result.Count());
         }
 
         public JsonResult GetEquipment(string search, int limit, int offset)
@@ -93,9 +93,9 @@ namespace INNOVIX_RFIX.Controllers
                     Id = x.Id,
                     noEquipamento = x.noEquipamento,
                     noLocalidade = x.tbLocalidade.noNome
-                }).Take(limit).Skip(offset);
+                });
 
-            return this.returnJson(result);
+            return this.returnJson(result.Skip((offset - 1) * limit).Take(limit), result.Count());
         }
     }
 }
