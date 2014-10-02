@@ -5,7 +5,6 @@
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@ViewBag.Title</title>
-    <script type="text/javascript"> var baseUrl = "@ViewBag.baseUrl"; </script>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/angular")
 </head>
@@ -15,7 +14,7 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/core")
     @RenderSection("scripts", required: false)
-    @Scripts.Render("~/bundles/routers")
-    @Scripts.Render("~/bundles/controllers")
+    @Scripts.Render("~/bundles/login/routers")
+    @Scripts.Render("~/bundles/login/controllers")
 </body>
 </html>

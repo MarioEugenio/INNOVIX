@@ -7,7 +7,7 @@
     };
 
     $scope.getUser = function (current) {
-        $http.post('user/GetAll', {
+        $http.post(baseUrl + '/user/GetAll', {
             limit: global.limit,
             offset: current
         })
@@ -19,7 +19,7 @@
     }
 
     $scope.searchUser = function (current) {
-        $http.post('user/GetUser', {
+        $http.post(baseUrl + '/user/GetUser', {
             search: $scope.search,
             limit: global.limit,
             offset: current

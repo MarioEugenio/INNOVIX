@@ -10,7 +10,7 @@
     }
 
     $scope.get = function (id) {
-        $http.post('equipment/get', { Id: id })
+        $http.post(baseUrl + '/equipment/get', { Id: id })
               .success(function (data) {
                   console.log(data);
                   if (data.length > 0)
@@ -20,7 +20,7 @@
     }
 
     $scope.getAllLocations = function () {
-        $http.post('location/getAll', {})
+        $http.post(baseUrl + '/location/getAll', {})
             .success(function (data) {
                 $scope.listLocations = data;
             });

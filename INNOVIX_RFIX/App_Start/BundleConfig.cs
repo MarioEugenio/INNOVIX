@@ -19,8 +19,14 @@ namespace INNOVIX_RFIX
             bundles.Add(new ScriptBundle("~/bundles/routers").Include(
                         "~/Web/js/Routers/*-router.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/login/routers").Include(
+                        "~/Web/js/Routers/login.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/controllers").Include(
                         "~/Web/js/Src/*-ctrl.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/login/controllers").Include(
+                        "~/Web/js/Src/login-init.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
                         "~/Web/js/Externals/jquery/jquery-ui-{version}.js"));

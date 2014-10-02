@@ -13,6 +13,8 @@ namespace INNOVIX_RFIX.Controllers
 
         public ActionResult Index()
         {
+            ViewBag.baseUrl = Request.Url.ToString().Replace(Request.Path, "");
+
             return View();
         }
     }

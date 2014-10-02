@@ -7,7 +7,7 @@
     };
 
     $scope.getRoute = function (current) {
-        $http.post('route/GetAll', {
+        $http.post(baseUrl + '/route/GetAll', {
             limit: global.limit,
             offset: current
         })
@@ -19,7 +19,7 @@
     }
 
     $scope.searchRoute = function (current) {
-        $http.post('route/GetRoute', {
+        $http.post(baseUrl + '/route/GetRoute', {
             search: $scope.search,
             limit: global.limit,
             offset: current

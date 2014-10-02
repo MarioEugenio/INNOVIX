@@ -7,7 +7,7 @@
     }
 
     $scope.get = function (id) {
-        $http.post('route/get', { Id: id })
+        $http.post(baseUrl + '/route/get', { Id: id })
               .success(function (data) {
                   if (data.length > 0)
                     $scope.form = data[0];

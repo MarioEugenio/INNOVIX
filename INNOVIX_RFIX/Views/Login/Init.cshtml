@@ -1,17 +1,21 @@
 ﻿<div ng-controller="LoginInitCtrl">
-    <div style="padding-left: 20px;color: #334D6D"><strong><h3>RFix</h3></strong></div>
-            <br>
-    <div class="form-group input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-        <input id="name" class="form-control" ng-model="formData.name" type="text" placeholder="CPF"/>
+    <div  class="page-header-title">
+        <h4>Bem vindo ao sistema RFix</h4>
+        <h6>Preencha os campos com seus dados de acesso.</h6>
     </div>
-    <div  class="form-group input-group">
-        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-        <input id="name" class="form-control"  ng-model="formData.password" type="password"  placeholder="Senha"/>
-    </div>
-    <div style="float: right">
-        <button type="button" class="btn btn-primary" ng-click="access()">Acessar</button>
-    </div>
+    <form role="form" ng-submit="access()">
+        <div class="form-group input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            <input id="name" class="form-control" ng-model="formData.name" type="text" placeholder="CPF" required/>
+        </div>
+        <div  class="form-group input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+            <input id="name" class="form-control"  ng-model="formData.password" type="password" required placeholder="Senha"/>
+        </div>
+        <div style="float: right">
+            <button type="submit" class="btn btn-primary">Acessar</button>
+        </div>
+    </form>
 </div>
 
 

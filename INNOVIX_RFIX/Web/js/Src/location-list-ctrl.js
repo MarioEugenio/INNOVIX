@@ -7,7 +7,7 @@
     };
 
     $scope.getLocation = function (current) {
-        $http.post('location/GetAll', {
+        $http.post(baseUrl + '/location/GetAll', {
             limit: global.limit,
             offset: current
         })
@@ -19,7 +19,7 @@
     }
 
     $scope.searchLocation = function (current) {
-        $http.post('location/GetLocation', {
+        $http.post(baseUrl + '/location/GetLocation', {
             search: $scope.search,
             limit: global.limit,
             offset: current

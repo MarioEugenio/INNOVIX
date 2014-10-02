@@ -10,7 +10,7 @@
     }
 
     $scope.get = function (id) {
-        $http.post('user/get', { Id: id })
+        $http.post(baseUrl + '/user/get', { Id: id })
               .success(function (data) {
                   if (data.length > 0)
                     $scope.form = data[0];
@@ -19,7 +19,7 @@
 
     $scope.getAllProfile = function () {
 
-        $http.post('profile/getAll', {})
+        $http.post(baseUrl + '/profile/getAll', {})
                .success(function (data) {
                    $scope.listProfile = data;
                });
@@ -39,7 +39,7 @@
     $scope.save = function () {
         var form = angular.copy($scope.form);
 
-        $http.post('user/save', form)
+        $http.post(baseUrl + '/user/save', form)
                .success(function (response) {
                    if (response.success) {
                        $location.path('/user/list');
