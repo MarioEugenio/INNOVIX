@@ -7,12 +7,12 @@
     <title>@ViewBag.Title</title>
     <script type="text/javascript"> var baseUrl = "@ViewBag.baseUrl"; </script>
     @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/angular")
 </head>
 <body class="background">
     @RenderBody()
 
-    @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/core")
     @RenderSection("scripts", required: false)
     @Scripts.Render("~/bundles/routers")

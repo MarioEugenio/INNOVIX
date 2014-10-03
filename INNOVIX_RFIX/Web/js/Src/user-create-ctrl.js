@@ -3,6 +3,7 @@
     $scope.listProfile = [];
 
     $scope.init = function () {
+        $scope.radioCPF = 'CPF';
         $scope.getAllProfile();
 
         if ($routeParams.id)
@@ -13,7 +14,13 @@
         $http.post(baseUrl + '/user/get', { Id: id })
               .success(function (data) {
                   if (data.length > 0)
-                    $scope.form = data[0];
+                      $scope.form = data[0];
+
+                  $scope.form.noEmail = $scope.form.noEmail.trim();
+                  $scope.form.TbPerfil = {
+                      Id: $scope.form.idPerfil
+                  };
+                
               });
     }
 
@@ -35,7 +42,7 @@
 
         return true;
     }
-
+    
     $scope.save = function () {
         var form = angular.copy($scope.form);
 

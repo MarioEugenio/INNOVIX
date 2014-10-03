@@ -42,7 +42,7 @@
             buttons: true,
             modal: true,
             layout: 'center',
-            theme: 'default',
+            theme: 'bootstrap',
             buttons: [
                 {
                     addClass: 'btn btn-primary', text: 'Ok', onClick: callback

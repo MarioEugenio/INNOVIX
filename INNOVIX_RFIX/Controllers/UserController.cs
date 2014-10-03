@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace INNOVIX_RFIX.Controllers
 {
@@ -17,6 +18,37 @@ namespace INNOVIX_RFIX.Controllers
         {
             this.service = service;
         }
+
+        protected void Application_PostAuthenticateRequest(Object sender, EventArgs e)
+        {
+            if (FormsAuthentication.CookiesSupported == true)
+            {
+                if (Request.Cookies[FormsAuthentication.FormsCookieName] != null)
+                {
+                    try
+                    {
+                        //let us take out the username now                
+                        string username = FormsAuthentication.Decrypt(Request.Cookies[FormsAuthentication.FormsCookieName].Value).Name;
+                        string roles = string.Empty;
+
+                        TbUsuario user = service.Pesquisar(x => x.codSenha.Equals(username)).SingleOrDefault();
+
+                        roles = user.tbPerfil.noDesc;
+                     
+                        //let us extract the roles from our own custom cookie
+
+
+                        //Let us set the Pricipal with our user specific details
+                        System.Web.HttpContext.Current.User = new System.Security.Principal.GenericPrincipal(
+                          new System.Security.Principal.GenericIdentity(username, "Forms"), roles.Split(';'));
+                    }
+                    catch (Exception)
+                    {
+                        //somehting went wrong
+                    }
+                }
+            }
+        } 
 
         public ViewResult List()
         {
@@ -67,7 +99,9 @@ namespace INNOVIX_RFIX.Controllers
                    noEmail = x.noEmail,
                    noTelefone = x.noTelefone,
                    noUsuario = x.noUsuario,
-                   codCpfCnpj = x.codCpfCnpj
+                   codCpfCnpj = x.codCpfCnpj,
+                   idPerfil = x.tbPerfil.Id,
+                   noPerfil = x.tbPerfil.noDesc
                });
 
             return this.returnJson(result);

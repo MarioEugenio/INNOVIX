@@ -9,11 +9,13 @@ namespace INNOVIX_RFIX
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Web/js/Externals/jquery/jquery.js"));
+                        "~/Web/js/Externals/jquery/jquery*",
+                        "~/Web/js/Externals/jquery/noty/jquery.noty.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/core").Include(
                         "~/Web/js/core.js",
                         "~/Web/js/bootstrap.js",
+                        "~/Web/js/directives.js",
                         "~/Web/js/modal.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/routers").Include(

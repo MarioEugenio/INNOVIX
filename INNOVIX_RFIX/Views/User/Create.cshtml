@@ -17,8 +17,16 @@
             <input type="text" class="form-control" maxlength="50" ng-model="form.noUsuario" placeholder="Digite Nome do Usuário" required>
           </div>
           <div class="form-group">
-            <label><em>*</em> CPF / CNPJ</label>
-            <input type="text" class="form-control small" maxlength="18" ng-model="form.codCpfCnpj" placeholder="Digite CPF ou CNPJ" required>
+            <label><em>*</em> Selecione: 
+                <label class="checkbox-inline">
+                    <input type="radio" id="radioCPF" ng-model="radioCPF" value="CPF"> CPF
+                </label>
+                <label class="checkbox-inline">
+                    <input type="radio" id="radioCPF" ng-model="radioCPF" value="CNPJ"> CNPJ
+                </label>
+            </label>
+            <input type="text" class="form-control small" ng-show="radioCPF == 'CPF'" cpf maxlength="18" ng-model="form.codCpfCnpj" placeholder="Digite CPF" required>
+            <input type="text" class="form-control small" ng-show="radioCPF == 'CNPJ'" cnpj maxlength="18" ng-model="form.codCpfCnpj" placeholder="Digite CNPJ" required>
           </div>
           <div class="form-group">
             <label for="exampleInputEmail1">E-mail</label>

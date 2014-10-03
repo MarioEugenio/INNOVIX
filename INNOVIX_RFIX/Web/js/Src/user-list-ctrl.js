@@ -6,6 +6,25 @@
         $scope.getUser(1);
     };
 
+    $scope.remove = function (index, item) {
+        console.log(item);
+        var conf = confirm('Tem certeza que deseja remover ' + item.noUsuario.trim() + '?');
+        if (conf) {
+            $http.post(baseUrl + '/user/remove', { Id: item.Id })
+               .success(function (response) {
+                   if (response.success) {
+                       $scope.listUser.split(index, 1);
+                   }
+
+                   Modal.alert(
+                          response.message,
+                          global.titleModal,
+                          response.success
+                       );
+               });
+        }
+    }
+
     $scope.getUser = function (current) {
         $http.post(baseUrl + '/user/GetAll', {
             limit: global.limit,
