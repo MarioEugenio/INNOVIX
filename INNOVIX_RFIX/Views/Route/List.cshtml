@@ -37,19 +37,21 @@
             <table class="table table-bordered table-striped">
                 <thead>
                     <tr class="table-header">
+                        <th>Codigo</th>
                         <th>Nome</th>
+                        <th>Descrição</th>
                         <th>Origem</th>
                         <th>Destino</th>
-                        <th>Codigo</th>
                         <th></th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr ng-repeat="item in list">
-                        <td>{{ item.noNome }}</td>
-                        <td></td>
-                        <td></td>
                         <td>{{ item.Id }}</td>
+                        <td>{{ item.noNome }}</td>
+                        <td>{{ item.noDesc }}</td>
+                        <td></td>
+                        <td></td>
                         <td style="width:110px;">
                             <a class="btn btn-default btn-mini" href="#/route/{{ item.Id }}/alter"><span class="glyphicon glyphicon-edit"></span></a>
                             <a class="btn btn-default btn-mini"><span class="glyphicon glyphicon-trash"></span></a>

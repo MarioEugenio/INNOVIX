@@ -37,21 +37,20 @@
             <table class="table table-bordered table-striped">
                 <thead>
                     <tr class="table-header">
+                        <th>Código</th>
                         <th>Nome</th>
-                        <th>Tipo</th>
                         <th>Telefone</th>
                         <th>Responsável</th>
-                        <th>Código</th>
                         <th></th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr ng-repeat="item in list">
+                        <td>{{ item.Id }}</td>
                         <td>{{ item.noNome }}</td>
-                        <td></td>
                         <td>{{ item.noTelefone }}</td>
                         <td>{{ item.noResponsavel}}</td>
-                        <td>{{ item.noDesc }}</td>
+                        
                         <td style="width:110px;">
                             <a class="btn btn-default btn-mini" href="#/location/{{ item.Id }}/alter"><span class="glyphicon glyphicon-edit"></span></a>
                             <a class="btn btn-default btn-mini"><span class="glyphicon glyphicon-trash"></span></a>

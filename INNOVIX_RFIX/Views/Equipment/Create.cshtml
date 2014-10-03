@@ -12,24 +12,25 @@
 
     <div>
         <form role="form" ng-submit="save()">
+          <div class="form-group" ng-show="form.Id">
+            <label><em>*</em> Código</label>
+            <input type="text" class="form-control small" maxlength="50" ng-model="form.Id" placeholder="Digite Nome do Equipamento" readonly>
+          </div>
           <div class="form-group">
             <label><em>*</em> Nome</label>
             <input type="text" class="form-control" maxlength="50" ng-model="form.noEquipamento" placeholder="Digite Nome do Equipamento" required>
           </div>
-          <div class="form-group">
+          <!--<div class="form-group">
             <label><em>*</em> Tipo</label>
             <select class="form-control medium" ng-model="form.idLocalidade" required>
                 <option value="">Selecione ...</option>
                 <option ng-repeat="item in listLocations" value="{{ item.Id }}">{{ item.noNome }}</option>
             </select>
-          </div>
-          <div class="form-group" ng-show="form.Id">
-            <label><em>*</em> Código</label>
-            <input type="text" class="form-control" maxlength="50" ng-model="form.Id" placeholder="Digite Nome do Equipamento" readonly>
-          </div>
+          </div>-->
+          
           <div class="form-group" ng-show="form.Id">
             <label><em>*</em> Ult. Atualização</label>
-            <input type="text" class="form-control" maxlength="50" ng-model="form.dtAtualizacao" ng-required="form.Id" placeholder="Digite a data de atualização">
+            <input type="text" class="form-control small" maxlength="50" readonly="true" ng-model="form.dtAtualizacao" ng-required="form.Id" placeholder="Digite a data de atualização">
           </div>
               
          <div class="modal-footer">

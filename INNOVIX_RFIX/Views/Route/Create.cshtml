@@ -12,16 +12,18 @@
 
     <div>
         <form role="form" ng-submit="save()">
-          <div class="form-group">
-            <label><em>*</em> Nome</label>
-            <input type="text" class="form-control" maxlength="50" ng-model="form.noNome" placeholder="Digite Nome da Rota" required>
-          </div>
           <div class="form-group" ng-show="form.Id">
             <label><em>*</em> Código</label>
             <input type="text" class="form-control small" maxlength="18" ng-model="form.Id" readonly>
           </div>
+
           <div class="form-group">
-            <label for="exampleInputEmail1">Rota</label>
+            <label><em>*</em> Nome</label>
+            <input type="text" class="form-control" maxlength="50" ng-model="form.noNome" placeholder="Digite Nome da Rota" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="exampleInputEmail1">Descrição</label>
             <input type="text" class="form-control" maxlength="30" ng-model="form.noDesc" placeholder="Digite a Rota">
           </div>
               

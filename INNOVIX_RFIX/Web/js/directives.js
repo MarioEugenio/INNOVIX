@@ -19,4 +19,15 @@
             }
 
         };
+    })
+
+    .directive('phone', function () {
+
+        return {
+            scope: true,
+            link: function (scope, element, attrs) {
+                element.inputmask('(99)9999-9999');
+            }
+
+        };
     });

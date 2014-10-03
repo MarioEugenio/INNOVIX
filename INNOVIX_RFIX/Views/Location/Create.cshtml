@@ -12,31 +12,33 @@
 
     <div>
         <form role="form" ng-submit="save()">
+          <div class="form-group" ng-show="form.Id">
+            <label>Código</label>
+            <input type="text" class="form-control small" readonly="true" maxlength="20" ng-model="form.Id">
+          </div>
+
           <div class="form-group">
             <label><em>*</em> Nome
             </label>
             <input type="text" class="form-control" maxlength="50" ng-model="form.noNome" placeholder="Digite Nome da localidade" required>
           </div>
-          <div class="form-group">
+          <!--<div class="form-group">
             <label><em>*</em> Tipo</label>
             <select class="form-control medium" ng-model="form.TbPerfil.Id" required>
                 <option value="">Selecione ...</option>
                 <option ng-repeat="item in listProfile" value="{{ item.Id }}">{{ item.noDesc }}</option>
             </select>
-          </div>
-          <div class="form-group">
-            <label><em>*</em> Telefone</label>
-            <input type="text" class="form-control small" maxlength="18" ng-model="form.noTelefone" placeholder="Digite o Telefone" required>
-          </div>
+          </div>-->
           <div class="form-group">
             <label for="exampleInputEmail1">Responsável</label>
             <input type="text" class="form-control" maxlength="30" ng-model="form.noResponsavel" placeholder="Digite o nome do Responsável">
           </div>
-          <div class="form-group" >
-            <label>Código</label>
-            <input type="text" class="form-control small" maxlength="20" ng-model="form.noDesc">
+
+          <div class="form-group">
+            <label><em>*</em> Telefone</label>
+            <input type="text" class="form-control small" phone maxlength="18" ng-model="form.noTelefone" placeholder="Digite o Telefone" required>
           </div>
-              
+          
          <div class="modal-footer">
             <a href="#/location/list" class="btn btn-default">Cancelar</a>
             <button type="submit" class="btn btn-primary" ng-disabled="enableForm()">Salvar</button>

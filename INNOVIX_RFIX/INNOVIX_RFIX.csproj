@@ -180,6 +180,10 @@
     <Compile Include="Controllers\LocationController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
+    <Compile Include="Controllers\ReportBoardingController.cs" />
+    <Compile Include="Controllers\ReportItemController.cs" />
+    <Compile Include="Controllers\ReportSealsController.cs" />
+    <Compile Include="Controllers\ReportUserController.cs" />
     <Compile Include="Controllers\RouteController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
@@ -305,6 +309,10 @@
     <Content Include="Web\js\Externals\jquery\noty\themes\default.js" />
     <Content Include="Web\js\modal.js" />
     <Content Include="Web\js\Routers\login.js" />
+    <Content Include="Web\js\Routers\report-boarding-router.js" />
+    <Content Include="Web\js\Routers\report-item-router.js" />
+    <Content Include="Web\js\Routers\report-seals-router.js" />
+    <Content Include="Web\js\Routers\report-user-router.js" />
     <Content Include="Web\js\Routers\route-router.js" />
     <Content Include="Web\js\Routers\equipment-router.js" />
     <Content Include="Web\js\Routers\location-router.js" />
@@ -314,6 +322,13 @@
     <Content Include="Web\js\Src\equipment-create-ctrl.js" />
     <Content Include="Web\js\Src\equipment-list-ctrl.js" />
     <Content Include="Web\js\Src\login-init.js" />
+    <Content Include="Web\js\Src\report-boarding-ctrl.js" />
+    <Content Include="Web\js\Src\report-boarding-list-ctrl.js" />
+    <Content Include="Web\js\Src\report-item-ctrl.js" />
+    <Content Include="Web\js\Src\report-item-list-ctrl.js" />
+    <Content Include="Web\js\Src\report-seals-ctrl.js" />
+    <Content Include="Web\js\Src\report-seals-list-ctrl.js" />
+    <Content Include="Web\js\Src\report-user-list-ctrl.js" />
     <Content Include="Web\js\Src\route-create-ctrl.js" />
     <Content Include="Web\js\Src\route-list-ctrl.js" />
     <Content Include="Web\js\Src\location-list-ctrl.js" />
@@ -408,6 +423,13 @@
     <Content Include="Views\Login\Init.cshtml" />
     <Content Include="Views\Shared\Login_Layout.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\ReportBoarding\Item.cshtml" />
+    <Content Include="Views\ReportBoarding\List.cshtml" />
+    <Content Include="Views\ReportItem\Item.cshtml" />
+    <Content Include="Views\ReportItem\List.cshtml" />
+    <Content Include="Views\ReportSeals\Item.cshtml" />
+    <Content Include="Views\ReportSeals\List.cshtml" />
+    <Content Include="Views\ReportUser\List.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
