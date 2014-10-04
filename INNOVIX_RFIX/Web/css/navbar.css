@@ -86,3 +86,15 @@ em {
   margin: 10px 0 20px;
   border-bottom: 1px solid #eee;
 }
+
+.modal-info {
+    color: #D9EDF7;
+}
+
+.modal-success {
+    color: #788749;
+}
+
+.modal-warning {
+    color: #BF6142;
+}

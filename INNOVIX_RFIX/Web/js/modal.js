@@ -2,14 +2,14 @@
     alert: function (text, title, typeAlert) {
         $('#myModalAlert').remove();
 
-        var htmlTitle = '<h4 class="modal-title"><span class="ico_information">' + title + '</span></h4>';
+        var htmlTitle = '<h4 class="modal-info"><span class="ico_information">' + title + '</span></h4>';
 
         if (typeAlert == true) {
-            htmlTitle = '<h4 class="modal-title"><span class="ico_success">' + title + '</span></h4>';
+            htmlTitle = '<h4 class="modal-success"><span class="glyphicon glyphicon-ok"></span> ' + title + '</h4>';
         }
 
         if (typeAlert == false) {
-            htmlTitle = '<h4 class="modal-title"><span class="ico_warning">' + title + '</span></h4>';
+            htmlTitle = '<h4 class="modal-warning"><span class="glyphicon glyphicon-warning-sign"></span> ' + title + '</h4>';
         }
 
         var html = '<div class="modal fade" id="myModalAlert" tabindex="-1" role="dialog" aria-labelledby="myModalAlert" >';
@@ -20,7 +20,7 @@
         html += htmlTitle;
         html += '</div>';
         html += '<div id="modal-body" class="modal-body">';
-        html += '   <p>' + text + '</p>';
+        html += '<p><h4>' + text + '</h4></p>';
         html += '</div>';
         html += '<div class="modal-footer">';
         html += '<a href="#" class="btn btn-primary"  data-dismiss="modal" onclick="Modal.close(\'myModalAlert\');">OK</a>';
