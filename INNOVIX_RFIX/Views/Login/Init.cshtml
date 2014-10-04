@@ -6,11 +6,11 @@
     <form role="form" ng-submit="access()">
         <div class="form-group input-group">
             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-            <input id="name" class="form-control" cpf ng-model="formData.name" type="text" placeholder="CPF" required/>
+            <input id="name" class="form-control" cpf ng-model="form.username" type="text" placeholder="CPF" required/>
         </div>
         <div  class="form-group input-group">
             <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-            <input id="name" class="form-control"  ng-model="formData.password" type="password" required placeholder="Senha"/>
+            <input id="name" class="form-control"  ng-model="form.password" type="password" required placeholder="Senha"/>
         </div>
         <div style="float: right">
             <button type="submit" class="btn btn-primary">Acessar</button>

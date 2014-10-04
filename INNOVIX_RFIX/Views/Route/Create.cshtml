@@ -26,6 +26,29 @@
             <label for="exampleInputEmail1">Descrição</label>
             <input type="text" class="form-control" maxlength="30" ng-model="form.noDesc" placeholder="Digite a Rota">
           </div>
+
+         <div class="panel panel-default">
+            <div class="panel-heading">Selecione as rotas desejadas</div>
+              <div class="panel-body">
+                <div class="row">
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label><em>*</em> Origem</label>
+                        <select  class="form-control" multiple>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label><em>*</em> Destino</label>
+                        <select  class="form-control" multiple>
+                        </select>
+                    </div>
+                </div>
+                </div>
+              </div>
+             </div>
+         </div>
               
          <div class="modal-footer">
             <a href="#/route/list" class="btn btn-default">Cancelar</a>

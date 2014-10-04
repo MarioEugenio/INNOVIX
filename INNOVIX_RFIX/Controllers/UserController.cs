@@ -10,6 +10,7 @@ using System.Web.Security;
 
 namespace INNOVIX_RFIX.Controllers
 {
+    [Authorize]
     public class UserController : ControllerBase
     {
         private ITbUsuarioService service;
@@ -19,35 +20,43 @@ namespace INNOVIX_RFIX.Controllers
             this.service = service;
         }
 
-        protected void Application_PostAuthenticateRequest(Object sender, EventArgs e)
+        [HttpPost]
+        [AllowAnonymous]
+        public JsonResult AuthenticateRequest(string username, string password)
         {
             if (FormsAuthentication.CookiesSupported == true)
             {
-                if (Request.Cookies[FormsAuthentication.FormsCookieName] != null)
+                if (Request.Cookies[FormsAuthentication.FormsCookieName] == null)
                 {
                     try
                     {
                         //let us take out the username now                
-                        string username = FormsAuthentication.Decrypt(Request.Cookies[FormsAuthentication.FormsCookieName].Value).Name;
                         string roles = string.Empty;
 
-                        TbUsuario user = service.Pesquisar(x => x.codSenha.Equals(username)).SingleOrDefault();
+                        var user = service.Pesquisar(x => x.codCpfCnpj.Equals(username)
+                            && x.codSenha.Equals(this.getMD5Hash(password))).SingleOrDefault();
+
+                        if (user == null)
+                            return this.returnMenssage("Usuário ou senha inválido", false);
 
                         roles = user.tbPerfil.noDesc;
-                     
-                        //let us extract the roles from our own custom cookie
 
+                        FormsAuthentication.SetAuthCookie(user.noUsuario,true);
 
                         //Let us set the Pricipal with our user specific details
                         System.Web.HttpContext.Current.User = new System.Security.Principal.GenericPrincipal(
-                          new System.Security.Principal.GenericIdentity(username, "Forms"), roles.Split(';'));
+                          new System.Security.Principal.GenericIdentity(user.noUsuario, "Forms"), roles.Split(';'));
+
+                        return this.returnMenssage("Autenticado com sucesso", true);
                     }
-                    catch (Exception)
+                    catch (Exception ex)
                     {
-                        //somehting went wrong
+                        return this.returnMenssage(ex.Message, false);
                     }
                 }
             }
+
+            return this.returnMenssage("Não foi possível realizar a autenticação", false);
         } 
 
         public ViewResult List()

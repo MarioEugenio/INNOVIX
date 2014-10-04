@@ -9,6 +9,7 @@ using System.Web.Mvc;
 
 namespace INNOVIX_RFIX.Controllers
 {
+     [Authorize]
     public class ProfileController : ControllerBase
     {
         private ItbPerfilService service;

@@ -9,6 +9,7 @@ using System.Web.Mvc;
 
 namespace INNOVIX_RFIX.Controllers
 {
+     [Authorize]
     public class ReportBoardingController : ControllerBase
     {
         public ViewResult List()
