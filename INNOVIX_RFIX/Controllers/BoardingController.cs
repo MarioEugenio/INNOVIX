@@ -14,6 +14,8 @@ namespace INNOVIX_RFIX.Controllers
 
         public ActionResult List()
         {
+            ViewBag.role = Session["role"];
+
             return View();
         }
 

@@ -64,8 +64,7 @@ namespace INNOVIX_RFIX.Controllers
                .Select(x => new
                {
                    Id = x.Id,
-                   noEquipamento = x.noEquipamento,
-                   idLocalidade = x.tbLocalidade.Id
+                   noEquipamento = x.noEquipamento
                });
 
             return this.returnJson(result);
@@ -77,8 +76,7 @@ namespace INNOVIX_RFIX.Controllers
                 .Listar()
                 .Select(x => new {
                     Id = x.Id,
-                    noEquipamento = x.noEquipamento,
-                    noLocalidade = x.tbLocalidade.noNome
+                    noEquipamento = x.noEquipamento
             });
 
             return this.returnJson(result.Skip((offset - 1) * limit).Take(limit), result.Count());
@@ -92,8 +90,7 @@ namespace INNOVIX_RFIX.Controllers
                 .Select(x => new
                 {
                     Id = x.Id,
-                    noEquipamento = x.noEquipamento,
-                    noLocalidade = x.tbLocalidade.noNome
+                    noEquipamento = x.noEquipamento
                 });
 
             return this.returnJson(result.Skip((offset - 1) * limit).Take(limit), result.Count());

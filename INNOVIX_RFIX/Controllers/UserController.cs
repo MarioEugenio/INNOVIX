@@ -42,6 +42,7 @@ namespace INNOVIX_RFIX.Controllers
                         roles = user.tbPerfil.noDesc;
 
                         FormsAuthentication.SetAuthCookie(user.noUsuario,true);
+                        Session["role"] = roles.ToUpper();
 
                         //Let us set the Pricipal with our user specific details
                         System.Web.HttpContext.Current.User = new System.Security.Principal.GenericPrincipal(

@@ -1,4 +1,4 @@
-﻿app.controller('EquipmentCreateCtrl', function ($scope, $http, $routeParams) {
+﻿app.controller('EquipmentCreateCtrl', function ($scope, $http, $routeParams, $location) {
     $scope.form = {};
 
     $scope.listLocations = [];
@@ -27,6 +27,19 @@
     }
 
     $scope.save = function () {
+        var form = angular.copy($scope.form);
 
+        $http.post(baseUrl + '/equipment/save', form)
+               .success(function (response) {
+                   if (response.success) {
+                       $location.path('/equipment/list');
+                   }
+
+                   Modal.alert(
+                          response.message,
+                          global.titleModal,
+                          response.success
+                       );
+               });
     }
 });

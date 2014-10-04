@@ -6,13 +6,14 @@
               .success(function (response) {
                   if (response.success) {
                       window.location = '/Home/Index';
-                  }
+                  } else {
 
-                  Modal.alert(
-                         response.message,
-                         global.titleModal,
-                         response.success
-                      );
+                      Modal.alert(
+                             response.message,
+                             global.titleModal,
+                             response.success
+                          );
+                  }
 
               });
     }
