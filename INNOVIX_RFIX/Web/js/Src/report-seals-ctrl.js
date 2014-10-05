@@ -8,6 +8,13 @@
         $scope.getReportHistoryItem(1);
     };
 
+    $scope.close = function () {
+        $('body').removeClass('modal-open');
+        $('.modal-backdrop').remove();
+        $('.modal-dialog').remove();
+        $('.modal').find('.in').remove();
+    };
+
     $scope.get = function (id) {
         $http.post(baseUrl + '/reportSeals/get', { Id: id })
               .success(function (data) {
@@ -17,6 +24,7 @@
                       origin: 'teste',
                       destiny: 'teste',
                       route: 'teste',
+                      embarque: 'Embarque',
                       status: 'teste',
                       dtAtualizacao: '10/02/2015',
                       responsavel: 'Teste',

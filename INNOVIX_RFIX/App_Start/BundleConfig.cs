@@ -44,7 +44,8 @@ namespace INNOVIX_RFIX
 
             bundles.Add(new StyleBundle("~/Content/css").Include("~/Web/css/bootstrap.css",
                 "~/Web/css/bootstrap-theme.css",
-                "~/Web/css/navbar.css"));
+                "~/Web/css/navbar.css",
+                "~/Web/css/main.css"));
         }
     }
 }

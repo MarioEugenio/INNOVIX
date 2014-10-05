@@ -1,4 +1,4 @@
-﻿app.controller('ReportBoardingCtrl', function ($scope, $http, $routeParams) {
+﻿app.controller('ReportBoardingCtrl', function ($scope, $http, $routeParams, $modal) {
     $scope.list = [];
     $scope.listSeals = [];
     $scope.objItem = {};
@@ -10,6 +10,12 @@
         $scope.getReportHistorySeals(1);
     };
 
+    $scope.close = function () {
+        $('body').removeClass('modal-open');
+        $('.modal-backdrop').remove();
+        $('.modal-dialog').remove();
+        $('.modal').find('.in').remove();
+    };
     $scope.get = function (id) {
         $http.post(baseUrl + '/reportBoarding/get', { Id: id })
               .success(function (data) {

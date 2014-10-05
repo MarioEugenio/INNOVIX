@@ -1,4 +1,4 @@
-﻿app.controller('ReportSealsListCtrl', function ($scope, $http) {
+﻿app.controller('ReportSealsListCtrl', function ($scope, $http, $modal, $routeParams) {
     $scope.list = [];
     $scope.search = "";
 
@@ -73,4 +73,12 @@
 
     $scope.maxSize = global.limit;
     $scope.currentPage = 1;
+
+    $scope.open = function (id) {
+        $routeParams.id = id
+        $modal.open({
+            templateUrl: '/ReportSeals/Item'
+        });
+
+    }
 });

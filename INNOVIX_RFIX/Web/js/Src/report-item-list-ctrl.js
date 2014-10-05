@@ -1,4 +1,4 @@
-﻿app.controller('ReportItemListCtrl', function ($scope, $http) {
+﻿app.controller('ReportItemListCtrl', function ($scope, $http, $modal, $routeParams) {
     $scope.list = [];
     $scope.search = "";
 
@@ -73,4 +73,12 @@
 
     $scope.maxSize = global.limit;
     $scope.currentPage = 1;
+
+    $scope.open = function (id) {
+        $routeParams.id = id
+        $modal.open({
+            templateUrl: '/ReportItem/Item'
+        });
+
+    }
 });

@@ -8,6 +8,13 @@
         $scope.getReportHistoryItem(1);
     };
 
+    $scope.close = function () {
+        $('body').removeClass('modal-open');
+        $('.modal-backdrop').remove();
+        $('.modal-dialog').remove();
+        $('.modal').find('.in').remove();
+    };
+
     $scope.get = function (id) {
         $http.post(baseUrl + '/reportItem/get', { Id: id })
               .success(function (data) {

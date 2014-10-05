@@ -1,56 +1,47 @@
 ﻿<div ng-controller="ReportSealsCtrl" ng-init="init()">
-    <ol class="breadcrumb">
-      <li><a href="#/home/init">Home</a></li>
-      <li class="active">Relatorio de Lacres</li>
-    </ol>
-
- <div  class="page-header">
-    <h3>Lacre</h3>
+ <div>
+    <div class="modal-header">
+        <button  class="close"  ng-click="close()">&times;</button>
+        <h3>Lacre</h3>
     </div>
+    <div class="modal-body">
     <p>
         <div class="panel panel-default">
           <div class="panel-heading">Detalhamento do lacre</div>
           <div class="panel-body">
             <div class="row">
-              <div class="col-lg-12">
-                <div class="col-lg-6">
-                    <div class="form-group">
-                        <span><strong style="font-size:20px;">AWB:</strong>{{ objItem.awb }}</span>
+                <div class="col-lg-12 border-dasher">
+                    <span><strong style="font-size:20px;">AWB:&nbsp;</strong>{{ objItem.awb }}</span>
+                </div>
+                <div >
+                    <div class="painel-information-now">
+                        <div class="painel-information">Origem:</div><div class="painel-value">{{ objItem.origin }}</div>
                     </div>
-                    <div class="form-group">
-                        <span><strong>Origem:</strong> {{ objItem.origin }}</span>
+                    <div class="painel-information-now">
+                        <div class="painel-information">Status:</div><div class="painel-value">{{ objItem.status }}</div>
                     </div>
-                    <div class="form-group">
-                        <span><strong>Destino:</strong> {{ objItem.destiny }}</span>
+                    <div class="painel-information-now">
+                        <div class="painel-information">Destino:</div><div class="painel-value">{{ objItem.destiny }}</div>
                     </div>
-                    <div class="form-group">
-                        <span><strong>Rota:</strong> {{ objItem.route }}</span>
+                    <div class="painel-information-now">
+                        <div class="painel-information">Embarque:</div><div class="painel-value">{{ objItem.embarque }}</div>
                     </div>
-                    <div class="form-group">
-                        <span><strong>Dt. Atualização:</strong> {{ objItem.dtAtualizacao }}</span>
+                    <div class="painel-information-now">
+                        <div class="painel-information">Rota:</div><div class="painel-value">{{ objItem.route }}</div>
                     </div>
-                    <div class="form-group">
-                        <span><strong>Responsável:</strong> {{ objItem.responsavel }}</span>
+                    <div class="painel-information-now">
+                        <div class="painel-information">Dt. Cadasstro:</div><div class="painel-value">{{ objItem.dtCadastro }}</div>
+                    </div>
+                    <div class="painel-information-now">
+                        <div class="painel-information">Dt. Atualização:</div><div class="painel-value">{{ objItem.dtAtualizacao }}</div>
+                    </div>
+                    <div class="painel-information-now">
+                        <div class="painel-information">EPC:</div><div class="painel-value">{{ objItem.epc }}</div>
+                    </div>
+                    <div class="painel-information-now">
+                        <div class="painel-information">Responsável:</div><div class="painel-value">{{ objItem.responsavel }}</div>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="form-group">
-                        <span><strong>Status:</strong> {{ objItem.status }}</span>
-                    </div>
-                    <div class="form-group">
-                        <span><strong>Lacre:</strong> {{ objItem.lacre }}</span>
-                    </div>
-                    <div class="form-group">
-                        <span><strong>Embarque:</strong> {{ objItem.embarque }}</span>
-                    </div>
-                    <div class="form-group">
-                        <span><strong>Dt. Cadasstro:</strong> {{ objItem.dtCadastro }}</span>
-                    </div>
-                    <div class="form-group">
-                        <span><strong>EPC:</strong> {{ objItem.epc }}</span>
-                    </div>
-                </div>
-              </div><!-- /.col-lg-6 -->
             </div>
           </div>
         </div>
@@ -96,12 +87,12 @@
                 </tfoot>
             </table>
         </div>
-
-        <div class="input-group-btn">
-            <a href="#/report/item/list" class="btn btn-default"><span class="glyphicon glyphicon-back"></span> Voltar</a>
         </div>
-       
-    </p>
+        <div class="modal-footer">
+            <button class="btn btn-default" ng-click="close()">Fechar</button>
+        </div>
+    </div>
+    
 </div>
 
 

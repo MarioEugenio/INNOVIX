@@ -70,13 +70,13 @@
                         <td>{{ item.status }}</td>
                         <td>{{ item.dtAtualizacao }}</td>
                         <td style="width:110px;">
-                            <a class="btn btn-default btn-mini" href="#/report/boarding/{{ item.Id }}/item"><span class="glyphicon glyphicon-edit"></span></a>
+                            <a class="btn btn-default btn-mini" ng-click="open(item.Id)"><span class="glyphicon glyphicon-list-alt"></span></a>
                         </td>
                     </tr>
                 </tbody>
                 <tfoot>
                     <tr>
-                        <td colspan="6" class="table-footer">
+                        <td colspan="7" class="table-footer">
                             <div class="pull-left">
                                 <pagination  previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;" total-items="totalItems" ng-model="currentPage" max-size="maxSize" ng-change="pageChanged()" boundary-links="true" rotate="false" num-pages="numPages"></pagination>
                             </div>
@@ -88,7 +88,6 @@
                 </tfoot>
             </table>
         </div>
-       
     </p>
 </div>
 
