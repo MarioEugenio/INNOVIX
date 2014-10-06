@@ -19,6 +19,11 @@
     }
 
     $scope.searchRoute = function (current) {
+        if (!$scope.search) {
+            $scope.getRoute(current);
+            return;
+        }
+
         $http.post(baseUrl + '/route/GetRoute', {
             search: $scope.search,
             limit: global.limit,

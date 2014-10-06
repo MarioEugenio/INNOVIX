@@ -19,6 +19,11 @@
     }
 
     $scope.searchEquipment = function (current) {
+        if (!$scope.search) {
+            $scope.getEquipment(current);
+            return;
+        }
+
         $http.post(baseUrl + '/equipment/getEquipment', {
             search: $scope.search,
             limit: global.limit,

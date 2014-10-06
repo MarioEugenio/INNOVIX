@@ -38,6 +38,11 @@
     }
 
     $scope.searchUser = function (current) {
+        if (!$scope.search) {
+            $scope.getUser(current);
+            return;
+        }
+
         $http.post(baseUrl + '/user/GetUser', {
             search: $scope.search,
             limit: global.limit,

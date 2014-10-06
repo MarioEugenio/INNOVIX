@@ -194,7 +194,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -205,18 +207,27 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Web\bootstrap\choices.tpl.html" />
+    <Content Include="Web\bootstrap\match-multiple.tpl.html" />
+    <Content Include="Web\bootstrap\match.tpl.html" />
+    <Content Include="Web\bootstrap\select-multiple.tpl.html" />
+    <Content Include="Web\bootstrap\select.tpl.html" />
     <Content Include="Web\css\bootstrap-theme.css" />
     <Content Include="Web\css\bootstrap-theme.min.css" />
     <Content Include="Web\css\bootstrap.css" />
     <Content Include="Web\css\bootstrap.min.css" />
+    <Content Include="Web\css\main.css" />
     <Content Include="Web\css\navbar.css" />
     <Content Include="Web\css\ng-grid.css" />
+    <Content Include="Web\css\select.css" />
     <Content Include="Web\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Web\img\logo\innovix_logosquare.png" />
     <Content Include="Web\js\bootstrap.js" />
     <Content Include="Web\js\core.js" />
     <Content Include="Web\js\directives.js" />
     <Content Include="Web\js\Externals\angular\angular-router.js" />
     <Content Include="Web\js\Externals\angular\angular.js" />
+    <Content Include="Web\js\Externals\angular\angular-select.js" />
     <Content Include="Web\js\Externals\angular\strap\dist\angular-strap.js" />
     <Content Include="Web\js\Externals\angular\strap\dist\angular-strap.min.js" />
     <Content Include="Web\js\Externals\angular\strap\dist\angular-strap.tpl.js" />

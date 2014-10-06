@@ -19,6 +19,11 @@
     }
 
     $scope.searchLocation = function (current) {
+        if (!$scope.search) {
+            $scope.getLocation(current);
+            return;
+        }
+
         $http.post(baseUrl + '/location/GetLocation', {
             search: $scope.search,
             limit: global.limit,

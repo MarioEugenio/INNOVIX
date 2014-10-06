@@ -38,6 +38,7 @@ namespace INNOVIX_RFIX
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
             bundles.Add(new ScriptBundle("~/bundles/angular").Include(
                         "~/Web/js/Externals/angular/angular.js",
+                        "~/Web/js/Externals/angular/angular-select.js",
                         "~/Web/js/Externals/angular/strap/dist/angular-strap.js",
                         "~/Web/js/Externals/angular/ui/ui-bootstrap.js",
                         "~/Web/js/Externals/angular/angular-router.js"));
@@ -45,6 +46,7 @@ namespace INNOVIX_RFIX
             bundles.Add(new StyleBundle("~/Content/css").Include("~/Web/css/bootstrap.css",
                 "~/Web/css/bootstrap-theme.css",
                 "~/Web/css/navbar.css",
+                "~/Web/css/select.css",
                 "~/Web/css/main.css"));
         }
     }

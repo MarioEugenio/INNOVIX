@@ -30,4 +30,15 @@
             }
 
         };
+    })
+
+    .directive('select2', function () {
+
+        return {
+            scope: true,
+            link: function (scope, element, attrs) {
+                element.select2({ width: 'off' });
+            }
+
+        };
     });
