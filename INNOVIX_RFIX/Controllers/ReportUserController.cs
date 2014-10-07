@@ -27,7 +27,7 @@ namespace INNOVIX_RFIX.Controllers
             return this.returnJson("{}");
         }
 
-        public JsonResult GetReportItem(string search, int limit, int offset)
+        public JsonResult GetReportItem(string search, int limit, int offset, string predicate, string order)
         {
             return this.returnJson("{}");
         }

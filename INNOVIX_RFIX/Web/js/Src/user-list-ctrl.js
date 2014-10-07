@@ -1,9 +1,31 @@
 ﻿app.controller('UserListCtrl', function ($scope, $http) {
     $scope.listUser = [];
     $scope.search = "";
+    $scope.predicate = 'id';
+    $scope.order = 'ASC';
 
     $scope.init = function () {
         $scope.getUser(1);
+    };
+
+    $scope.sorting = function (predicate) {
+        if ($scope.predicate == predicate && $scope.order == 'DESC') {
+            return 'glyphicon glyphicon-chevron-down';
+        }
+        return 'glyphicon glyphicon-chevron-up';
+    };
+
+    $scope.sortingTable = function (predicate) {
+
+        if ($scope.predicate == predicate && $scope.order == 'DESC') {
+            $scope.predicate = predicate;
+            $scope.order = 'ASC';
+        } else {
+            $scope.predicate = predicate;
+            $scope.order = 'DESC';
+        }
+
+        $scope.searchUser(1);
     };
 
     $scope.remove = function (index, item) {
@@ -28,7 +50,9 @@
     $scope.getUser = function (current) {
         $http.post(baseUrl + '/user/GetAll', {
             limit: global.limit,
-            offset: current
+            offset: current,
+            predicate: $scope.predicate,
+            order: $scope.order
         })
         .success(function (response) {
             $scope.listUser = response.data;
@@ -46,7 +70,9 @@
         $http.post(baseUrl + '/user/GetUser', {
             search: $scope.search,
             limit: global.limit,
-            offset: current
+            offset: current,
+            predicate: $scope.predicate,
+            order: $scope.order
         })
         .success(function (response) {
             $scope.listUser = response.data;

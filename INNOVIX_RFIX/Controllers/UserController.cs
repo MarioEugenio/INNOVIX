@@ -117,7 +117,7 @@ namespace INNOVIX_RFIX.Controllers
             return this.returnJson(result);
         }
 
-        public JsonResult GetAll(int limit, int offset)
+        public JsonResult GetAll(int limit, int offset, string predicate, string order)
         {
             var result = this.service
                 .Listar()
@@ -134,7 +134,7 @@ namespace INNOVIX_RFIX.Controllers
             return this.returnJson(result.Skip((offset - 1) * limit).Take(limit), result.Count());
         }
 
-        public JsonResult GetUser(string search, int limit, int offset)
+        public JsonResult GetUser(string search, int limit, int offset, string predicate, string order)
         {
             var str = (search != "") ? search.ToLower() : null;
             var result = this.service

@@ -48,4 +48,8 @@
     width :1100px;
     left:-250px;
 }
+.alingArrowRight {
+    cursor:pointer;
+    float:right;
+}
 

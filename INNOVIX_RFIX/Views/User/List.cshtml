@@ -37,11 +37,11 @@
             <table class="table table-bordered table-striped">
                 <thead>
                     <tr class="table-header">
-                        <th>Nome</th>
-                        <th>CPF / CNPJ</th>
-                        <th>E-mail</th>
-                        <th>Telefone</th>
-                        <th>Perfil</th>
+                        <th>Nome<i ng-class="sorting('nome')" ng-click="sortingTable('nome')" class="alingArrowRight glyphicon "></i></th>
+                        <th>CPF / CNPJ<i ng-class="sorting('cpf')" ng-click="sortingTable('cpf')" class="alingArrowRight glyphicon "></i></th>
+                        <th>E-mail<i ng-class="sorting('email')" ng-click="sortingTable('email')" class="alingArrowRight glyphicon "></i></th>
+                        <th>Telefone<i ng-class="sorting('telefone')" ng-click="sortingTable('telefone')" class="alingArrowRight glyphicon "></i></th>
+                        <th>Perfil<i ng-class="sorting('perfil')" ng-click="sortingTable('perfil')" class="alingArrowRight glyphicon "></i></th>
                         <th></th>
                     </tr>
                 </thead>

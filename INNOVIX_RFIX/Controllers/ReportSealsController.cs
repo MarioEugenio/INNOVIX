@@ -27,17 +27,17 @@ namespace INNOVIX_RFIX.Controllers
             return this.returnJson("{}");
         }
 
-        public JsonResult GetAll(int limit, int offset)
+        public JsonResult GetAll(int limit, int offset, string predicate, string order)
         {
             return this.returnJson("{}");
         }
 
-        public JsonResult GetReportItem(string search, int limit, int offset)
+        public JsonResult GetReportItem(string search, int limit, int offset, string predicate, string order)
         {
             return this.returnJson("{}");
         }
 
-        public JsonResult GetAllHistory(int Id, int limit, int offset)
+        public JsonResult GetAllHistory(int Id, int limit, int offset, string predicate, string order)
         {
             return this.returnJson("{}");
         }

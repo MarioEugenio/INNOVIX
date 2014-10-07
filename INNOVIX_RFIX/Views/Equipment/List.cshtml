@@ -37,10 +37,10 @@
             <table class="table table-bordered table-striped">
                 <thead>
                     <tr class="table-header">
-                        <th>Codigo</th>
-                        <th>Nome</th>
-                        <th>Tipo</th>
-                        <th>Ult. Atualização</th>
+                        <th>Codigo<i ng-class="sorting('id_equipamento')" ng-click="sortingTable('id_equipamento')" class="alingArrowRight glyphicon "></i></th>
+                        <th>Nome<i ng-class="sorting('no_equipamento')" ng-click="sortingTable('no_equipamento')" class="alingArrowRight glyphicon "></i></th>
+                        <th>Tipo<i ng-class="sorting('tipo')" ng-click="sortingTable('tipo')" class="alingArrowRight glyphicon"></i></th>
+                        <th>Ult. Atualização<i ng-class="sorting('dt_atualizacao')" ng-click="sortingTable('dt_atualizacao')" class="alingArrowRight glyphicon "></i></th>
                         <th></th>
                     </tr>
                 </thead>
