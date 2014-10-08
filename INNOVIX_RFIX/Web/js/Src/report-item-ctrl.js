@@ -2,9 +2,30 @@
     $scope.list = [];
     $scope.objItem = {};
     $scope.search = "";
+    $scope.predicate = 'id';
+    $scope.order = 'ASC';
 
     $scope.init = function () {
         $scope.get($routeParams.id);
+        $scope.getReportHistoryItem(1);
+    };
+
+    $scope.sorting = function (predicate) {
+        if ($scope.predicate == predicate && $scope.order == 'DESC') {
+            return 'glyphicon glyphicon-chevron-down';
+        }
+        return 'glyphicon glyphicon-chevron-up';
+    };
+
+    $scope.sortingTable = function (predicate) {
+
+        if ($scope.predicate == predicate && $scope.order == 'DESC') {
+            $scope.predicate = predicate;
+            $scope.order = 'ASC';
+        } else {
+            $scope.predicate = predicate;
+            $scope.order = 'DESC';
+        }
         $scope.getReportHistoryItem(1);
     };
 
@@ -39,7 +60,9 @@
         $http.post(baseUrl + '/reportItem/getAllHistory', {
             id: $routeParams.id,
             limit: global.limit,
-            offset: current
+            offset: current,
+            predicate: $scope.predicate,
+            order: $scope.order
         })
         .success(function (response) {
             response = {

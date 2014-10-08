@@ -1,15 +1,38 @@
 ﻿app.controller('LocationListCtrl', function ($scope, $http) {
     $scope.list = [];
     $scope.search = "";
+    $scope.predicate = 'id_localidade';
+    $scope.order = 'ASC';
 
     $scope.init = function () {
         $scope.getLocation(1);
     };
 
+    $scope.sorting = function (predicate) {
+        if ($scope.predicate == predicate && $scope.order == 'DESC') {
+            return 'glyphicon glyphicon-chevron-down';
+        }
+        return 'glyphicon glyphicon-chevron-up';
+    };
+
+    $scope.sortingTable = function (predicate) {
+
+        if ($scope.predicate == predicate && $scope.order == 'DESC') {
+            $scope.predicate = predicate;
+            $scope.order = 'ASC';
+        } else {
+            $scope.predicate = predicate;
+            $scope.order = 'DESC';
+        }
+        $scope.searchLocation(1);
+    };
+
     $scope.getLocation = function (current) {
         $http.post(baseUrl + '/location/GetAll', {
             limit: global.limit,
-            offset: current
+            offset: current,
+            predicate: $scope.predicate,
+            order: $scope.order
         })
         .success(function (response) {
             $scope.list = response.data;
@@ -27,7 +50,9 @@
         $http.post(baseUrl + '/location/GetLocation', {
             search: $scope.search,
             limit: global.limit,
-            offset: current
+            offset: current,
+            predicate: $scope.predicate,
+            order: $scope.order
         })
         .success(function (response) {
             $scope.list = response.data;

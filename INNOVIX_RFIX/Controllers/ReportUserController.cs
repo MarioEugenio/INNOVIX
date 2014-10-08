@@ -56,7 +56,7 @@ namespace INNOVIX_RFIX.Controllers
             return this.returnJson(result.Skip((offset - 1) * limit).Take(limit), result.Count());
         }
 
-        public JsonResult GetLogUser(int limit, int offset, string search, DateTime dtAction)
+        public JsonResult GetReportItem(string search, DateTime dtAction, int limit, int offset, string predicate, string order)
         {
             var result = this.service.GetLogUsuario(dtAction, search)
                 .Select(x => new
