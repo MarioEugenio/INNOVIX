@@ -15,10 +15,10 @@ namespace Innovix.Base.Persistencia.NHibernate.Map {
 			Id(x => x.Id).GeneratedBy.Identity().Column("id_operacao");
 			Map(x => x.noDesc).Column("no_desc").Not.Nullable().Length(50);
 			//HasMany(x => x.relPerfilOperacao).KeyColumn("id_operacao");
+			HasMany(x => x.tbLogEpc).KeyColumn("id_operacao");
+			HasMany(x => x.tbLogLote).KeyColumn("id_operacao");
+			HasMany(x => x.tbLogSaco).KeyColumn("id_operacao");
 			HasMany(x => x.tbLogUsuario).KeyColumn("id_operacao");
-			//HasMany(x => x.tbLogitem).KeyColumn("id_operacao");
-			//HasMany(x => x.tbLoglote).KeyColumn("id_operacao");
-			//HasMany(x => x.tbLogsaco).KeyColumn("id_operacao");
 			//HasMany(x => x.tbSincOperacao).KeyColumn("id_operacao");
         }
     }

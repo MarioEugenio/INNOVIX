@@ -22,7 +22,7 @@ namespace Innovix.Base.Domain.Entity {
         [Length(50)]
         public virtual string noUsuario { get; set; }
         [NotNullNotEmpty]
-        public virtual string codSenha { get; set; }
+        public virtual byte[] codSenha { get; set; }
 
         [NotNullNotEmpty]
         [Length(18)]
@@ -37,5 +37,7 @@ namespace Innovix.Base.Domain.Entity {
         //public virtual IList<TbLoglote> tbLoglote { get; set; }
         //public virtual IList<TbLogsaco> tbLogsaco { get; set; }
         //public virtual IList<TbSincUsuario> tbSincUsuario { get; set; }
+
+        public virtual string password { get; set; }
     }
 }

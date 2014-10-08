@@ -34,14 +34,18 @@
                 <div class="col-lg-6">
                     <div class="form-group">
                         <label><em>*</em> Origem</label>
-                        <select  class="form-control" multiple>
+                        <select  class="form-control">
+                            <option value="">Selecione ...</option>
+                            <option ng-repeat="item in listLocation" value="{{ item.Id }}">{{ item.noNome }}</option>
                         </select>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="form-group">
                         <label><em>*</em> Destino</label>
-                        <select  class="form-control" multiple>
+                        <select  class="form-control">
+                            <option value="">Selecione ...</option>
+                            <option ng-repeat="item in listLocation" value="{{ item.Id }}">{{ item.noNome }}</option>
                         </select>
                     </div>
                 </div>

@@ -23,13 +23,11 @@ C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Domain.Service.Imp
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Domain.Service.Impl\bin\Innovix.Base.Domain.dll
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Domain.Service.Impl\bin\Innovix.Base.Infrastructure.dll
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Domain.Service.Impl\bin\NHibernate.Validator.dll
-C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Domain.Service.Impl\bin\NHibernate.dll
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Domain.Service.Impl\bin\Castle.Core.dll
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Domain.Service.Impl\bin\Innovix.Base.Data.pdb
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Domain.Service.Impl\bin\Innovix.Base.Domain.pdb
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Domain.Service.Impl\bin\Innovix.Base.Infrastructure.pdb
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Domain.Service.Impl\bin\NHibernate.Validator.xml
-C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Domain.Service.Impl\bin\NHibernate.xml
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Domain.Service.Impl\bin\Castle.Core.xml
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Domain.Service.Impl\bin\de\NHibernate.Validator.resources.dll
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Domain.Service.Impl\bin\es\NHibernate.Validator.resources.dll
@@ -44,4 +42,3 @@ C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Domain.Service.Imp
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Domain.Service.Impl\obj\Debug\Innovix.Base.Domain.Service.Impl.csprojResolveAssemblyReference.cache
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Domain.Service.Impl\obj\Debug\Innovix.Base.Domain.Service.Impl.dll
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Domain.Service.Impl\obj\Debug\Innovix.Base.Domain.Service.Impl.pdb
-C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Domain.Service.Impl\bin\Iesi.Collections.dll

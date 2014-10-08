@@ -11,6 +11,7 @@ namespace Innovix.Base.Domain.Entity {
         public TbStatus() {
 			tbItem = new List<TbItem>();
         }
+        public virtual int idStatus { get; set; }
         [Length(50)]
         public virtual string noDesc { get; set; }
         public virtual IList<TbItem> tbItem { get; set; }

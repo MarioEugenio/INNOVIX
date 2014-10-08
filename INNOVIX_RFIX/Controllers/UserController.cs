@@ -4,6 +4,7 @@ using Innovix.Base.Infrastructure.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
@@ -32,9 +33,11 @@ namespace INNOVIX_RFIX.Controllers
                     {
                         //let us take out the username now                
                         string roles = string.Empty;
+                        Byte[] inputBytes = Encoding.UTF8.GetBytes(password);
+                        //Byte[] hashedBytes = algorithm.ComputeHash(inputBytes);
 
                         var user = service.Pesquisar(x => x.codCpfCnpj.Equals(username)
-                            && x.codSenha.Equals(this.getMD5Hash(password))).SingleOrDefault();
+                            && x.codSenha.Equals(inputBytes)).SingleOrDefault();
 
                         if (user == null)
                             return this.returnMenssage("Usuário ou senha inválido", false);
@@ -89,7 +92,8 @@ namespace INNOVIX_RFIX.Controllers
         {
             try
             {
-                entity.codSenha = this.getMD5Hash(entity.codSenha);
+                Byte[] inputBytes = Encoding.UTF8.GetBytes(entity.password);
+                entity.codSenha = inputBytes;
                 this.service.Salvar(entity);
 
                 return this.returnMenssage("Cadastro realizado com sucesso", true);

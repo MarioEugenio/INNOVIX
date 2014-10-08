@@ -10,6 +10,12 @@ namespace Innovix.Base.Domain.Service.Impl
 { 
     public class TbUsuarioService : ServiceCRUD<TbUsuario>, ITbUsuarioService
     {
-		public TbUsuarioService(ITbUsuarioRepository repository) : base(repository) { }
+        ITbUsuarioRepository repository;
+
+		public TbUsuarioService(ITbUsuarioRepository repository) : base(repository) {
+            this.repository = repository;
+        }
+
+        
 	}
 }

@@ -34,8 +34,8 @@
     }
 
     $scope.enableForm = function () {
-        if (($scope.form.codSenha) && ($scope.form.confCodSenha)) {
-            if ($scope.form.codSenha == $scope.form.confCodSenha) {
+        if (($scope.form.password) && ($scope.form.confCodSenha)) {
+            if ($scope.form.password == $scope.form.confCodSenha) {
                 return false;
             }
         }

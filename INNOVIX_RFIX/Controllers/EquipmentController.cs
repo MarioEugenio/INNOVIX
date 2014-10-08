@@ -76,7 +76,8 @@ namespace INNOVIX_RFIX.Controllers
                 .Listar()
                 .Select(x => new {
                     Id = x.Id,
-                    noEquipamento = x.noEquipamento
+                    noEquipamento = x.noEquipamento,
+                    dtAtualizacao = (x.tbLogEpc.GetType() == typeof(TbLogEpc))? x.tbLogEpc.LastOrDefault().dthLog.ToString() : null
             });
 
             return this.returnJson(result.Skip((offset - 1) * limit).Take(limit), result.Count());
@@ -90,7 +91,8 @@ namespace INNOVIX_RFIX.Controllers
                 .Select(x => new
                 {
                     Id = x.Id,
-                    noEquipamento = x.noEquipamento
+                    noEquipamento = x.noEquipamento,
+                    dtAtualizacao = (x.tbLogEpc.GetType() == typeof(TbLogEpc)) ? x.tbLogEpc.LastOrDefault().dthLog.ToString() : null
                 });
 
             return this.returnJson(result.Skip((offset - 1) * limit).Take(limit), result.Count());

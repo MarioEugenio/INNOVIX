@@ -1,7 +1,10 @@
 ﻿app.controller('RouteCreateCtrl', function ($scope, $http, $routeParams, $location) {
     $scope.form = {};
+    $scope.listLocation = [];
 
     $scope.init = function () {
+        $scope.getLocation();
+
         if ($routeParams.id)
             $scope.get($routeParams.id);
     }
@@ -11,6 +14,16 @@
               .success(function (data) {
                   if (data.length > 0)
                     $scope.form = data[0];
+              });
+    }
+
+    $scope.getLocation = function (id) {
+        $http.post(baseUrl + '/location/getAll', {
+            limit: 1000000,
+            offset: 1
+        })
+              .success(function (response) {
+                  $scope.listLocation = response.data;
               });
     }
 

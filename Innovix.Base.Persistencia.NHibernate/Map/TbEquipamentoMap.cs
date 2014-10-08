@@ -16,9 +16,27 @@ namespace Innovix.Base.Persistencia.NHibernate.Map {
 			References(x => x.tbLocalidade).Column("id_localidade");
 			Map(x => x.noEquipamento).Column("no_equipamento").Length(50);
 			//HasMany(x => x.relEmpresaEquipamento).KeyColumn("id_equipamento");
-			//HasMany(x => x.tbLogitem).KeyColumn("id_equipamento");
-			//HasMany(x => x.tbLoglote).KeyColumn("id_equipamento");
-			//HasMany(x => x.tbLogsaco).KeyColumn("id_equipamento");
+            HasMany<TbLogEpc>(x => x.tbLogEpc)
+                .KeyColumn("id_equipamento")
+                .LazyLoad()
+              .Generic()
+              .Cascade
+              .AllDeleteOrphan();
+
+			HasMany<TbLogLote>(x => x.tbLoglote)
+                .KeyColumn("id_equipamento")
+                .LazyLoad()
+              .Generic()
+              .Cascade
+              .AllDeleteOrphan();
+
+			HasMany<TbLogSaco>(x => x.tbLogsaco)
+                .KeyColumn("id_equipamento")
+                .LazyLoad()
+              .Generic()
+              .Cascade
+              .AllDeleteOrphan();
+
 			//HasMany(x => x.tbSincLocalidade).KeyColumn("id_equipamento");
 			//HasMany(x => x.tbSincOperacao).KeyColumn("id_equipamento");
 			//HasMany(x => x.tbSincPerfil).KeyColumn("id_equipamento");

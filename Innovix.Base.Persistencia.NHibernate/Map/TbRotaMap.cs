@@ -15,7 +15,14 @@ namespace Innovix.Base.Persistencia.NHibernate.Map {
 			Id(x => x.Id).GeneratedBy.Identity().Column("id_rota");
 			Map(x => x.noNome).Column("no_nome").Not.Nullable().Length(50);
 			Map(x => x.noDesc).Column("no_desc").Length(100);
-			//HasMany(x => x.relLocalidadeRota).KeyColumn("id_rota");
+
+			HasMany<RelLocalidadeRota>(x => x.relLocalidadeRota)
+                .KeyColumn("id_rota")
+                .LazyLoad()
+              .Generic()
+              .Cascade
+              .AllDeleteOrphan();
+
 			//HasMany(x => x.tbLote).KeyColumn("id_rota");
 			//HasMany(x => x.tbSincRota).KeyColumn("id_rota");
         }
