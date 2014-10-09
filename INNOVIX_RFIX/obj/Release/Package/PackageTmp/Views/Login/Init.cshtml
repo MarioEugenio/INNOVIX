@@ -1,0 +1,23 @@
+﻿<div ng-controller="LoginInitCtrl">
+    <div  class="page-header-title">
+        <h4>Bem vindo ao sistema RFix</h4>
+        <h6>Preencha os campos com seus dados de acesso.</h6>
+    </div>
+    <form role="form" ng-submit="access()">
+        <div class="form-group input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            <input id="name" class="form-control" cpf ng-model="form.username" type="text" placeholder="CPF" required/>
+        </div>
+        <div  class="form-group input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+            <input id="name" class="form-control"  ng-model="form.password" type="password" required placeholder="Senha"/>
+        </div>
+        <div style="float: right">
+            <button type="submit" class="btn btn-primary">Acessar</button>
+        </div>
+    </form>
+</div>
+
+
+
+

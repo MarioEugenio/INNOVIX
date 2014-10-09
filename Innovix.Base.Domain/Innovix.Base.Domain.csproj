@@ -100,14 +100,17 @@
     <Compile Include="Service\IRelLocalidadeRotaService.cs" />
     <Compile Include="Service\IServiceCRUD.cs" />
     <Compile Include="Service\ITbEquipamentoService.cs" />
+    <Compile Include="Service\ITbItemService.cs" />
     <Compile Include="Service\ITbLacreService.cs" />
     <Compile Include="Service\ITbLocalidadeService.cs" />
     <Compile Include="Service\ITbLogEpcService.cs" />
     <Compile Include="Service\ITbLogLoteService.cs" />
     <Compile Include="Service\ITbLogSacoService.cs" />
     <Compile Include="Service\ITbLogUsuarioService.cs" />
+    <Compile Include="Service\ITbLoteService.cs" />
     <Compile Include="Service\ItbPerfilService.cs" />
     <Compile Include="Service\ITbRotaService.cs" />
+    <Compile Include="Service\ITbSacoService.cs" />
     <Compile Include="Service\ITbUsuarioService.cs" />
   </ItemGroup>
   <ItemGroup>

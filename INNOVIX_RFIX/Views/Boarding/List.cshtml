@@ -1,14 +1,18 @@
-﻿<div ng-controller="BoardingListCtrl">
+﻿<div ng-controller="BoardingListCtrl" ng-init="init()">
  <div  class="page-header">
     <h1>Painel Principal</h1>
     </div>
     <p class="lead"> Você está conectado como <span class="label label-primary">@ViewBag.role</span>&nbsp; em <span class="label label-primary">@User.Identity.Name</span></p>
     <p>Abaixo, um resumo dos embarques de hoje e seus status</p>
     <p>
-        <div class="panel panel-default">
-            <table class="table table-bordered">
+        <div ng-show="list.length == 0" class="alert alert-warning" role="alert">
+            <a href="#" class="alert-link"><span class="glyphicon glyphicon-warning-sign"></span> Não houve retorno de registros</a>
+        </div>
+
+        <div ng-show="list.length" class="panel panel-default">
+            <table class="table table-bordered table-striped">
                 <thead>
-                    <tr>
+                    <tr class="table-header">
                         <th>Embarque</th>
                         <th>Origem</th>
                         <th>Destino</th>
@@ -17,18 +21,27 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>XXXXXX</td>
-                        <td>XXXXXX</td>
-                        <td>XXXXXX</td>
-                        <td>XXXXXX</td>
-                        <td>XXXXXX</td>
+                    <tr ng-repeat="item in list">
+                        <td>{{ item.noDesc }}</td>
+                        <td>{{ item.origin }}</td>
+                        <td>{{ item.destiny }}</td>
+                        <td>{{ item.route }}</td>
+                        <td>{{ item.status }}</td>
                     </tr>
                 </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="7" class="table-footer">
+                            <div class="pull-left">
+                                <pagination  previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;" total-items="totalItems" ng-model="currentPage" max-size="maxSize" ng-change="pageChanged()" boundary-links="true" rotate="false" num-pages="numPages"></pagination>
+                            </div>
+                            <div class="pull-right table-count">
+                                <h5>Total de registros <span class="label label-primary">{{ totalItems }}</span></h5>
+                            </div>
+                        </td>
+                    </tr>
+                </tfoot>
             </table>
-        </div>
-        <div class="center">
-            <pagination total-items="totalItems" ng-model="currentPage" max-size="maxSize" class="pagination-sm" ng-change="pageChanged()" boundary-links="true" rotate="false" num-pages="numPages"></pagination>
         </div>
     </p>
 </div>

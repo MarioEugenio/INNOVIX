@@ -64,14 +64,17 @@
     <Compile Include="Repository\IRelLocalidadeRotaRepository.cs" />
     <Compile Include="Repository\IRepository.cs" />
     <Compile Include="Repository\ITbEquipamentoRepository.cs" />
+    <Compile Include="Repository\ITbItemRepository.cs" />
     <Compile Include="Repository\ITbLacreRepository.cs" />
     <Compile Include="Repository\ITbLocalidadeRepository.cs" />
     <Compile Include="Repository\ITbLogEpcRepository.cs" />
     <Compile Include="Repository\ITbLogLoteRepository.cs" />
     <Compile Include="Repository\ITbLogSacoRepository.cs" />
     <Compile Include="Repository\ITbLogUsuarioRepository.cs" />
+    <Compile Include="Repository\ITbLoteRepository.cs" />
     <Compile Include="Repository\ItbPerfilRepository.cs" />
     <Compile Include="Repository\ITbRotaRepository.cs" />
+    <Compile Include="Repository\ITbSacoRepository.cs" />
     <Compile Include="Repository\ITbUsuarioRepository.cs" />
   </ItemGroup>
   <ItemGroup>

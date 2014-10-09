@@ -14,6 +14,7 @@ namespace Innovix.Base.Domain.Entity {
         }
         public virtual int idLote { get; set; }
         public virtual TbLocalidade tbLocalidade { get; set; }
+        public virtual TbLocalidade tbLocalidadeDest { get; set; }
         public virtual TbRota tbRota { get; set; }
         [Length(50)]
         public virtual string noDesc { get; set; }

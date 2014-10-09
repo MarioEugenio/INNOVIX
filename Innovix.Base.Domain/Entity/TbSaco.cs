@@ -14,7 +14,7 @@ namespace Innovix.Base.Domain.Entity {
         }
         public virtual int idSaco { get; set; }
         public virtual TbSaco tbSaco { get; set; }
-        //public virtual TbLacre tbLacre { get; set; }
+        public virtual TbLacre tbLacre { get; set; }
         public virtual TbLote tbLote { get; set; }
         [NotNullNotEmpty]
         public virtual DateTime dthCriacao { get; set; }

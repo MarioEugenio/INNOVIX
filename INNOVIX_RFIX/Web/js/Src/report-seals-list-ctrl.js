@@ -47,26 +47,7 @@
             order: $scope.order
         })
         .success(function (response) {
-            response = {
-                data: [{
-                    Id: 1,
-                    awb: '00001',
-                    origin: 'teste',
-                    destiny: 'teste',
-                    route: 'teste',
-                    status: 'teste',
-                    dtAtualizacao: '10/02/2015'
-                },
-                {
-                    Id: 1,
-                    awb: '00002',
-                    origin: 'teste',
-                    destiny: 'teste',
-                    route: 'teste',
-                    status: 'teste',
-                    dtAtualizacao: '10/02/2015'
-                }], total: 5
-            };
+           
             $scope.list = response.data;
             $scope.totalItems = response.total;
         });

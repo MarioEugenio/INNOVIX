@@ -1,0 +1,78 @@
+﻿<div ng-controller="EquipmentListCtrl" ng-init="init()">
+    <ol class="breadcrumb">
+      <li><a href="#/home/init">Home</a></li>
+      <li class="active">Equipamentos</li>
+    </ol>
+
+ <div  class="page-header">
+    <h3>Equipamentos</h3>
+    </div>
+    <p>
+        <div class="panel panel-default">
+          <div class="panel-heading">Pesquise equipamentos cadastrados</div>
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-lg-10">
+                <div class="input-group">
+                  <input type="text" class="form-control" ng-model="search" placeholder="Nome do equipamento">
+                  <span class="input-group-btn">
+                    <button class="btn btn-default" ng-click="searchEquipment(1)" type="button"><span class="glyphicon glyphicon-search"></span> Pesquisar</button>
+                  </span>
+                </div><!-- /input-group -->
+              </div><!-- /.col-lg-6 -->
+              <div class="col-lg-2">
+                <div class="input-group pull-right">
+                    <a class="btn btn-primary" href="#/equipment/create">Cadastrar</a>
+                </div><!-- /input-group -->
+              </div><!-- /.col-lg-6 -->
+            </div>
+          </div>
+        </div>
+
+        <div ng-show="list.length == 0" class="alert alert-warning" role="alert">
+            <a href="#" class="alert-link"><span class="glyphicon glyphicon-warning-sign"></span> Não houve retorno de registros</a>
+        </div>
+
+        <div ng-show="list.length" class="panel panel-default">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr class="table-header">
+
+                        <th>Codigo<i ng-class="sorting('id_equipamento')" ng-click="sortingTable('id_equipamento')" class="alingArrowRight glyphicon "></i></th>
+                        <th>Nome<i ng-class="sorting('no_equipamento')" ng-click="sortingTable('no_equipamento')" class="alingArrowRight glyphicon "></i></th>
+                        <th>Ult. Atualização<i ng-class="sorting('dt_atualizacao')" ng-click="sortingTable('dt_atualizacao')" class="alingArrowRight glyphicon "></i></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in list">
+                        <td>{{ item.Id }}</td>
+                        <td>{{ item.noEquipamento }}</td>
+                        <td>{{ item. }}</td>
+                        <td style="width:110px;">
+                            <a class="btn btn-default btn-mini" href="#/equipment/{{ item.Id }}/alter"><span class="glyphicon glyphicon-edit"></span></a>
+                            <a class="btn btn-default btn-mini"><span class="glyphicon glyphicon-trash"></span></a>
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="6" class="table-footer">
+                            <div class="pull-left">
+                                <pagination  previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;" total-items="totalItems" ng-model="currentPage" max-size="maxSize" ng-change="pageChanged()" boundary-links="true" rotate="false" num-pages="numPages"></pagination>
+                            </div>
+                            <div class="pull-right table-count">
+                                <h5>Total de registros <span class="label label-primary">{{ totalItems }}</span></h5>
+                            </div>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+       
+    </p>
+</div>
+
+
+
+

@@ -1,0 +1,96 @@
+﻿<div ng-controller="ReportBoardingListCtrl" ng-init="init()">
+    <ol class="breadcrumb">
+      <li><a href="#/home/init">Home</a></li>
+      <li class="active">Relatorio de Embarques</li>
+    </ol>
+
+ <div  class="page-header">
+    <h3>Embarques</h3>
+    </div>
+    <p>
+        <div class="panel panel-default">
+          <div class="panel-heading">Pesquise embarques cadastrados</div>
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="input-group">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control" ng-model="search.dtAtualizacao" placeholder="Data Atualização">
+                        </div>
+                        <br />
+                        <div class="form-group">
+                            <input type="text" class="form-control" ng-model="search.destiny" placeholder="Destino">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control" ng-model="search.awb" placeholder="Embarque">
+                        </div>
+                        <br />
+                        <div class="form-group">
+                            <input type="text" class="form-control" ng-model="search.origin" placeholder="Origem">
+                        </div>
+                    </div>
+                    <div class="input-group-btn">
+                        <button class="btn btn-default" ng-click="search(1)" type="button"><span class="glyphicon glyphicon-search"></span> Pesquisar</button>
+                    </div>
+                    <div class="input-group-btn">
+                        <button class="btn btn-default" ng-click="clear()" type="button"><span class="glyphicon glyphicon-trash"></span> Limpar</button>
+                    </div>
+                </div><!-- /input-group -->
+              </div><!-- /.col-lg-6 -->
+            </div>
+          </div>
+        </div>
+
+        <div ng-show="list.length == 0" class="alert alert-warning" role="alert">
+            <a href="#" class="alert-link"><span class="glyphicon glyphicon-warning-sign"></span> Não houve retorno de registros</a>
+        </div>
+
+        <div ng-show="list.length" class="panel panel-default">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr class="table-header">
+                        <th>Embarque<i ng-class="sorting('id_localidade')" ng-click="sortingTable('id_localidade')" class="alingArrowRight glyphicon "></i></th>
+                        <th>Origem<i ng-class="sorting('origem')" ng-click="sortingTable('origem')" class="alingArrowRight glyphicon "></i></th>
+                        <th>Destino<i ng-class="sorting('destino')" ng-click="sortingTable('destino')" class="alingArrowRight glyphicon "></i></th>
+                        <th>Rota<i ng-class="sorting('rota')" ng-click="sortingTable('rota')" class="alingArrowRight glyphicon "></i></th>
+                        <th>Status<i ng-class="sorting('status')" ng-click="sortingTable('status')" class="alingArrowRight glyphicon "></i></th>
+                        <th>Ult. Atualização<i ng-class="sorting('dt_atualizacao')" ng-click="sortingTable('dt_atualizacao')" class="alingArrowRight glyphicon "></i></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in list">
+                        <td>{{ item.awb }}</td>
+                        <td>{{ item.origin }}</td>
+                        <td>{{ item.destiny }}</td>
+                        <td>{{ item.route }}</td>
+                        <td>{{ item.status }}</td>
+                        <td>{{ item.dtAtualizacao }}</td>
+                        <td style="width:110px;">
+                            <a class="btn btn-default btn-mini" ng-click="open(item.Id)"><span class="glyphicon glyphicon-list-alt"></span></a>
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="7" class="table-footer">
+                            <div class="pull-left">
+                                <pagination  previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;" total-items="totalItems" ng-model="currentPage" max-size="maxSize" ng-change="pageChanged()" boundary-links="true" rotate="false" num-pages="numPages"></pagination>
+                            </div>
+                            <div class="pull-right table-count">
+                                <h5>Total de registros <span class="label label-primary">{{ totalItems }}</span></h5>
+                            </div>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </p>
+</div>
+
+
+
+

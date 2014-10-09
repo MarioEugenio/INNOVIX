@@ -1,0 +1,55 @@
+.border-dasher  {
+    border-bottom: 1px dashed rgba(0,0,0,.2);
+    background: #fff;
+    font-size: 16px;
+    font-weight: 300;
+    color: #232323;
+}
+.painel-information {
+    
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    line-height: 30px;
+    width: 25%;
+    font-weight: bold;
+    text-align: right;
+    padding-right: 10px;
+    float:left;
+}
+.painel-value {
+    border: 1px solid #ddd;
+    line-height: 30px;
+    width: 75%;
+    text-align: left;
+    padding-left: 10px;
+    float:left;
+}
+.painel-information-now {
+    width:50%;
+    float:left;
+}
+.painel-information-first {
+    
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    line-height: 30px;
+    width: 15%;
+    font-weight: bold;
+    text-align: right;
+    padding-right: 10px;
+    float:left;
+}
+.painel-information-now-full {
+    width:100%;
+    float:left;
+}
+.modal-content {
+    margin: 0 auto;
+    width :1100px;
+    left:-250px;
+}
+.alingArrowRight {
+    cursor:pointer;
+    float:right;
+}
+

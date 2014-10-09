@@ -65,14 +65,17 @@
     <Compile Include="Service\Service.cs" />
     <Compile Include="Service\ServiceCRUD.cs" />
     <Compile Include="Service\TbEquipamentoService.cs" />
+    <Compile Include="Service\TbItemService.cs" />
     <Compile Include="Service\TbLacreService.cs" />
     <Compile Include="Service\TbLocalidadeService.cs" />
     <Compile Include="Service\TbLogEpcService.cs" />
     <Compile Include="Service\TbLogLoteService.cs" />
     <Compile Include="Service\TbLogSacoService.cs" />
     <Compile Include="Service\TbLogUsuarioService.cs" />
+    <Compile Include="Service\TbLoteService.cs" />
     <Compile Include="Service\tbPerfilService.cs" />
     <Compile Include="Service\TbRotaService.cs" />
+    <Compile Include="Service\TbSacoService.cs" />
     <Compile Include="Service\TbUsuarioService.cs" />
   </ItemGroup>
   <ItemGroup>

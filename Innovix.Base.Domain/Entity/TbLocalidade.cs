@@ -11,8 +11,8 @@ namespace Innovix.Base.Domain.Entity {
         public TbLocalidade() {
 			//relLocalidadeRota = new List<RelLocalidadeRota>();
 			tbEquipamento = new List<TbEquipamento>();
-			//tbItem = new List<TbItem>();
-			//tbItem = new List<TbItem>();
+            tbItemDestino = new List<TbItem>();
+			tbItem = new List<TbItem>();
 			//tbLogitem = new List<TbLogitem>();
 			//tbLoglote = new List<TbLoglote>();
 			//tbLogsaco = new List<TbLogsaco>();
@@ -34,8 +34,8 @@ namespace Innovix.Base.Domain.Entity {
         public virtual string noEstado { get; set; }
         //public virtual IList<RelLocalidadeRota> relLocalidadeRota { get; set; }
         public virtual IList<TbEquipamento> tbEquipamento { get; set; }
-        //public virtual IList<TbItem> tbItem { get; set; }
-        //public virtual IList<TbItem> tbItem { get; set; }
+        public virtual IList<TbItem> tbItemDestino { get; set; }
+        public virtual IList<TbItem> tbItem { get; set; }
         //public virtual IList<TbLogitem> tbLogitem { get; set; }
         //public virtual IList<TbLoglote> tbLoglote { get; set; }
         //public virtual IList<TbLogsaco> tbLogsaco { get; set; }

@@ -14,11 +14,11 @@ namespace Innovix.Base.Persistencia.NHibernate.Map {
 			LazyLoad();
 			Id(x => x.Id).GeneratedBy.Identity().Column("id_saco");
 			References(x => x.tbSaco).Column("id_sacopai");
-			//References(x => x.tbLacre).Column("id_lacre");
+			References(x => x.tbLacre).Column("id_lacre");
 			References(x => x.tbLote).Column("id_lote");
 			Map(x => x.dthCriacao).Column("dth_criacao").Not.Nullable();
 			HasMany(x => x.tbItem).KeyColumn("id_saco");
-			//HasMany(x => x.listSaco).KeyColumn("id_sacopai");
+			HasMany(x => x.listSaco).KeyColumn("id_sacopai");
         }
     }
 }

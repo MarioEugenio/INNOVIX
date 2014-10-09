@@ -1,0 +1,63 @@
+﻿<div ng-controller="RouteCreateCtrl" ng-init="init()">
+    <ol class="breadcrumb">
+      <li><a href="#/home/init">Home</a></li>
+      <li><a href="#/route/list">Rota</a></li>
+      <li class="active">Cadastro</li>
+    </ol>
+
+    <div  class="page-header">
+        <h3>Cadastro de Rotas</h3>
+        <h6>Os campos marcados com <em>*</em> são de preenchimento obrigatório</h6>
+    </div>
+
+    <div>
+        <form role="form" ng-submit="save()">
+          <div class="form-group" ng-show="form.Id">
+            <label><em>*</em> Código</label>
+            <input type="text" class="form-control small" maxlength="18" ng-model="form.Id" readonly>
+          </div>
+
+          <div class="form-group">
+            <label><em>*</em> Nome</label>
+            <input type="text" class="form-control" maxlength="50" ng-model="form.noNome" placeholder="Digite Nome da Rota" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="exampleInputEmail1">Descrição</label>
+            <input type="text" class="form-control" maxlength="30" ng-model="form.noDesc" placeholder="Digite a Rota">
+          </div>
+
+         <div class="panel panel-default">
+            <div class="panel-heading">Selecione as rotas desejadas</div>
+              <div class="panel-body">
+                <div class="row">
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label><em>*</em> Origem</label>
+                        <select  class="form-control">
+                            <option value="">Selecione ...</option>
+                            <option ng-repeat="item in listLocation" value="{{ item.Id }}">{{ item.noNome }}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label><em>*</em> Destino</label>
+                        <select  class="form-control">
+                            <option value="">Selecione ...</option>
+                            <option ng-repeat="item in listLocation" value="{{ item.Id }}">{{ item.noNome }}</option>
+                        </select>
+                    </div>
+                </div>
+                </div>
+              </div>
+             </div>
+         </div>
+              
+         <div class="modal-footer">
+            <a href="#/route/list" class="btn btn-default">Cancelar</a>
+            <button type="submit" class="btn btn-primary" ng-disabled="enableForm()">Salvar</button>
+         </div>
+          
+        </form>
+</div>

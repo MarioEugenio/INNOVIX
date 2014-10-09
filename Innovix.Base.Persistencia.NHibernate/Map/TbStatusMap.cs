@@ -14,7 +14,13 @@ namespace Innovix.Base.Persistencia.NHibernate.Map {
 			LazyLoad();
 			Id(x => x.Id).GeneratedBy.Identity().Column("id_status");
 			Map(x => x.noDesc).Column("no_desc").Length(50);
-			HasMany(x => x.tbItem).KeyColumn("id_status");
+
+			HasMany<TbItem>(x => x.tbItem)
+                .KeyColumn("id_status")
+                .LazyLoad()
+              .Generic()
+              .Cascade
+              .AllDeleteOrphan();
         }
     }
 }

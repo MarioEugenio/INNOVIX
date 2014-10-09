@@ -13,10 +13,12 @@ namespace INNOVIX_RFIX.Controllers
     public class ReportItemController : ControllerBase
     {
         private ITbLogEpcService service;
+        private ITbItemService serviceItem;
 
-        public ReportItemController(ITbLogEpcService service)
+        public ReportItemController(ITbLogEpcService service, ITbItemService serviceItem)
         {
             this.service = service;
+            this.serviceItem = serviceItem;
         }
 
         public ViewResult List()
@@ -36,12 +38,17 @@ namespace INNOVIX_RFIX.Controllers
                .Select(x => new
                {
                    Id = x.Id,
-                   awb = x.codEpc,
+                   awb = x.tbEquipamento.tbLogsaco.FirstOrDefault().codBarras,
                    origin = x.tbEquipamento.tbLocalidade.noNome,
                    destiny = x.tbLocalidade.noNome,
                    //route = x.tbLocalidade.,
                    status = x.tbOperacao.noDesc,
-                   dtAtualizacao = x.dthLog.ToString("d/MM/yyyy")
+                   dtAtualizacao = x.dthLog.ToString("d/MM/yyyy"),
+                   responsavel = x.tbLocalidade.noResponsavel,
+                   // lacre = x.tbEquipamento.tbLogsaco.SingleOrDefault().
+                   embarque = x.tbEquipamento.tbLoglote.FirstOrDefault().tbLocalidade.noNome,
+                   dtCadastro = x.dthLog.ToString("d/MM/yyyy"),
+                   epc = x.codEpc
 
                });
 
@@ -50,18 +57,12 @@ namespace INNOVIX_RFIX.Controllers
 
         public JsonResult GetAll(int limit, int offset, string predicate, string order)
         {
-            var result = this.service
-                .Listar()
-                .Select(x => new
-                {
+            var result = this.serviceItem
+                .Listar() 
+                .Select(x => new {
                     Id = x.Id,
-                    awb = x.codEpc,
-                    origin = x.tbEquipamento.tbLocalidade.noNome,
-                    destiny = x.tbLocalidade.noNome,
-                    //route = x.tbLocalidade.,
-                    status = x.tbOperacao.noDesc,
-                    dtAtualizacao = x.dthLog.ToString("d/MM/yyyy")
-                   
+                    awb = x.codBarras,
+                    dtAtualizacao = x.dthCriacao.ToString("d/MM/yyyy")
                 });
 
             return this.returnJson(result.Skip((offset - 1) * limit).Take(limit), result.Count());
@@ -72,19 +73,21 @@ namespace INNOVIX_RFIX.Controllers
             return this.returnJson("{}");
         }
 
-        public JsonResult GetAllHistory(string Id, int limit, int offset)
+        public JsonResult GetAllHistory(int Id, int limit, int offset, string predicate, string order)
         {
+            var objEpc = this.serviceItem.ObterPorId(Id);
+
             var result = this.service
-               .Pesquisar(x => x.codEpc == Id)
+               .Pesquisar(x => x.codEpc == objEpc.codBarras)
                .Select(x => new
                {
                    Id = x.Id,
-                   awb = x.codEpc,
-                   origin = x.tbEquipamento.tbLocalidade.noNome,
-                   destiny = x.tbLocalidade.noNome,
-                   //route = x.tbLocalidade.,
-                   status = x.tbOperacao.noDesc,
-                   dtAtualizacao = x.dthLog.ToString("d/MM/yyyy")
+                   awb = x.tbEquipamento.tbLogsaco.FirstOrDefault().codBarras,
+                   local = x.tbEquipamento.tbLocalidade.noNome,
+                   equipamento = x.tbEquipamento.noEquipamento,
+                   acao = x.tbOperacao.noDesc,
+                   dtAtualizacao = x.dthLog.ToString("d/MM/yyyy"),
+                   responsavel = x.tbLocalidade.noResponsavel
 
                });
 

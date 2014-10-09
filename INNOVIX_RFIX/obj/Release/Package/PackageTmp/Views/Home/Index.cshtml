@@ -21,36 +21,35 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cadastros <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
-                <li><a href="#">Equipamentos</a></li>
-                <li><a href="#">Localidades</a></li>
-                <li><a href="#">Rotas</a></li>
+                <li><a href="#/equipment/list">Equipamentos</a></li>
+                <li><a href="#/location/list">Localidades</a></li>
+                <li><a href="#/route/list">Rotas</a></li>
                 <li class="divider"></li>
                 <li class="dropdown-header">Acesso / Perfil</li>
-                <li><a href="#">Usuários</a></li>
+                <li><a href="#/user/list">Usuários</a></li>
               </ul>
             </li>
 
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Relatórios <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
-                <li><a href="#">Itens</a></li>
-                <li><a href="#">Lacres</a></li>
-                <li><a href="#">Embarques</a></li>
-                <li><a href="#">Logs de Usuário</a></li>
+                <li><a href="#/report/item/list">Itens</a></li>
+                <li><a href="#/report/seals/list">Lacres</a></li>
+                <li><a href="#/report/boarding/list">Embarques</a></li>
+                <li><a href="#/report/user/list">Logs de Usuário</a></li>
               </ul>
             </li>
           </ul>
 
             <ul class="nav navbar-nav navbar-right">
-                <li>
-                  <div class="btn-group navbar-btn">
-                    <button class="btn btn-primary"><span class="glyphicon glyphicon-user"></span> Mário Eugênio</button>
-                    <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle"><span class="caret"></span></button>
-                    <ul class="dropdown-menu">
-                      <li><a href="#">Logoff</a></li>
-                    </ul>
-                  </div>
-                </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> &nbsp;@ViewBag.userCurrent <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="~/login/Logoff">Logoff</a></li>
+               
+              </ul>
+            </li>
+               
             </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -61,12 +60,16 @@
 
 
     <!-- Begin page content -->
-    <div class="container">
+    <div class="container panel">
         <ng-view id="j-content"></ng-view>
     </div> <!-- /container -->
 
     <div class="footer">
         <div class="container">
-            <p class="text-muted">Todos os direitos reservados</p>
+            <div class="col-lg-6">
+                <p class="text-muted"><img src="~/Web/img/logo/innovix_logosquare.png" class="pull-rigth" style="width:5%;" /> INNOVIX - Todos os direitos reservados</p>
+                
+            </div>
+            
         </div>
     </div>

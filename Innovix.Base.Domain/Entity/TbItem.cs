@@ -15,9 +15,10 @@ namespace Innovix.Base.Domain.Entity {
         }
         public virtual TbStatus tbStatus { get; set; }
         //public virtual TbRfid tbRfid { get; set; }
-        //public virtual TbSaco tbSaco { get; set; }
-        //public virtual TbLote tbLote { get; set; }
+        public virtual TbSaco tbSaco { get; set; }
+        public virtual TbLote tbLote { get; set; }
         public virtual TbLocalidade tbLocalidade { get; set; }
+        public virtual TbLocalidade tbLocalidadeDestino { get; set; }
         [Length(50)]
         public virtual string codBarras { get; set; }
         [NotNullNotEmpty]

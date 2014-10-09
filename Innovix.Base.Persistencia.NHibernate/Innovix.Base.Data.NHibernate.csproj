@@ -93,14 +93,17 @@
     <Compile Include="Repository\RelLocalidadeRotaRepository.cs" />
     <Compile Include="Repository\RepositoryNHibernate.cs" />
     <Compile Include="Repository\TbEquipamentoRepository.cs" />
+    <Compile Include="Repository\TbItemRepository.cs" />
     <Compile Include="Repository\TbLacreRepository.cs" />
     <Compile Include="Repository\TbLocalidadeRepository.cs" />
     <Compile Include="Repository\TbLogEpcRepository.cs" />
     <Compile Include="Repository\TbLogLoteRepository.cs" />
     <Compile Include="Repository\TbLogSacoRepository.cs" />
     <Compile Include="Repository\TbLogUsuarioRepository.cs" />
+    <Compile Include="Repository\TbLoteRepository.cs" />
     <Compile Include="Repository\tbPerfilRepository.cs" />
     <Compile Include="Repository\TbRotaRepository.cs" />
+    <Compile Include="Repository\TbSacoRepository.cs" />
     <Compile Include="Repository\TbUsuarioRepository.cs" />
   </ItemGroup>
   <ItemGroup>

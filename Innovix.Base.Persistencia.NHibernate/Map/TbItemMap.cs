@@ -15,10 +15,10 @@ namespace Innovix.Base.Persistencia.NHibernate.Map {
 			Id(x => x.Id).GeneratedBy.Identity().Column("id_item");
 			References(x => x.tbStatus).Column("id_status");
 			//References(x => x.tbRfid).Column("id_rfid");
-			//References(x => x.tbSaco).Column("id_saco");
-			//References(x => x.tbLote).Column("id_lote");
+			References(x => x.tbSaco).Column("id_saco");
+			References(x => x.tbLote).Column("id_lote");
 			References(x => x.tbLocalidade).Column("id_localidade");
-			//References(x => x.idDestino).Column("id_destino");
+            References(x => x.tbLocalidadeDestino).Column("id_destino");
 			Map(x => x.codBarras).Column("cod_barras").Length(50);
 			Map(x => x.dthCriacao).Column("dth_criacao").Not.Nullable();
 			Map(x => x.noDesc).Column("no_desc").Length(100);
