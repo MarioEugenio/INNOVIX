@@ -33,9 +33,9 @@ namespace INNOVIX_RFIX.Controllers
                     {
                         //let us take out the username now                
                         string roles = string.Empty;
-                       // System.Security.Cryptography.MD5CryptoServiceProvider x = new System.Security.Cryptography.MD5CryptoServiceProvider();
+                        System.Security.Cryptography.MD5CryptoServiceProvider x = new System.Security.Cryptography.MD5CryptoServiceProvider();
                         byte[] bs = System.Text.Encoding.UTF8.GetBytes(password);
-
+                        bs = x.ComputeHash(bs);
                         var user = service.Pesquisar(z => z.codCpfCnpj.Equals(username)).FirstOrDefault();
 
                         if (user != null) {

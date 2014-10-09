@@ -13,12 +13,14 @@ namespace INNOVIX_RFIX.Controllers
     public class RouteController : ControllerBase
     {
         private ITbRotaService service;
+        private ITbLocalidadeService serviceLocalidade;
         private IRelLocalidadeRotaService serviceRel;
 
-        public RouteController(ITbRotaService service, IRelLocalidadeRotaService serviceRl)
+        public RouteController(ITbRotaService service, IRelLocalidadeRotaService serviceRl, ITbLocalidadeService serviceLocalidade)
         {
             this.service = service;
             this.serviceRel = serviceRl;
+            this.serviceLocalidade = serviceLocalidade;
         }
 
         public ViewResult List()
@@ -51,6 +53,15 @@ namespace INNOVIX_RFIX.Controllers
             try
             {
                 this.service.Salvar(entity);
+
+                if (entity.destiny > 0)
+                {
+                    RelLocalidadeRota relLocalidadeRota = new RelLocalidadeRota();
+                    relLocalidadeRota.tbLocalidade = this.serviceLocalidade.ObterPorId(entity.destiny);
+                    entity.relLocalidadeRota.Add(relLocalidadeRota);
+
+                    this.service.Salvar(entity);
+                }
 
                 return this.returnMenssage("Cadastro realizado com sucesso", true);
             } catch (ExceptionService ex) {

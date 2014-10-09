@@ -21,5 +21,6 @@ namespace Innovix.Base.Domain.Entity {
         public virtual IList<RelLocalidadeRota> relLocalidadeRota { get; set; }
         public virtual IList<TbLote> tbLote { get; set; }
         public virtual IList<TbSincRota> tbSincRota { get; set; }
+        public virtual int destiny { get; set; }
     }
 }
