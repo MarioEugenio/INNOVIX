@@ -47,7 +47,13 @@ namespace Innovix.Base.Persistencia.NHibernate.Map {
 			//HasMany(x => x.tbLogsaco).KeyColumn("id_localidade");
 			//HasMany(x => x.tbLote).KeyColumn("id_destino");
 			//HasMany(x => x.tbLote).KeyColumn("id_localidade");
-			//HasMany(x => x.tbSincLocalidade).KeyColumn("id_localidade");
+			HasMany<TbSincLocalidade>(x => x.tbSincLocalidade)
+                .KeyColumn("id_localidade")
+                .LazyLoad()
+              .Generic()
+              .Inverse()
+              .Cascade
+              .AllDeleteOrphan();
         }
     }
 }

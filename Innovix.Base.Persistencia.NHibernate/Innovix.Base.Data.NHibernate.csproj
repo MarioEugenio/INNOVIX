@@ -86,6 +86,9 @@
     <Compile Include="Map\TbPerfilMap.cs" />
     <Compile Include="Map\TbRotaMap.cs" />
     <Compile Include="Map\TbSacoMap.cs" />
+    <Compile Include="Map\TbSincLocalidadeMap.cs" />
+    <Compile Include="Map\TbSincRotaMap.cs" />
+    <Compile Include="Map\TbSincUsuarioMap.cs" />
     <Compile Include="Map\TbStatusMap.cs" />
     <Compile Include="Map\TbTipoUsuarioMap.cs" />
     <Compile Include="Map\TbUsuarioMap.cs" />

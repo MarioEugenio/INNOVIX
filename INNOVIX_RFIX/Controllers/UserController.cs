@@ -33,14 +33,20 @@ namespace INNOVIX_RFIX.Controllers
                     {
                         //let us take out the username now                
                         string roles = string.Empty;
-                        Byte[] inputBytes = Encoding.UTF8.GetBytes(password);
-                        //Byte[] hashedBytes = algorithm.ComputeHash(inputBytes);
+                       // System.Security.Cryptography.MD5CryptoServiceProvider x = new System.Security.Cryptography.MD5CryptoServiceProvider();
+                        byte[] bs = System.Text.Encoding.UTF8.GetBytes(password);
 
-                        var user = service.Pesquisar(x => x.codCpfCnpj.Equals(username)
-                            && x.codSenha.Equals(inputBytes)).SingleOrDefault();
+                        var user = service.Pesquisar(z => z.codCpfCnpj.Equals(username)).FirstOrDefault();
+
+                        if (user != null) {
+                            if (this.StrToByteArray(user.codSenha) != this.StrToByteArray(bs))
+                            {
+                                return this.returnMenssage("Senha inválida", false);
+                            }
+                        }
 
                         if (user == null)
-                            return this.returnMenssage("Usuário ou senha inválido", false);
+                            return this.returnMenssage("Login inválido", false);
 
                         roles = user.tbPerfil.noDesc;
 
@@ -92,8 +98,10 @@ namespace INNOVIX_RFIX.Controllers
         {
             try
             {
-                Byte[] inputBytes = Encoding.UTF8.GetBytes(entity.password);
-                entity.codSenha = inputBytes;
+                System.Security.Cryptography.MD5CryptoServiceProvider x = new System.Security.Cryptography.MD5CryptoServiceProvider();
+                byte[] bs = System.Text.Encoding.UTF8.GetBytes(entity.password);
+                bs = x.ComputeHash(bs);
+                entity.codSenha = bs;
                 this.service.Salvar(entity);
 
                 return this.returnMenssage("Cadastro realizado com sucesso", true);
@@ -132,7 +140,8 @@ namespace INNOVIX_RFIX.Controllers
                     noUsuario = x.noUsuario,
                     codCpfCnpj = x.codCpfCnpj,
                     idPerfil = (x.tbPerfil != null) ? x.tbPerfil.Id : 0,
-                    noPerfil = (x.tbPerfil != null) ? x.tbPerfil.noDesc : null
+                    noPerfil = (x.tbPerfil != null) ? x.tbPerfil.noDesc : null,
+                    password = x.codSenha
                 });
 
             return this.returnJson(result.Skip((offset - 1) * limit).Take(limit), result.Count(), result);

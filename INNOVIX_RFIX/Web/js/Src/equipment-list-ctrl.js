@@ -28,6 +28,25 @@
         $scope.getEquipment(1);
     };
 
+    $scope.remove = function (index, item) {
+        console.log(item);
+        var conf = confirm('Tem certeza que deseja remover?');
+        if (conf) {
+            $http.post(baseUrl + '/equipment/remove', { Id: item.Id })
+               .success(function (response) {
+                   if (response.success) {
+                       $scope.list.splice(index, 1);
+                   }
+
+                   Modal.alert(
+                          response.message,
+                          global.titleModal,
+                          response.success
+                       );
+               });
+        }
+    }
+
     $scope.getEquipment = function (current) {
         $http.post(baseUrl + '/equipment/getAll', {
             limit: global.limit,

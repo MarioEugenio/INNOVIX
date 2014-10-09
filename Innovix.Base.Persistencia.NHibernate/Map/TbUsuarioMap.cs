@@ -25,11 +25,24 @@ namespace Innovix.Base.Persistencia.NHibernate.Map {
 			Map(x => x.noEmail).Column("no_email").Length(30);
 			Map(x => x.noTelefone).Column("no_telefone").Length(20);
 			//HasMany(x => x.relEmpresaUsuario).KeyColumn("id_usuario");
-			HasMany(x => x.tbLogUsuario).KeyColumn("id_usuario");
+
+			HasMany<TbLogUsuario>(x => x.tbLogUsuario)
+                .KeyColumn("id_usuario")
+                .LazyLoad()
+              .Generic()
+              .Cascade
+              .AllDeleteOrphan();
+
 			//HasMany(x => x.tbLogitem).KeyColumn("id_usuario");
 			//HasMany(x => x.tbLoglote).KeyColumn("id_usuario");
 			//HasMany(x => x.tbLogsaco).KeyColumn("id_usuario");
-			//HasMany(x => x.tbSincUsuario).KeyColumn("id_usuario");
+			HasMany<TbSincUsuario>(x => x.tbSincUsuario)
+                .KeyColumn("id_usuario")
+                .LazyLoad()
+              .Generic()
+              .Inverse()
+              .Cascade
+              .AllDeleteOrphan();
         }
     }
 }

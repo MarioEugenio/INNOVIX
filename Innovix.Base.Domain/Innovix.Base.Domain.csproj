@@ -93,6 +93,9 @@
     <Compile Include="Entity\TbPerfil.cs" />
     <Compile Include="Entity\TbRota.cs" />
     <Compile Include="Entity\TbSaco.cs" />
+    <Compile Include="Entity\TbSincLocalidade.cs" />
+    <Compile Include="Entity\TbSincRota.cs" />
+    <Compile Include="Entity\TbSincUsuario.cs" />
     <Compile Include="Entity\TbStatus.cs" />
     <Compile Include="Entity\TbTipoUsuario.cs" />
     <Compile Include="Entity\TbUsuario.cs" />

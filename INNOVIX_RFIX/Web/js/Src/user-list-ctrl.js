@@ -35,7 +35,7 @@
             $http.post(baseUrl + '/user/remove', { Id: item.Id })
                .success(function (response) {
                    if (response.success) {
-                       $scope.listUser.split(index, 1);
+                       $scope.listUser.splice(index, 1);
                    }
 
                    Modal.alert(

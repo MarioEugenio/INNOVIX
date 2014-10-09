@@ -38,6 +38,13 @@ namespace INNOVIX_RFIX.Controllers
             return Json(row, JsonRequestBehavior.AllowGet);
         }
 
+        // Converte uma string em um byte[]
+        public string StrToByteArray(byte[] dBytes)
+        {
+            System.Text.UTF8Encoding enc = new System.Text.UTF8Encoding();
+            return enc.GetString(dBytes);
+        }
+
         public string getMD5Hash(string input)
         {
             System.Security.Cryptography.MD5 md5 = System.Security.Cryptography.MD5.Create();

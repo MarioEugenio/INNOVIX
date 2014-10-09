@@ -51,7 +51,7 @@
                         <td>{{ item. }}</td>
                         <td style="width:110px;">
                             <a class="btn btn-default btn-mini" href="#/equipment/{{ item.Id }}/alter"><span class="glyphicon glyphicon-edit"></span></a>
-                            <a class="btn btn-default btn-mini"><span class="glyphicon glyphicon-trash"></span></a>
+                            <a class="btn btn-default btn-mini" ng-click="remove($index, item)"><span class="glyphicon glyphicon-trash"></span></a>
                         </td>
                     </tr>
                 </tbody>

@@ -18,7 +18,7 @@ namespace Innovix.Base.Domain.Entity {
 			//tbLogsaco = new List<TbLogsaco>();
 			//tbLote = new List<TbLote>();
 			//tbLote = new List<TbLote>();
-			//tbSincLocalidade = new List<TbSincLocalidade>();
+			tbSincLocalidade = new List<TbSincLocalidade>();
         }
         [Length(50)]
         public virtual string noDesc { get; set; }
@@ -41,6 +41,6 @@ namespace Innovix.Base.Domain.Entity {
         //public virtual IList<TbLogsaco> tbLogsaco { get; set; }
         //public virtual IList<TbLote> tbLote { get; set; }
         //public virtual IList<TbLote> tbLote { get; set; }
-        //public virtual IList<TbSincLocalidade> tbSincLocalidade { get; set; }
+        public virtual IList<TbSincLocalidade> tbSincLocalidade { get; set; }
     }
 }
