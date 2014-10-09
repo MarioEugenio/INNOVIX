@@ -69,7 +69,7 @@ namespace INNOVIX_RFIX.Controllers
                     dtAtualizacao = x.dthCriacao.ToString("d/MM/yyyy")
                 });
 
-            return this.returnJson(result.Skip((offset - 1) * limit).Take(limit), result.Count());
+            return this.returnJson(result.Skip((offset - 1) * limit).Take(limit), result.Count(), result);
         }
 
         public JsonResult GetReportItem(searchItem search, int limit, int offset, string predicate, string order)
@@ -90,7 +90,7 @@ namespace INNOVIX_RFIX.Controllers
                    dtAtualizacao = x.dthCriacao.ToString("d/MM/yyyy")
                });
 
-            return this.returnJson(result.Skip((offset - 1) * limit).Take(limit), result.Count());
+            return this.returnJson(result.Skip((offset - 1) * limit).Take(limit), result.Count(), result);
         }
 
         public JsonResult GetAllHistory(int Id, int limit, int offset, string predicate, string order)
@@ -111,7 +111,7 @@ namespace INNOVIX_RFIX.Controllers
 
                });
 
-            return this.returnJson(result.Skip((offset - 1) * limit).Take(limit), result.Count());
+            return this.returnJson(result.Skip((offset - 1) * limit).Take(limit), result.Count(), result);
         }
     }
 

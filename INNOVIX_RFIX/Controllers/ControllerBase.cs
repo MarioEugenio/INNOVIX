@@ -28,11 +28,12 @@ namespace INNOVIX_RFIX.Controllers
             return resultado;
         }
 
-        public JsonResult returnJson<T>(T result, int totalResults)
+        public JsonResult returnJson<T>(T result, int totalResults, T export)
         {
             Dictionary<string, Object> row = new Dictionary<string, Object>();
             row.Add("total", totalResults);
             row.Add("data", result);
+            row.Add("export", export);
 
             return Json(row, JsonRequestBehavior.AllowGet);
         }

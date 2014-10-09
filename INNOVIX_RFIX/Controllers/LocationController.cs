@@ -89,7 +89,7 @@ namespace INNOVIX_RFIX.Controllers
                     noTelefone = x.noTelefone
             });
 
-            return this.returnJson(result.Skip((offset - 1) * limit).Take(limit), result.Count());
+            return this.returnJson(result.Skip((offset - 1) * limit).Take(limit), result.Count(), result);
         }
 
         public JsonResult GetLocation(string search, int limit, int offset, string predicate, string order)
@@ -108,7 +108,7 @@ namespace INNOVIX_RFIX.Controllers
                     noTelefone = x.noTelefone
                 });
 
-            return this.returnJson(result.Skip((offset - 1) * limit).Take(limit), result.Count());
+            return this.returnJson(result.Skip((offset - 1) * limit).Take(limit), result.Count(), result);
         }
 
     }

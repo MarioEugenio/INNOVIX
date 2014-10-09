@@ -100,7 +100,7 @@ namespace INNOVIX_RFIX.Controllers
                 });
             }
 
-            return this.returnJson(list.Skip((offset - 1) * limit).Take(limit), list.Count());
+            return this.returnJson(list.Skip((offset - 1) * limit).Take(limit), list.Count(), result);
         }
 
         public JsonResult GetRoute(string search, int limit, int offset, string predicate, string order)
@@ -115,7 +115,7 @@ namespace INNOVIX_RFIX.Controllers
                     noNome = x.noNome
                 });
 
-            return this.returnJson(result.Skip((offset - 1) * limit).Take(limit), result.Count());
+            return this.returnJson(result.Skip((offset - 1) * limit).Take(limit), result.Count(), result);
         }
 
     }

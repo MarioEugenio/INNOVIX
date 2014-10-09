@@ -135,7 +135,7 @@ namespace INNOVIX_RFIX.Controllers
                     noPerfil = (x.tbPerfil != null) ? x.tbPerfil.noDesc : null
                 });
 
-            return this.returnJson(result.Skip((offset - 1) * limit).Take(limit), result.Count());
+            return this.returnJson(result.Skip((offset - 1) * limit).Take(limit), result.Count(), result);
         }
 
         public JsonResult GetUser(string search, int limit, int offset, string predicate, string order)
@@ -154,7 +154,7 @@ namespace INNOVIX_RFIX.Controllers
                     no_perfil = x.tbPerfil.noDesc
                 });
 
-            return this.returnJson(result.Skip((offset - 1) * limit).Take(limit), result.Count());
+            return this.returnJson(result.Skip((offset - 1) * limit).Take(limit), result.Count(), result);
         }
 
     }

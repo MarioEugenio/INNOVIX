@@ -59,7 +59,7 @@ namespace INNOVIX_RFIX.Controllers
                     //status = x.tbItem.FirstOrDefault().tbStatus.noDesc
                 });
 
-            return this.returnJson(result.Skip((offset - 1) * limit).Take(limit), result.Count());
+            return this.returnJson(result.Skip((offset - 1) * limit).Take(limit), result.Count(), result);
         }
     }
 }

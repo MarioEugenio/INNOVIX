@@ -80,7 +80,7 @@ namespace INNOVIX_RFIX.Controllers
                     dtAtualizacao = (x.tbLogEpc.GetType() == typeof(TbLogEpc))? x.tbLogEpc.LastOrDefault().dthLog.ToString() : null
             });
 
-            return this.returnJson(result.Skip((offset - 1) * limit).Take(limit), result.Count());
+            return this.returnJson(result.Skip((offset - 1) * limit).Take(limit), result.Count(), result);
         }
 
         public JsonResult GetEquipment(string search, int limit, int offset, string predicate, string order)
@@ -95,7 +95,7 @@ namespace INNOVIX_RFIX.Controllers
                     dtAtualizacao = (x.tbLogEpc.GetType() == typeof(TbLogEpc)) ? x.tbLogEpc.LastOrDefault().dthLog.ToString() : null
                 });
 
-            return this.returnJson(result.Skip((offset - 1) * limit).Take(limit), result.Count());
+            return this.returnJson(result.Skip((offset - 1) * limit).Take(limit), result.Count(), result);
         }
     }
 }

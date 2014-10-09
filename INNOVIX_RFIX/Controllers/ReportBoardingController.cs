@@ -66,7 +66,7 @@ namespace INNOVIX_RFIX.Controllers
                     dtAtualizacao = x.dthCriacao.ToString("dd/MM/yyyy")
                 });
 
-            return this.returnJson(result.Skip((offset - 1) * limit).Take(limit), result.Count());
+            return this.returnJson(result.Skip((offset - 1) * limit).Take(limit), result.Count(), result);
         }
 
         public JsonResult GetReportItem(searchBoarding search, int limit, int offset, string predicate, string order)
@@ -86,7 +86,7 @@ namespace INNOVIX_RFIX.Controllers
                     dtAtualizacao = x.dthCriacao.ToString("dd/MM/yyyy")
                 });
 
-            return this.returnJson(result.Skip((offset - 1) * limit).Take(limit), result.Count());
+            return this.returnJson(result.Skip((offset - 1) * limit).Take(limit), result.Count(), result);
         }
 
         public JsonResult GetAllItem(int Id, int limit, int offset, string predicate, string order)
@@ -108,7 +108,7 @@ namespace INNOVIX_RFIX.Controllers
 
                });
 
-            return this.returnJson(result.Skip((offset - 1) * limit).Take(limit), result.Count());
+            return this.returnJson(result.Skip((offset - 1) * limit).Take(limit), result.Count(), result);
         }
 
         public JsonResult GetAllSeals(int Id, int limit, int offset, string predicate, string order)
@@ -129,7 +129,7 @@ namespace INNOVIX_RFIX.Controllers
 
               });
 
-            return this.returnJson(result.Skip((offset - 1) * limit).Take(limit), result.Count());
+            return this.returnJson(result.Skip((offset - 1) * limit).Take(limit), result.Count(), result);
         }
     }
 

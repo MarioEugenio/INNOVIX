@@ -64,7 +64,7 @@ namespace INNOVIX_RFIX.Controllers
                       lacre = (x.tbLacre != null)? x.tbLacre.Id : 0
                 });
 
-            return this.returnJson(result.Skip((offset - 1) * limit).Take(limit), result.Count());
+            return this.returnJson(result.Skip((offset - 1) * limit).Take(limit), result.Count(), result);
         }
 
         public JsonResult GetReportItem(searchSeals search, int limit, int offset, string predicate, string order)
@@ -84,7 +84,7 @@ namespace INNOVIX_RFIX.Controllers
                     lacre = (x.tbLacre != null) ? x.tbLacre.Id : 0
                 });
 
-            return this.returnJson(result.Skip((offset - 1) * limit).Take(limit), result.Count());
+            return this.returnJson(result.Skip((offset - 1) * limit).Take(limit), result.Count(), result);
         }
 
         public JsonResult GetAllHistory(int Id, int limit, int offset, string predicate, string order)

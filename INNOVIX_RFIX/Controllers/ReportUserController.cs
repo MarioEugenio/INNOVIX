@@ -53,7 +53,7 @@ namespace INNOVIX_RFIX.Controllers
                     codCpfCnpj = x.tbUsuario.codCpfCnpj
                 });
 
-            return this.returnJson(result.Skip((offset - 1) * limit).Take(limit), result.Count());
+            return this.returnJson(result.Skip((offset - 1) * limit).Take(limit), result.Count(), result);
         }
 
         public JsonResult GetReportItem(searchUser search, int limit, int offset, string predicate, string order)
@@ -72,7 +72,7 @@ namespace INNOVIX_RFIX.Controllers
                 dthLog = x.dthLog.ToString("dd/MM/yyyy")
             });
 
-            return this.returnJson(result.Skip((offset - 1) * limit).Take(limit), result.Count());
+            return this.returnJson(result.Skip((offset - 1) * limit).Take(limit), result.Count(), result);
         }
     }
 
