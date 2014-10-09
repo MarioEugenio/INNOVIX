@@ -3,10 +3,22 @@
     $scope.search = "";
     $scope.predicate = 'id';
     $scope.order = 'ASC';
+    $scope.listLocation = [];
 
     $scope.init = function () {
+        $scope.getLocation();
         $scope.getReportItem(1);
     };
+
+    $scope.getLocation = function (id) {
+        $http.post(baseUrl + '/location/getAll', {
+            limit: 1000000,
+            offset: 1
+        })
+              .success(function (response) {
+                  $scope.listLocation = response.data;
+              });
+    }
 
     $scope.sorting = function (predicate) {
         if ($scope.predicate == predicate && $scope.order == 'DESC') {

@@ -16,11 +16,15 @@
                 <div class="input-group">
                     <div class="col-lg-6">
                         <div class="form-group">
-                            <input type="text" class="form-control" ng-model="search.dtAtualizacao" placeholder="Data Atualização">
+                            <input type="text" class="form-control" bs-datepicker ng-model="search.dtAtualizacao" placeholder="Data Atualização">
                         </div>
                         <br />
                         <div class="form-group">
-                            <input type="text" class="form-control" ng-model="search.destiny" placeholder="Destino">
+                            <label> Origem</label>
+                            <select  ng-model="search.origem" class="form-control">
+                                <option value="">Selecione ...</option>
+                                <option ng-repeat="item in listLocation" value="{{ item.Id }}">{{ item.noNome }}</option>
+                            </select>
                         </div>
                     </div>
                     <div class="col-lg-6">
@@ -29,7 +33,11 @@
                         </div>
                         <br />
                         <div class="form-group">
-                            <input type="text" class="form-control" ng-model="search.origin" placeholder="Origem">
+                            <label>Destino</label>
+                            <select  ng-model="search.destino"  class="form-control">
+                                <option value="">Selecione ...</option>
+                                <option ng-repeat="item in listLocation" value="{{ item.Id }}">{{ item.noNome }}</option>
+                            </select>
                         </div>
                     </div>
                     <div class="input-group-btn">
