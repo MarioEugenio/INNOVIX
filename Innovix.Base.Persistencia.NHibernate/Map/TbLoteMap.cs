@@ -13,13 +13,41 @@ namespace Innovix.Base.Persistencia.NHibernate.Map {
 			Table("tb_lote");
 			LazyLoad();
 			Id(x => x.Id).GeneratedBy.Identity().Column("id_lote");
-			References(x => x.tbLocalidade).Column("id_localidade");
-            References(x => x.tbLocalidadeDest).Column("id_destino");
-			References(x => x.tbRota).Column("id_rota");
+
+            References(x => x.tbLocalidade)
+                .Column("id_localidade")
+                .LazyLoad()
+                .Cascade
+                .None();
+
+            References(x => x.tbLocalidadeDest)
+                .Column("id_destino")
+                .LazyLoad()
+                .Cascade
+                .None();
+
+			References(x => x.tbRota)
+                .Column("id_rota")
+                .LazyLoad()
+                .Cascade
+                .None();
+
 			Map(x => x.noDesc).Column("no_desc").Length(50);
 			Map(x => x.dthCriacao).Column("dth_criacao").Not.Nullable();
-			HasMany(x => x.tbItem).KeyColumn("id_lote");
-			HasMany(x => x.tbSaco).KeyColumn("id_lote");
+
+			HasMany<TbItem>(x => x.tbItem)
+                .KeyColumn("id_lote")
+                .LazyLoad()
+              .Generic()
+              .Cascade
+              .AllDeleteOrphan(); 
+
+			HasMany<TbSaco>(x => x.tbSaco)
+                .KeyColumn("id_lote")
+                .LazyLoad()
+              .Generic()
+              .Cascade
+              .AllDeleteOrphan();
         }
     }
 }

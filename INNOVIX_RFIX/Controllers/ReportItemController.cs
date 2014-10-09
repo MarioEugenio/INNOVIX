@@ -62,15 +62,35 @@ namespace INNOVIX_RFIX.Controllers
                 .Select(x => new {
                     Id = x.Id,
                     awb = x.codBarras,
+                    origin = (x.tbLocalidade != null) ? x.tbLocalidade.noNome : null,
+                    destiny = (x.tbLocalidadeDestino != null) ? x.tbLocalidadeDestino.noNome : null,
+                    route = (x.tbLote != null)? x.tbLote.tbRota.noNome : null,
+                    status = (x.tbStatus != null)? x.tbStatus.noDesc : null,
                     dtAtualizacao = x.dthCriacao.ToString("d/MM/yyyy")
                 });
 
             return this.returnJson(result.Skip((offset - 1) * limit).Take(limit), result.Count());
         }
 
-        public JsonResult GetReportItem(string search, int limit, int offset, string predicate, string order)
+        public JsonResult GetReportItem(searchItem search, int limit, int offset, string predicate, string order)
         {
-            return this.returnJson("{}");
+            var result = this.serviceItem
+               .Pesquisar(x => (x.codBarras == search.awb) 
+                   || (x.dthCriacao.Date >= search.dtAtualizacao.Date && x.dthCriacao.Date <= search.dtAtualizacao.Date) 
+                   || (x.tbLocalidade.Id == search.origem)
+                   || (x.tbLocalidadeDestino.Id == search.destino))
+               .Select(x => new
+               {
+                   Id = x.Id,
+                   awb = x.codBarras,
+                   origin = (x.tbLocalidade != null) ? x.tbLocalidade.noNome : null,
+                   destiny = (x.tbLocalidadeDestino != null) ? x.tbLocalidadeDestino.noNome : null,
+                   route = (x.tbLote != null) ? x.tbLote.tbRota.noNome : null,
+                   status = (x.tbStatus != null) ? x.tbStatus.noDesc : null,
+                   dtAtualizacao = x.dthCriacao.ToString("d/MM/yyyy")
+               });
+
+            return this.returnJson(result.Skip((offset - 1) * limit).Take(limit), result.Count());
         }
 
         public JsonResult GetAllHistory(int Id, int limit, int offset, string predicate, string order)
@@ -93,5 +113,12 @@ namespace INNOVIX_RFIX.Controllers
 
             return this.returnJson(result.Skip((offset - 1) * limit).Take(limit), result.Count());
         }
+    }
+
+    public class searchItem {
+        public string awb { get; set; }
+        public int destino { get; set; }
+        public int origem { get; set; }
+        public DateTime dtAtualizacao { get; set; }
     }
 }

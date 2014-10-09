@@ -14,8 +14,18 @@ namespace Innovix.Base.Persistencia.NHibernate.Map {
 			LazyLoad();
 			CompositeId().KeyProperty(x => x.idLocalidade, "id_localidade")
 			             .KeyProperty(x => x.idRota, "id_rota");
-			References(x => x.tbLocalidade).Column("id_localidade");
-			References(x => x.tbRota).Column("id_rota");
+            References(x => x.tbLocalidade)
+                .Column("id_localidade")
+                .LazyLoad()
+                .Cascade
+                .None();
+
+            References(x => x.tbRota)
+                .Column("id_rota")
+                .LazyLoad()
+                .Cascade
+                .None(); 
+
 			Map(x => x.intCheckpoint).Column("int_checkpoint").Not.Nullable().Precision(10);
         }
     }

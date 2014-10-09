@@ -31,7 +31,7 @@ namespace INNOVIX_RFIX.Controllers
                .Select(x => new
                {
                    Id = x.Id,
-                   dthLog = x.dthLog,
+                   dthLog = x.dthLog.ToString("dd/MM/yyyy"),
                    noDesc = x.tbOperacao.noDesc,
                    noUsuario = x.tbUsuario.noUsuario,
                    codCpfCnpj = x.tbUsuario.codCpfCnpj
@@ -47,7 +47,7 @@ namespace INNOVIX_RFIX.Controllers
                 .Select(x => new
                 {
                     Id = x.Id,
-                    dthLog = x.dthLog,
+                    dthLog = x.dthLog.ToString("dd/MM/yyyy"),
                     noDesc = x.tbOperacao.noDesc,
                     noUsuario = x.tbUsuario.noUsuario,
                     codCpfCnpj = x.tbUsuario.codCpfCnpj
@@ -56,19 +56,29 @@ namespace INNOVIX_RFIX.Controllers
             return this.returnJson(result.Skip((offset - 1) * limit).Take(limit), result.Count());
         }
 
-        public JsonResult GetReportItem(string search, DateTime dtAction, int limit, int offset, string predicate, string order)
+        public JsonResult GetReportItem(searchUser search, int limit, int offset, string predicate, string order)
         {
-            var result = this.service.GetLogUsuario(dtAction, search)
+            var result = this.service
+                .Pesquisar(x => (x.tbUsuario.noUsuario.Contains(search.search)) 
+                    || (x.tbUsuario.codCpfCnpj == search.search) 
+                    || (x.dthLog.Date >= search.dtAction.Date && x.dthLog.Date <= search.dtAction.Date))
                 .Select(x => new
             {
                 Id = x.Id,
-                dthLog = x.dthLog,
+                awb = x.dthLog,
                 noDesc = x.tbOperacao.noDesc,
                 noUsuario = x.tbUsuario.noUsuario,
-                codCpfCnpj = x.tbUsuario.codCpfCnpj
+                codCpfCnpj = x.tbUsuario.codCpfCnpj,
+                dthLog = x.dthLog.ToString("dd/MM/yyyy")
             });
 
             return this.returnJson(result.Skip((offset - 1) * limit).Take(limit), result.Count());
         }
     }
+
+     public class searchUser
+     {
+         public string search { get; set; }
+         public DateTime dtAction { get; set; }
+     }
 }

@@ -131,8 +131,8 @@ namespace INNOVIX_RFIX.Controllers
                     noTelefone = x.noTelefone,
                     noUsuario = x.noUsuario,
                     codCpfCnpj = x.codCpfCnpj,
-                    idPerfil = x.tbPerfil.Id,
-                    noPerfil = x.tbPerfil.noDesc
+                    idPerfil = (x.tbPerfil != null) ? x.tbPerfil.Id : 0,
+                    noPerfil = (x.tbPerfil != null) ? x.tbPerfil.noDesc : null
                 });
 
             return this.returnJson(result.Skip((offset - 1) * limit).Take(limit), result.Count());

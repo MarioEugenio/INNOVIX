@@ -1,6 +1,6 @@
 ﻿app.controller('ReportItemListCtrl', function ($scope, $http, $modal, $routeParams) {
     $scope.list = [];
-    $scope.search = "";
+    $scope.search = {};
     $scope.predicate = 'id';
     $scope.order = 'ASC';
     $scope.listLocation = [];
@@ -53,11 +53,12 @@
 
     }
 
-    $scope.search = function (current) {
+    $scope.searchItem = function (current) {
         if (!$scope.search) {
             $scope.getReportItem(current);
             return;
         }
+
         $http.post(baseUrl + '/reportItem/getReportItem', {
             search: $scope.search,
             limit: global.limit,
@@ -84,11 +85,35 @@
     $scope.maxSize = global.limit;
     $scope.currentPage = 1;
 
-    $scope.open = function (id) {
+    $scope.openModal = function (id) {
         $routeParams.id = id
         $modal.open({
             templateUrl: '/ReportItem/Item'
         });
 
     }
+
+    // Disable weekend selection
+    $scope.disabled = function (date, mode) {
+        return (mode === 'day' && (date.getDay() === 0 || date.getDay() === 6));
+    };
+
+    $scope.toggleMin = function () {
+        $scope.minDate = $scope.minDate ? null : new Date();
+    };
+    $scope.toggleMin();
+
+    $scope.open = function ($event) {
+        $event.preventDefault();
+        $event.stopPropagation();
+
+        $scope.opened = true;
+    };
+
+    $scope.dateOptions = {
+        formatYear: 'yy',
+        startingDay: 1
+    };
+
+    $scope.format = 'dd/MM/yyyy';
 });

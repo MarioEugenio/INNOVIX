@@ -13,7 +13,11 @@ namespace Innovix.Base.Persistencia.NHibernate.Map {
 			Table("tb_usuario");
 			LazyLoad();
 			Id(x => x.Id).GeneratedBy.Identity().Column("id_usuario");
-			References(x => x.tbPerfil).Column("id_perfil");
+
+			References(x => x.tbPerfil)
+                .Column("id_perfil")
+                .LazyLoad();
+
 			References(x => x.tbTipoUsuario).Column("id_tipo_usuario");
 			Map(x => x.noUsuario).Column("no_usuario").Not.Nullable().Length(50);
 			Map(x => x.codSenha).Column("cod_senha").Not.Nullable().Length(35);

@@ -15,8 +15,11 @@
               <div class="col-lg-12">
                 <div class="input-group">
                     <div class="col-lg-6">
-                        <div class="form-group">
-                            <input type="text" class="form-control" ng-model="search.dtAtualizacao" placeholder="Data de Ação">
+                        <div class="form-group input-group">
+                              <input type="text" class="form-control" readonly="true" placeholder="Data Ação" datepicker-popup="{{format}}" ng-model="search.dtAtualizacao" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+                              <span class="input-group-btn">
+                                <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                              </span>
                         </div>
                     </div>
                     <div class="col-lg-6">
@@ -47,23 +50,17 @@
                 <thead>
                     <tr class="table-header">
                         <th>Nome<i ng-class="sorting('nome')" ng-click="sortingTable('nome')" class="alingArrowRight glyphicon "></i></th>
-                        <th>CPF<i ng-class="sorting('cpf')" ng-click="sortingTable('cpf')" class="alingArrowRight glyphicon "></i></th>
-                        <th>Equipamento<i ng-class="sorting('equipamento')" ng-click="sortingTable('equipamento')" class="alingArrowRight glyphicon "></i></th>
-                        <th>Ação<i ng-class="sorting('acao')" ng-click="sortingTable('acao')" class="alingArrowRight glyphicon "></i></th>
-                        <th>AWB<i ng-class="sorting('awb')" ng-click="sortingTable('awb')" class="alingArrowRight glyphicon "></i></th>
-                        <th>Local<i ng-class="sorting('local')" ng-click="sortingTable('local')" class="alingArrowRight glyphicon "></i></th>
+                        <th>CPF / CNPJ<i ng-class="sorting('cpf')" ng-click="sortingTable('cpf')" class="alingArrowRight glyphicon "></i></th>
+                        <th>Operação<i ng-class="sorting('operacao')" ng-click="sortingTable('operacao')" class="alingArrowRight glyphicon "></i></th>
                         <th>Data<i ng-class="sorting('dt_atualizacao')" ng-click="sortingTable('dt_atualizacao')" class="alingArrowRight glyphicon "></i></th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr ng-repeat="item in list">
-                        <td>{{ item.nome }}</td>
-                        <td>{{ item.nuCpf }}</td>
-                        <td>{{ item.equipamento }}</td>
-                        <td>{{ item.acao }}</td>
-                        <td>{{ item.awb }}</td>
-                        <td>{{ item.local }}</td>
-                        <td>{{ item.data }}</td>
+                        <td>{{ item.noUsuario }}</td>
+                        <td>{{ item.codCpfCnpj }}</td>
+                        <td>{{ item.noDesc }}</td>
+                        <td>{{ item.dthLog }}</td>
                     </tr>
                 </tbody>
                 <tfoot>

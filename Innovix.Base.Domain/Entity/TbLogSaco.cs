@@ -15,6 +15,6 @@ namespace Innovix.Base.Domain.Entity {
         public virtual TbLocalidade tbLocalidade { get; set; }
         [Length(32)]
         public virtual string codBarras { get; set; }
-        public virtual DateTime? dthLog { get; set; }
+        public virtual DateTime dthLog { get; set; }
     }
 }

@@ -13,10 +13,12 @@ namespace INNOVIX_RFIX.Controllers
     public class RouteController : ControllerBase
     {
         private ITbRotaService service;
+        private IRelLocalidadeRotaService serviceRel;
 
-        public RouteController(ITbRotaService service)
+        public RouteController(ITbRotaService service, IRelLocalidadeRotaService serviceRl)
         {
             this.service = service;
+            this.serviceRel = serviceRl;
         }
 
         public ViewResult List()
@@ -59,13 +61,16 @@ namespace INNOVIX_RFIX.Controllers
 
         public JsonResult Get(int Id)
         {
+            var rel = this.serviceRel.Pesquisar(x => x.tbRota.Id == Id);
+
             var result = this.service
                .Pesquisar(x => x.Id == Id)
                .Select(x => new
                {
                    Id = x.Id,
                    noDesc = x.noDesc,
-                   noNome = x.noNome
+                   noNome = x.noNome,
+                   destiny = (rel.Count() > 0) ? rel.FirstOrDefault().tbLocalidade.Id : 0
                });
 
             return this.returnJson(result);
@@ -81,7 +86,21 @@ namespace INNOVIX_RFIX.Controllers
                     noNome = x.noNome
                 });
 
-            return this.returnJson(result.Skip((offset - 1) * limit).Take(limit), result.Count());
+            List<object> list = new List<object>();
+
+            foreach(var item in result) {
+                var rel = this.serviceRel.Pesquisar(x => x.tbRota.Id == item.Id);
+
+                list.Add(new 
+                {
+                    Id = item.Id,
+                    noDesc = item.noDesc,
+                    noNome = item.noNome,
+                    destiny = (rel.Count() > 0) ? rel.FirstOrDefault().tbLocalidade.noCidade : null
+                });
+            }
+
+            return this.returnJson(list.Skip((offset - 1) * limit).Take(limit), list.Count());
         }
 
         public JsonResult GetRoute(string search, int limit, int offset, string predicate, string order)

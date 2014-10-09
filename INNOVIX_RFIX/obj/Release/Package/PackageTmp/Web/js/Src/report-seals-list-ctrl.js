@@ -3,10 +3,22 @@
     $scope.search = "";
     $scope.predicate = 'id';
     $scope.order = 'ASC';
+    $scope.listLocation = [];
 
     $scope.init = function () {
+        $scope.getLocation();
         $scope.getReportItem(1);
     };
+
+    $scope.getLocation = function (id) {
+        $http.post(baseUrl + '/location/getAll', {
+            limit: 1000000,
+            offset: 1
+        })
+              .success(function (response) {
+                  $scope.listLocation = response.data;
+              });
+    }
 
     $scope.sorting = function (predicate) {
         if ($scope.predicate == predicate && $scope.order == 'DESC') {
@@ -55,17 +67,7 @@
             order: $scope.order
         })
         .success(function (response) {
-            response = {
-                data: [{
-                    Id: 1,
-                    awb: '00001',
-                    origin: 'teste',
-                    destiny: 'teste',
-                    route: 'teste',
-                    status: 'teste',
-                    dtAtualizacao: '10/02/2015'
-                }], total: 5
-            };
+
             $scope.list = response.data;
             $scope.totalItems = response.total;
         });
@@ -91,4 +93,28 @@
         });
 
     }
+
+    // Disable weekend selection
+    $scope.disabled = function (date, mode) {
+        return (mode === 'day' && (date.getDay() === 0 || date.getDay() === 6));
+    };
+
+    $scope.toggleMin = function () {
+        $scope.minDate = $scope.minDate ? null : new Date();
+    };
+    $scope.toggleMin();
+
+    $scope.open = function ($event) {
+        $event.preventDefault();
+        $event.stopPropagation();
+
+        $scope.opened = true;
+    };
+
+    $scope.dateOptions = {
+        formatYear: 'yy',
+        startingDay: 1
+    };
+
+    $scope.format = 'dd/MM/yyyy';
 });

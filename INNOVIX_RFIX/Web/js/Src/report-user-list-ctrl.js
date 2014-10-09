@@ -1,6 +1,6 @@
 ﻿app.controller('ReportUserListCtrl', function ($scope, $http) {
     $scope.list = [];
-    $scope.search = "";
+    $scope.search = {};
     $scope.predicate = 'id';
     $scope.order = 'ASC';
 
@@ -35,37 +35,14 @@
             order: $scope.order
         })
         .success(function (response) {
-            response = {
-                data: [{
-                    Id: 1,
-                    awb: '00001',
-                    local: 'teste',
-                    nome: 'teste',
-                    equipamento: 'teste',
-                    acao: 'teste',
-                    data: '10/02/2015',
-                    nuCpf: '03536388116',
-                    nome: 'Luk'
-                },
-                {
-                    Id: 1,
-                    awb: '00001',
-                    local: 'teste',
-                    nome: 'teste',
-                    equipamento: 'teste',
-                    acao: 'teste',
-                    data: '10/02/2015',
-                    nuCpf: '03536388116',
-                    nome: 'Luk'
-                }], total: 5
-            };
+            
             $scope.list = response.data;
             $scope.totalItems = response.total;
         });
 
     }
 
-    $scope.search = function (current) {
+    $scope.searchUser = function (current) {
         if (!$scope.search) {
             $scope.getReportItem(current);
             return;
@@ -78,19 +55,7 @@
             order: $scope.order
         })
         .success(function (response) {
-            response = {
-                data: [{
-                    Id: 1,
-                    awb: '00001',
-                    local: 'teste',
-                    nome: 'teste',
-                    equipamento: 'teste',
-                    acao: 'teste',
-                    data: '10/02/2015',
-                    nuCpf: '03536388116',
-                    nome: 'Luk'
-                }], total: 5
-            };
+          
             $scope.list = response.data;
             $scope.totalItems = response.total;
         });
@@ -108,4 +73,28 @@
 
     $scope.maxSize = global.limit;
     $scope.currentPage = 1;
+
+    // Disable weekend selection
+    $scope.disabled = function (date, mode) {
+        return (mode === 'day' && (date.getDay() === 0 || date.getDay() === 6));
+    };
+
+    $scope.toggleMin = function () {
+        $scope.minDate = $scope.minDate ? null : new Date();
+    };
+    $scope.toggleMin();
+
+    $scope.open = function ($event) {
+        $event.preventDefault();
+        $event.stopPropagation();
+
+        $scope.opened = true;
+    };
+
+    $scope.dateOptions = {
+        formatYear: 'yy',
+        startingDay: 1
+    };
+
+    $scope.format = 'dd/MM/yyyy';
 });

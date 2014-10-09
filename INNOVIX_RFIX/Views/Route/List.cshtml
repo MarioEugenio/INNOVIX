@@ -40,7 +40,6 @@
                         <th>Codigo<i ng-class="sorting('codigo')" ng-click="sortingTable('codigo')" class="alingArrowRight glyphicon "></i></th>
                         <th>Nome<i ng-class="sorting('nome')" ng-click="sortingTable('nome')" class="alingArrowRight glyphicon "></i></th>
                         <th>Descrição<i ng-class="sorting('desc')" ng-click="sortingTable('desc')" class="alingArrowRight glyphicon "></i></th>
-                        <th>Origem<i ng-class="sorting('origem')" ng-click="sortingTable('origem')" class="alingArrowRight glyphicon "></i></th>
                         <th>Destino<i ng-class="sorting('destino')" ng-click="sortingTable('destino')" class="alingArrowRight glyphicon "></i></th>
                         <th></th>
                     </tr>
@@ -50,8 +49,7 @@
                         <td>{{ item.Id }}</td>
                         <td>{{ item.noNome }}</td>
                         <td>{{ item.noDesc }}</td>
-                        <td>{{ item.noDesc }}</td>
-                        <td>{{ item.noDesc }}</td>
+                        <td>{{ item.destiny }}</td>
                         <td style="width:110px;">
                             <a class="btn btn-default btn-mini" href="#/route/{{ item.Id }}/alter"><span class="glyphicon glyphicon-edit"></span></a>
                             <a class="btn btn-default btn-mini"><span class="glyphicon glyphicon-trash"></span></a>

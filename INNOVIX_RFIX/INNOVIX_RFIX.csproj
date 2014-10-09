@@ -220,6 +220,9 @@
     <Content Include="Web\css\navbar.css" />
     <Content Include="Web\css\ng-grid.css" />
     <Content Include="Web\css\select.css" />
+    <Content Include="Web\css\select2-spinner.gif" />
+    <Content Include="Web\css\select2.png" />
+    <Content Include="Web\css\select2x2.png" />
     <Content Include="Web\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Web\img\logo\innovix_logosquare.png" />
     <Content Include="Web\js\bootstrap.js" />

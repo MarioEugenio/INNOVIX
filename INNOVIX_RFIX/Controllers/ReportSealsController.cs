@@ -57,25 +57,34 @@ namespace INNOVIX_RFIX.Controllers
                 .Select(x => new
                 {
                     Id =  x.Id,
-                      awb = x.tbLacre.indCodbarras,
-                      origin = x.tbLote.tbLocalidade.noCidade,
-                      destiny = x.tbLote.tbLocalidadeDest.noCidade,
-                      //route = ,
-                      //embarque = x.,
-                      status = x.tbItem.FirstOrDefault().tbStatus.noDesc,
+                    awb = (x.tbLacre != null) ? x.tbLacre.indCodbarras : null,
+                    origin = (x.tbLote != null)? x.tbLote.tbLocalidade.noCidade : null,
+                    destiny = (x.tbLote != null)? x.tbLote.tbLocalidadeDest.noCidade : null,
                       dtAtualizacao = x.dthCriacao.ToString("dd/MM/yyyy"),
-                      responsavel = x.tbLote.tbLocalidade.noResponsavel,
-                      lacre = x.tbLacre.Id,
-                      dtCadastro = x.tbItem.FirstOrDefault().dthCriacao.ToString("dd/MM/yyyy"),
-                      //epc = '0000000000000001111111542'
+                      lacre = (x.tbLacre != null)? x.tbLacre.Id : 0
                 });
 
             return this.returnJson(result.Skip((offset - 1) * limit).Take(limit), result.Count());
         }
 
-        public JsonResult GetReportItem(string search, int limit, int offset, string predicate, string order)
+        public JsonResult GetReportItem(searchSeals search, int limit, int offset, string predicate, string order)
         {
-            return this.returnJson("{}");
+            var result = this.serviceSaco
+                 .Pesquisar(x => (x.Id == search.cod)
+                   || (x.dthCriacao.Date >= search.dtAtualizacao.Date && x.dthCriacao.Date <= search.dtAtualizacao.Date)
+                   || (x.tbLote.tbLocalidade.Id == search.origem)
+                   || (x.tbLote.tbLocalidadeDest.Id == search.destino))
+                .Select(x => new
+                {
+                    Id = x.Id,
+                    awb = (x.tbLacre != null) ? x.tbLacre.indCodbarras : null,
+                    origin = (x.tbLote != null) ? x.tbLote.tbLocalidade.noCidade : null,
+                    destiny = (x.tbLote != null) ? x.tbLote.tbLocalidadeDest.noCidade : null,
+                    dtAtualizacao = x.dthCriacao.ToString("dd/MM/yyyy"),
+                    lacre = (x.tbLacre != null) ? x.tbLacre.Id : 0
+                });
+
+            return this.returnJson(result.Skip((offset - 1) * limit).Take(limit), result.Count());
         }
 
         public JsonResult GetAllHistory(int Id, int limit, int offset, string predicate, string order)
@@ -83,4 +92,12 @@ namespace INNOVIX_RFIX.Controllers
             return this.returnJson("{}");
         }
     }
+
+     public class searchSeals
+     {
+         public int cod { get; set; }
+         public int destino { get; set; }
+         public int origem { get; set; }
+         public DateTime dtAtualizacao { get; set; }
+     }
 }
