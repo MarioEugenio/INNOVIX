@@ -16,7 +16,7 @@
                 <div class="input-group">
                     <div class="col-lg-6">
                         <div class="form-group input-group">
-                              <input type="text" class="form-control" readonly="true" placeholder="Data de Atualização" datepicker-popup="{{format}}" ng-model="search.dtAtualizacao" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+                              <input type="text" class="form-control" readonly="true" placeholder="Data de Atualização" datepicker-popup="{{format}}" ng-model="search.dtAtualizacao" is-open="opened"  datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
                               <span class="input-group-btn">
                                 <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
                               </span>
@@ -31,7 +31,7 @@
                     </div>
                     <div class="col-lg-6">
                         <div class="form-group input-group">
-                            <input type="text" class="form-control" ng-model="search.awb" placeholder="Embarque">
+                            <input type="text" class="form-control" ng-model="search.cod" placeholder="Embarque">
                         </div>
                         <div class="form-group">
                             <label>Destino</label>
@@ -42,7 +42,7 @@
                         </div>
                     </div>
                     <div class="input-group-btn">
-                        <button class="btn btn-default" ng-click="search(1)" type="button"><span class="glyphicon glyphicon-search"></span> Pesquisar</button>
+                        <button class="btn btn-default" ng-click="searchBoarding(1)" type="button"><span class="glyphicon glyphicon-search"></span> Pesquisar</button>
                     </div>
                     <div class="input-group-btn">
                         <button class="btn btn-default" ng-click="clear()" type="button"><span class="glyphicon glyphicon-trash"></span> Limpar</button>
@@ -52,6 +52,16 @@
             </div>
           </div>
         </div>
+
+        <div>
+            <li class="dropdown" style="display: inline;">
+                <a href="#" class=" btn btn-primary  dropdown-toggle"  data-toggle="dropdown"><span class="glyphicon glyphicon-export"></span> Exportar <span class="caret"></span></a>
+                <ul class="dropdown-menu " role="menu">
+			        <li> <a  download="relatorio de itens.xls" href="#" onclick="return ExcellentExport.excel(this, 'reportItens', 'RelatorioExcel');">Excel</a></li>
+			        <li><a href="#/report/boarding/list" ng-click="exportPDF()">PDF</a></li>
+		        </ul>
+            </li>
+        </div><br />
 
         <div ng-show="list.length == 0" class="alert alert-warning" role="alert">
             <a href="#" class="alert-link"><span class="glyphicon glyphicon-warning-sign"></span> Não houve retorno de registros</a>
@@ -79,7 +89,7 @@
                         <td>{{ item.status }}</td>
                         <td>{{ item.dtAtualizacao }}</td>
                         <td style="width:110px;">
-                            <a class="btn btn-default btn-mini" ng-click="open(item.Id)"><span class="glyphicon glyphicon-list-alt"></span></a>
+                            <a class="btn btn-default btn-mini" ng-click="openModal(item.Id)"><span class="glyphicon glyphicon-list-alt"></span></a>
                         </td>
                     </tr>
                 </tbody>
@@ -97,6 +107,30 @@
                 </tfoot>
             </table>
         </div>
+        <div id="tableReport">
+            <table id="reportItens" class="table table-striped" style="display:none">
+                <thead>
+                    <tr >
+                        <th>Embarque</th>
+                        <th>Origem</th>
+                        <th>Destino</th>
+                        <th>Rota</th>
+                        <th>Status</th>
+                        <th>Ult. Atualização</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in export">
+                        <td>{{ item.noDesc }}</td>
+                        <td>{{ item.origin }}</td>
+                        <td>{{ item.destiny }}</td>
+                        <td>{{ item.route }}</td>
+                        <td>{{ item.status }}</td>
+                        <td>{{ item.dtAtualizacao }}</td>
+                    </tr>
+                </tbody>
+            </table>
+       </div>
     </p>
 </div>
 

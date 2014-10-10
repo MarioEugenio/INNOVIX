@@ -1,6 +1,6 @@
 ﻿app.controller('ReportUserListCtrl', function ($scope, $http) {
     $scope.list = [];
-    $scope.search = "";
+    $scope.search = {};
     $scope.predicate = 'id';
     $scope.order = 'ASC';
 
@@ -42,7 +42,7 @@
 
     }
 
-    $scope.search = function (current) {
+    $scope.searchUser = function (current) {
         if (!$scope.search) {
             $scope.getReportItem(current);
             return;

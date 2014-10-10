@@ -15,6 +15,26 @@
         return 'glyphicon glyphicon-chevron-up';
     };
 
+    $scope.remove = function (index, item) {
+        console.log(item);
+        var conf = confirm('Tem certeza que deseja remover?');
+        if (conf) {
+            $http.post(baseUrl + '/location/remove', { Id: item.Id })
+               .success(function (response) {
+                   if (response.success) {
+                       $scope.list.splice(index, 1);
+                   }
+
+                   Modal.alert(
+                          response.message,
+                          global.titleModal,
+                          response.success
+                       );
+               });
+        }
+    }
+
+
     $scope.sortingTable = function (predicate) {
 
         if ($scope.predicate == predicate && $scope.order == 'DESC') {

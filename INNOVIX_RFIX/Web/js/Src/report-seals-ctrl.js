@@ -40,21 +40,9 @@
     $scope.get = function (id) {
         $http.post(baseUrl + '/reportSeals/get', { Id: id })
               .success(function (data) {
-                  $scope.objItem = {
-                      Id: 1,
-                      awb: '00001',
-                      origin: 'teste',
-                      destiny: 'teste',
-                      route: 'teste',
-                      embarque: 'Embarque',
-                      status: 'teste',
-                      dtAtualizacao: '10/02/2015',
-                      responsavel: 'Teste',
-                      lacre: 'Teste',
-                      embarque: 'Teste',
-                      dtCadastro: '10/02/2015',
-                      epc: '0000000000000001111111542',
-                  };
+                  if (data.length > 0) {
+                    $scope.objItem = data[0];
+                  }
               });
     };
 
@@ -67,26 +55,6 @@
             order: $scope.order
         })
         .success(function (response) {
-            response = {
-                data: [{
-                    Id: 1,
-                    awb: '00001',
-                    origin: 'teste',
-                    destiny: 'teste',
-                    route: 'teste',
-                    status: 'teste',
-                    dtAtualizacao: '10/02/2015'
-                },
-                {
-                    Id: 1,
-                    awb: '00002',
-                    origin: 'teste',
-                    destiny: 'teste',
-                    route: 'teste',
-                    status: 'teste',
-                    dtAtualizacao: '10/02/2015'
-                }], total: 5
-            };
             $scope.list = response.data;
             $scope.totalItems = response.total;
         });

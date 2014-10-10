@@ -8,16 +8,6 @@
     <h3>Embarques</h3>
     </div>
     <p>
-        <div>
-            <li class="dropdown" style="display: inline;">
-                <a href="#" class=" btn btn-primary  dropdown-toggle"  data-toggle="dropdown">Exportar <span class="caret"></span></a>
-                <ul class="dropdown-menu " role="menu">
-			        <li> <a  download="relatorio de itens.xls" href="#" onclick="return ExcellentExport.excel(this, 'reportItens', 'RelatorioExcel');">Excel</a></li>
-			        <li><a href="#/report/boarding/list" ng-click="exportPDF()">PDF</a></li>
-		        </ul>
-            </li>
-        </div>
-        <br />
         <div class="panel panel-default">
           <div class="panel-heading">Pesquise embarques cadastrados</div>
           <div class="panel-body">
@@ -62,6 +52,16 @@
             </div>
           </div>
         </div>
+
+        <div>
+            <li class="dropdown" style="display: inline;">
+                <a href="#" class=" btn btn-primary  dropdown-toggle"  data-toggle="dropdown"><span class="glyphicon glyphicon-export"></span> Exportar <span class="caret"></span></a>
+                <ul class="dropdown-menu " role="menu">
+			        <li> <a  download="relatorio de itens.xls" href="#" onclick="return ExcellentExport.excel(this, 'reportItens', 'RelatorioExcel');">Excel</a></li>
+			        <li><a href="#/report/boarding/list" ng-click="exportPDF()">PDF</a></li>
+		        </ul>
+            </li>
+        </div><br />
 
         <div ng-show="list.length == 0" class="alert alert-warning" role="alert">
             <a href="#" class="alert-link"><span class="glyphicon glyphicon-warning-sign"></span> Não houve retorno de registros</a>

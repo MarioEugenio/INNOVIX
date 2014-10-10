@@ -33,17 +33,19 @@ namespace INNOVIX_RFIX.Controllers
 
         public JsonResult Get(int Id)
         {
-            var result = this.service
+            var result = this.serviceSaco
                .Pesquisar(x => x.Id == Id)
                .Select(x => new
                {
                    Id = x.Id,
-                   awb = x.codBarras,
-                   origin = x.tbEquipamento.tbLocalidade.noNome,
-                   destiny = x.tbLocalidade.noNome,
-                   //route = null,
-                   status = x.tbOperacao.noDesc,
-                   dtAtualizacao = x.dthLog
+                   awb = (x.tbLacre != null) ? x.tbLacre.indCodbarras : null,
+                   origin = (x.tbLote != null) ? x.tbLote.tbLocalidade.noCidade : null,
+                   destiny = (x.tbLote != null) ? x.tbLote.tbLocalidadeDest.noCidade : null,
+                   dtCadastro = x.dthCriacao.ToString("dd/MM/yyyy"),
+                   dtAtualizacao = (x.listSaco.Count() > 0)? x.listSaco.FirstOrDefault().dthCriacao.ToString("dd/MM/yyyy") : null,
+                   lacre = (x.tbLacre != null) ? x.tbLacre.Id : 0,
+                   responsavel = (x.tbLote != null)? x.tbLote.tbLocalidade.noResponsavel : null,
+                   route = (x.tbLote != null)? x.tbLote.tbRota.noNome : null
 
                });
 
@@ -89,7 +91,23 @@ namespace INNOVIX_RFIX.Controllers
 
         public JsonResult GetAllHistory(int Id, int limit, int offset, string predicate, string order)
         {
-            return this.returnJson("{}");
+            var obj = this.serviceSaco.ObterPorId(Id);
+
+            var result = this.service
+               .Pesquisar(x => x.codBarras == obj.tbLacre.indCodbarras.ToString())
+               .Select(x => new
+               {
+                   Id = x.Id,
+                   awb = x.tbEquipamento.tbLogsaco.FirstOrDefault().codBarras,
+                   local = x.tbEquipamento.tbLocalidade.noNome,
+                   destiny = (x.tbLocalidade != null) ? x.tbLocalidade.noCidade : null,
+                   origin = (x.tbEquipamento != null) ? x.tbEquipamento.tbLocalidade.noCidade : null,
+                   dtAtualizacao = x.dthLog.ToString("dd/MM/yyyy"),
+                   //route = (x.tbEquipamento != null) ? x.tbEquipamento.tbRota.noNome : null
+
+               });
+
+            return this.returnJson(result.Skip((offset - 1) * limit).Take(limit), result.Count(), result);
         }
     }
 
