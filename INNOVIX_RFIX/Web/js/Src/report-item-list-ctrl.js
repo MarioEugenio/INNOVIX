@@ -1,5 +1,6 @@
 ﻿app.controller('ReportItemListCtrl', function ($scope, $http, $modal, $routeParams) {
     $scope.list = [];
+    $scope.export = [];
     $scope.search = {};
     $scope.predicate = 'id';
     $scope.order = 'ASC';
@@ -19,6 +20,24 @@
                   $scope.listLocation = response.data;
               });
     }
+
+    $scope.exportPDF = function () {
+        var doc = new jsPDF('landscape', 'pt', 'a4');
+        doc.setFont("times", "normal");
+        doc.text(20, 20, "Relatorio de Itens");
+				doc.setFontSize(12);
+				data = [];
+				data = doc.tableToJson('reportItens');
+				height = doc.drawTable(data, {
+					xstart : 15,
+					ystart : 40,
+					tablestart : 30,
+					marginleft : 40,
+					xOffset : 5,
+					yOffset : 15
+				});
+				doc.save('Relatorio de Itens.pdf');
+    };
 
     $scope.sorting = function (predicate) {
         if ($scope.predicate == predicate && $scope.order == 'DESC') {
@@ -48,6 +67,7 @@
         })
         .success(function (response) {
             $scope.list = response.data;
+            $scope.export = response.export;
             $scope.totalItems = response.total;
         });
 
@@ -68,6 +88,7 @@
         })
         .success(function (response) {
             $scope.list = response.data;
+            $scope.export = response.export;
             $scope.totalItems = response.total;
         });
 

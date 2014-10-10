@@ -41,7 +41,17 @@ namespace INNOVIX_RFIX
                         "~/Web/js/Externals/angular/angular-select.js",
                         "~/Web/js/Externals/angular/strap/dist/angular-strap.js",
                         "~/Web/js/Externals/angular/ui/ui-bootstrap.js",
-                        "~/Web/js/Externals/angular/angular-router.js"));
+                        "~/Web/js/Externals/angular/angular-router.js",
+                        "~/Web/js/Externals/htmltable_export/jsPDF0.9/jspdf.js",
+                        "~/Web/js/Externals/htmltable_export/jsPDF0.9/jspdf.plugin.standard_fonts_metrics.js",
+                        "~/Web/js/Externals/htmltable_export/jsPDF0.9/jspdf.plugin.split_text_to_size.js",
+                        "~/Web/js/Externals/htmltable_export/jsPDF0.9/jspdf.plugin.from_html.js",
+                        "~/Web/js/Externals/htmltable_export/jsPDF0.9/libs/Deflate/adler32cs.js",
+                        "~/Web/js/Externals/htmltable_export/jsPDF0.9/libs/FileSaver.js/FileSaver.js",
+                        "~/Web/js/Externals/htmltable_export/jsPDF0.9/libs/Blob.js/BlobBuilder.js",
+                        "~/Web/js/Externals/htmltable_export/jsPDF0.9/jspdf.plugin.addimage.js",
+                        "~/Web/js/Externals/htmltable_export/jsPDF0.9/jspdf.plugin.table.js",
+                        "~/Web/js/Externals/htmltable_export/excellentexport.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include("~/Web/css/bootstrap.css",
                 "~/Web/css/bootstrap-theme.css",

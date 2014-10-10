@@ -8,6 +8,16 @@
     <h3>Itens</h3>
     </div>
     <p>
+        <div>
+            <li class="dropdown" style="display: inline;">
+                <a href="#" class=" btn btn-primary  dropdown-toggle"  data-toggle="dropdown">Exportar <span class="caret"></span></a>
+                <ul class="dropdown-menu " role="menu">
+			        <li> <a  download="relatorio de itens.xls" href="#" onclick="return ExcellentExport.excel(this, 'reportItens', 'RelatorioExcel');">Excel</a></li>
+			        <li><a href="#/report/item/list" ng-click="exportPDF()">PDF</a></li>
+		        </ul>
+            </li>
+        </div>
+        <br />
         <div class="panel panel-default">
           <div class="panel-heading">Pesquise itens cadastrados</div>
           <div class="panel-body">
@@ -97,7 +107,30 @@
                 </tfoot>
             </table>
         </div>
-       
+        <div id="tableReport">
+            <table id="reportItens" class="table table-striped" style="display:none">
+                <thead>
+                    <tr >
+                        <th>AWB</th>
+                        <th>Origem</th>
+                        <th>Destino</th>
+                        <th>Rota</th>
+                        <th>Status</th>
+                        <th>Ult. Atualização</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in export">
+                        <td>{{ item.awb }}</td>
+                        <td>{{ item.origin }}</td>
+                        <td>{{ item.destiny }}</td>
+                        <td>{{ item.route }}</td>
+                        <td>{{ item.status }}</td>
+                        <td>{{ item.dtAtualizacao }}</td>
+                    </tr>
+                </tbody>
+            </table>
+       </div>
     </p>
 </div>
 

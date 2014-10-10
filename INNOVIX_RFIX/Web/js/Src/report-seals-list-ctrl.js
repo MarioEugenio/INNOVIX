@@ -1,5 +1,6 @@
 ﻿app.controller('ReportSealsListCtrl', function ($scope, $http, $modal, $routeParams) {
     $scope.list = [];
+    $scope.export = [];
     $scope.search = {};
     $scope.predicate = 'id';
     $scope.order = 'ASC';
@@ -19,6 +20,24 @@
                   $scope.listLocation = response.data;
               });
     }
+
+    $scope.exportPDF = function () {
+        var doc = new jsPDF('landscape', 'pt', 'a4');
+        doc.setFont("times", "normal");
+        doc.text(20, 20, "Relatorio de Lacres");
+        doc.setFontSize(12);
+        data = [];
+        data = doc.tableToJson('reportItens');
+        height = doc.drawTable(data, {
+            xstart: 15,
+            ystart: 40,
+            tablestart: 30,
+            marginleft: 40,
+            xOffset: 5,
+            yOffset: 15
+        });
+        doc.save('Relatorio de Lacres.pdf');
+    };
 
     $scope.sorting = function (predicate) {
         if ($scope.predicate == predicate && $scope.order == 'DESC') {
@@ -47,7 +66,7 @@
             order: $scope.order
         })
         .success(function (response) {
-           
+            $scope.export = response.export;
             $scope.list = response.data;
             $scope.totalItems = response.total;
         });
@@ -67,7 +86,7 @@
             order: $scope.order
         })
         .success(function (response) {
-
+            $scope.export = response.export;
             $scope.list = response.data;
             $scope.totalItems = response.total;
         });
