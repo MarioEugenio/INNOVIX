@@ -1,5 +1,6 @@
 ﻿app.controller('ReportSealsCtrl', function ($scope, $http, $routeParams) {
     $scope.list = [];
+    $scope.export = [];
     $scope.objItem = {};
     $scope.search = "";
     $scope.predicate = 'id';
@@ -22,6 +23,37 @@
             return 'glyphicon glyphicon-chevron-down';
         }
         return 'glyphicon glyphicon-chevron-up';
+    };
+
+    $scope.exportPDF = function () {
+        var doc = new jsPDF('landscape', 'pt', 'a4');
+        doc.setFont("times", "normal");
+        doc.text(20, 20, "AWB: " + ($scope.objItem.awb|| ''));
+        doc.text(300, 20, "Origem: " + ($scope.objItem.origin|| ''));
+        doc.text(20, 40, "Status: " + ($scope.objItem.status|| ''));
+        doc.text(300, 40, "Destino: " + ($scope.objItem.destiny|| ''));
+        doc.text(20, 60, "Embarque: " + ($scope.objItem.embarque|| ''));
+        doc.text(300, 60, "Rota: " + ($scope.objItem.route|| ''));
+        doc.text(20, 80, "Dt. Atualização: " + ($scope.objItem.dtAtualizacao|| ''));
+        doc.text(300, 80, "Dt. Cadastro: " + ($scope.objItem.dtCadastro|| ''));
+        doc.text(20, 100, "Responsável: " + ($scope.objItem.responsavel|| ''));
+        doc.text(300, 100, "EPC: " + ($scope.objItem.epc|| ''));
+
+        data = [];
+        data = doc.tableToJson('reportItenPDFItem');
+        if (data.length) {
+            doc.text(20, 140, "Itens");
+            doc.setFontSize(12);
+            height = doc.drawTable(data, {
+                xstart: 15,
+                ystart: 40,
+                tablestart: 160,
+                marginleft: 40,
+                xOffset: 5,
+                yOffset: 15
+            });
+        }
+        doc.save('Relatorio de lacres.pdf');
     };
 
     $scope.sortingTable = function (predicate) {
@@ -85,8 +117,27 @@
                     route: 'teste',
                     status: 'teste',
                     dtAtualizacao: '10/02/2015'
+                }],
+                export: [{
+                    Id: 1,
+                    awb: '00001',
+                    origin: 'teste',
+                    destiny: 'teste',
+                    route: 'teste',
+                    status: 'teste',
+                    dtAtualizacao: '10/02/2015'
+                },
+                {
+                    Id: 1,
+                    awb: '00002',
+                    origin: 'teste',
+                    destiny: 'teste',
+                    route: 'teste',
+                    status: 'teste',
+                    dtAtualizacao: '10/02/2015'
                 }], total: 5
             };
+            $scope.export = response.export;
             $scope.list = response.data;
             $scope.totalItems = response.total;
         });
