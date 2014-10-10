@@ -51,6 +51,8 @@ namespace INNOVIX_RFIX
                         "~/Web/js/Externals/htmltable_export/jsPDF0.9/libs/Blob.js/BlobBuilder.js",
                         "~/Web/js/Externals/htmltable_export/jsPDF0.9/jspdf.plugin.addimage.js",
                         "~/Web/js/Externals/htmltable_export/jsPDF0.9/jspdf.plugin.table.js",
+                        "~/Web/js/Externals/htmltable_export/jsPDF0.9/jspdf.plugin.cell.js",
+                        "~/Web/js/Externals/htmltable_export/jsPDF0.9/jspdf.debug.js",
                         "~/Web/js/Externals/htmltable_export/excellentexport.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include("~/Web/css/bootstrap.css",

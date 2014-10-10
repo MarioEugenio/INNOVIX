@@ -1,5 +1,6 @@
 ﻿app.controller('ReportUserListCtrl', function ($scope, $http) {
     $scope.list = [];
+    $scope.export = [];
     $scope.search = {};
     $scope.predicate = 'id';
     $scope.order = 'ASC';
@@ -13,6 +14,24 @@
             return 'glyphicon glyphicon-chevron-down';
         }
         return 'glyphicon glyphicon-chevron-up';
+    };
+
+    $scope.exportPDF = function () {
+        var doc = new jsPDF('landscape', 'pt', 'a4');
+        doc.setFont("times", "normal");
+        doc.text(20, 20, "Logs de usuario");
+        doc.setFontSize(12);
+        data = [];
+        data = doc.tableToJson('reportItens');
+        height = doc.drawTable(data, {
+            xstart: 15,
+            ystart: 40,
+            tablestart: 30,
+            marginleft: 40,
+            xOffset: 5,
+            yOffset: 15
+        });
+        doc.save('log de Usuario.pdf');
     };
 
     $scope.sortingTable = function (predicate) {
@@ -35,7 +54,7 @@
             order: $scope.order
         })
         .success(function (response) {
-            
+            $scope.export = response.export;
             $scope.list = response.data;
             $scope.totalItems = response.total;
         });

@@ -88,7 +88,7 @@ jsPDFAPI.initPDF = function(data,marginConfig,firstpage) {
 
 //draws table on the document 
 
-jsPDFAPI.drawTable = function(table_DATA, marginConfig) {
+jsPDFAPI.drawTable = function (table_DATA, marginConfig, table_DATA2) {
 	fdata = [], sdata = [];
 	SplitIndex = [], cSplitIndex = [], indexHelper = 0;
 	heights = [];
@@ -142,6 +142,16 @@ jsPDFAPI.drawTable = function(table_DATA, marginConfig) {
 	} else {
 		this.insertHeader(table_DATA)
 		this.pdf(table_DATA, dim, true, false);
+	}
+	if (table_DATA2) {
+	    this.addPage();
+	    this.setFont("times", "normal");
+	    this.text(20, 20, "Lacres");
+	    this.setFontSize(12);
+	    marginConfig.tablestart = 40;
+	    this.initPDF(table_DATA2, marginConfig, true);
+	    this.insertHeader(table_DATA2)
+	    this.pdf(table_DATA2, dim, true, false);
 	}
 	return nextStart;
 };

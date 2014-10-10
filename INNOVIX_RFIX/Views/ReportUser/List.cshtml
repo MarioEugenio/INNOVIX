@@ -8,6 +8,7 @@
     <h3>Logs</h3>
     </div>
     <p>
+ 
         <div class="panel panel-default">
           <div class="panel-heading">Pesquise logs cadastrados</div>
           <div class="panel-body">
@@ -39,7 +40,16 @@
           </div>
         </div>
 
-        <p><button class="btn btn-primary"><span class="glyphicon glyphicon-print"></span> Exportar PDF</button></p>
+        <div>
+            <li class="dropdown" style="display: inline;">
+                <a href="#" class=" btn btn-primary  dropdown-toggle"  data-toggle="dropdown"><span class="glyphicon glyphicon-print"></span> Exportar <span class="caret"></span></a>
+                <ul class="dropdown-menu " role="menu">
+			        <li> <a  download="logs de usuario.xls" href="#" onclick="return ExcellentExport.excel(this, 'reportItens', 'RelatorioExcel');">Excel</a></li>
+			        <li><a href="#/report/user/list" ng-click="exportPDF()">PDF</a></li>
+		        </ul>
+            </li>
+        </div>
+        <br />
 
         <div ng-show="list.length == 0" class="alert alert-warning" role="alert">
             <a href="#" class="alert-link"><span class="glyphicon glyphicon-warning-sign"></span> Não houve retorno de registros</a>
@@ -77,7 +87,26 @@
                 </tfoot>
             </table>
         </div>
-       
+       <div id="tableReport">
+            <table id="reportItens" class="table table-striped" style="display:none">
+                <thead>
+                    <tr >
+                        <th>Nome</th>
+                        <th>CPF / CNPJ</th>
+                        <th>Operação</th>
+                        <th>Data</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in export">
+                        <td>{{ item.noUsuario }}</td>
+                        <td>{{ item.codCpfCnpj }}</td>
+                        <td>{{ item.noDesc }}</td>
+                        <td>{{ item.dthLog }}</td>
+                    </tr>
+                </tbody>
+            </table>
+       </div>
     </p>
 </div>
 
