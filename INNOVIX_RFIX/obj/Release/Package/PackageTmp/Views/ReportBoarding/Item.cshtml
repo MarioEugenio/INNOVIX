@@ -1,0 +1,286 @@
+﻿@{
+    Layout = null;
+}
+
+<div ng-controller="ReportBoardingCtrl" ng-init="init()">
+  <div>
+        <div class="modal-header">
+           <button  class="close"  ng-click="close()">&times;</button>
+           <h3>Detalhamento Embarque</h3>
+        </div>
+        <div class="modal-body">
+    <p>
+        <div>
+            <li class="dropdown" style="display: inline;">
+                <a href="#" class=" btn btn-primary  dropdown-toggle"><span class="glyphicon glyphicon-print"></span> Exportar <span class="caret"></span></a>
+                <ul class="dropdown-menu " role="menu">
+			        <li> <a  download="relatorio de embarque.xls" href="#" onclick="return ExcellentExport.excel(this, 'reportItenExcel', 'RelatorioExcel');">Excel</a></li>
+			        <li><a href="#/report/boarding/list" ng-click="exportPDF()">PDF</a></li>
+		        </ul>
+            </li>
+        </div>
+        <br />
+        <div class="panel panel-default">
+          <div class="panel-body">
+              <div class="row">
+                <div>
+                    <div class="painel-information-now">
+                        <div class="painel-information">Embarque:</div><div class="painel-value">{{ objItem.embarque }}</div>
+                    </div>
+                    <div class="painel-information-now">
+                        <div class="painel-information">Status:</div><div class="painel-value">{{ objItem.status }}</div>
+                    </div>
+                    <div class="painel-information-now">
+                        <div class="painel-information">Origem:</div><div class="painel-value">{{ objItem.origin }}</div>
+                    </div>
+                    <div class="painel-information-now">
+                        <div class="painel-information">Dt. Atualização:</div><div class="painel-value">{{ objItem.dtAtualizacao }}</div>
+                    </div>
+                    <div class="painel-information-now">
+                        <div class="painel-information">Destino:</div><div class="painel-value">{{ objItem.destiny }}</div>
+                    </div>
+                    <div class="painel-information-now">
+                        <div class="painel-information">Dt. Cadastro:</div><div class="painel-value">{{ objItem.dtCadastro }}</div>
+                    </div>
+                    <div class="painel-information-now">
+                        <div class="painel-information">Lacre:</div><div class="painel-value">{{ objItem.lacre }}</div>
+                    </div>
+                    <div class="painel-information-now">
+                        <div class="painel-information">Total Itens:</div><div class="painel-value">{{ objItem.totalItens }}</div>
+                    </div>
+                    <div class="painel-information-now">
+                        <div class="painel-information">Itens Entregues:</div><div class="painel-value">{{ objItem.totalItensEntregues }}</div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+
+        <div ng-show="listSeals.length == 0" class="alert alert-warning" role="alert">
+            <a href="#" class="alert-link"><span class="glyphicon glyphicon-warning-sign"></span> Não houve retorno de registros</a>
+        </div>
+
+        <div ng-show="listSeals.length" class="panel panel-default">
+            <div class="panel-heading">Lacres</div>
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr class="table-header">
+                        <th>Localidade<i ng-class="sorting('localidade')" ng-click="sortingTable('localidade')" class="alingArrowRight glyphicon "></i></th>
+                        <th>Data<i ng-class="sorting('data')" ng-click="sortingTable('data')" class="alingArrowRight glyphicon "></i></th>
+                        <th>Total Itens Lidos<i ng-class="sorting('totalItensLidos')" ng-click="sortingTable('totalItensLidos')" class="alingArrowRight glyphicon "></i></th>
+                        <th>Operador<i ng-class="sorting('operador')" ng-click="sortingTable('operador')" class="alingArrowRight glyphicon "></i></th>
+                     
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in listSeals">
+                        <td>{{ item.localidade }}</td>
+                        <td>{{ item.data }}</td>
+                        <td>{{ item.totalItensLidos }}</td>
+                        <td>{{ item.operador }}</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="4" class="table-footer">
+                            <div class="pull-left">
+                                <pagination  previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;" total-items="totalItems" ng-model="currentPage" max-size="maxSize" ng-change="pageChanged()" boundary-links="true" rotate="false" num-pages="numPages"></pagination>
+                            </div>
+                            <div class="pull-right table-count">
+                                <h5>Total de registros <span class="label label-primary">{{ totalItems }}</span></h5>
+                            </div>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+      <!--  <div ng-show="listSeals.length" class="panel panel-default">
+            <div class="panel-heading">Lacres</div>
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr class="table-header">
+                        <th>Código<i ng-class="sortingSeals('awb')" ng-click="sortingTableSeals('awb')" class="alingArrowRight glyphicon "></i></th>
+                        <th>Origem<i ng-class="sortingSeals('origem')" ng-click="sortingTableSeals('origem')" class="alingArrowRight glyphicon "></i></th>
+                        <th>Destino<i ng-class="sortingSeals('destino')" ng-click="sortingTableSeals('destino')" class="alingArrowRight glyphicon "></i></th>
+                        <th>Rota<i ng-class="sortingSeals('rota')" ng-click="sortingTableSeals('rota')" class="alingArrowRight glyphicon "></i></th>
+                        <th>Status<i ng-class="sortingSeals('status')" ng-click="sortingTableSeals('status')" class="alingArrowRight glyphicon "></i></th>
+                        <th>Ult. Atualização<i ng-class="sortingSeals('dt_atualizacao')" ng-click="sortingTableSeals('dt_atualizacao')" class="alingArrowRight glyphicon "></i></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in listSeals">
+                        <td>{{ item.awb }}</td>
+                        <td>{{ item.origin }}</td>
+                        <td>{{ item.destiny }}</td>
+                        <td>{{ item.route }}</td>
+                        <td>{{ item.status }}</td>
+                        <td>{{ item.dtAtualizacao }}</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="6" class="table-footer">
+                            <div class="pull-left">
+                                <pagination  previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;" total-items="totalSeals" ng-model="currentPageSeals" max-size="maxSize" ng-change="pageChangedSeals()" boundary-links="true" rotate="false" num-pages="numPages"></pagination>
+                            </div>
+                            <div class="pull-right table-count">
+                                <h5>Total de registros <span class="label label-primary">{{ totalItems }}</span></h5>
+                            </div>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>-->
+        </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-default" ng-click="close()">Fechar</button>
+        </div>
+    </div>
+    <div id="tableReport">
+            <table id="reportItenExcel" class="table table-striped" style="display:none">
+                <thead>
+                    <tr >
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr >
+                        <td>Detalhamento</td>
+                    </tr>
+                </tbody>
+                <thead>
+                    <tr >
+                        <th>Embarque</th>
+                        <th>Status</th>
+                        <th>Origem</th>
+                        <th>Dt. Atualização</th>
+                        <th>Destino</th>
+                        <th>Dt. Cadastro</th>
+                        <th>Rota</th>
+                        <th>Responsável</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr >
+                        <td>{{ objItem.embarque }}</td>
+                        <td>{{ objItem.status }}</td>
+                        <td>{{ objItem.origin }}</td>
+                        <td>{{ objItem.dtAtualizacao }}</td>
+                        <td>{{ objItem.destiny }}</td>
+                        <td>{{ objItem.route }}</td>
+                        <td>{{ objItem.dtCadastro }}</td>
+                        <td>{{ objItem.responsavel }}</td>
+                    </tr>
+                </tbody>
+                <thead>
+                    <tr >
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr >
+                        <td>Itens</td>
+                    </tr>
+                </tbody>
+                 <thead>
+                    <tr >
+                        <th>AWB</th>
+                        <th>Origem</th>
+                        <th>Destino</th>
+                        <th>Rota</th>
+                        <th>Status</th>
+                        <th>Ult. Atualização</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in export">
+                        <td>{{ item.awb }}</td>
+                        <td>{{ item.origin }}</td>
+                        <td>{{ item.destiny }}</td>
+                        <td>{{ item.route }}</td>
+                        <td>{{ item.status }}</td>
+                        <td>{{ item.dtAtualizacao }}</td>
+                    </tr>
+                </tbody>
+                <thead>
+                    <tr >
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr >
+                        <td>Lacres</td>
+                    </tr>
+                </tbody>
+                <thead>
+                    <tr >
+                        <th>Código</th>
+                        <th>Origem</th>
+                        <th>Destino</th>
+                        <th>Rota</th>
+                        <th>Status</th>
+                        <th>Ult. Atualização</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in exportSeals">
+                        <td>{{ item.awb }}</td>
+                        <td>{{ item.origin }}</td>
+                        <td>{{ item.destiny }}</td>
+                        <td>{{ item.route }}</td>
+                        <td>{{ item.status }}</td>
+                        <td>{{ item.dtAtualizacao }}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        <table id="reportItenPDFItem" class="table table-striped" style="display:none">
+                 <thead>
+                    <tr >
+                        <th>AWB</th>
+                        <th>Origem</th>
+                        <th>Destino</th>
+                        <th>Rota</th>
+                        <th>Status</th>
+                        <th>Ult. Atualização</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in export">
+                        <td>{{ item.awb }}</td>
+                        <td>{{ item.origin }}</td>
+                        <td>{{ item.destiny }}</td>
+                        <td>{{ item.route }}</td>
+                        <td>{{ item.status }}</td>
+                        <td>{{ item.dtAtualizacao }}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        <table id="reportItenPDFSeals" class="table table-striped" style="display:none">
+                <thead>
+                    <tr >
+                        <th>Código</th>
+                        <th>Origem</th>
+                        <th>Destino</th>
+                        <th>Rota</th>
+                        <th>Status</th>
+                        <th>Ult. Atualização</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in exportSeals">
+                        <td>{{ item.awb }}</td>
+                        <td>{{ item.origin }}</td>
+                        <td>{{ item.destiny }}</td>
+                        <td>{{ item.route }}</td>
+                        <td>{{ item.status }}</td>
+                        <td>{{ item.dtAtualizacao }}</td>
+                    </tr>
+                </tbody>
+            </table>
+       </div>
+    </div>
+
+
