@@ -2,7 +2,7 @@
     $scope.list = [];
     $scope.export = [];
     $scope.search = {};
-    $scope.predicate = 'id';
+    $scope.predicate = 'data';
     $scope.order = 'ASC';
 
     $scope.init = function () {
@@ -43,10 +43,12 @@
             $scope.predicate = predicate;
             $scope.order = 'DESC';
         }
-        $scope.search(1);
+        $scope.searchUser(1);
     };
 
     $scope.getReportItem = function (current) {
+        Loading.showAll();
+
         $http.post(baseUrl + '/reportUser/getAll', {
             limit: global.limit,
             offset: current,
@@ -57,6 +59,8 @@
             $scope.export = response.export;
             $scope.list = response.data;
             $scope.totalItems = response.total;
+
+            Loading.hideAll();
         });
 
     }
@@ -66,6 +70,9 @@
             $scope.getReportItem(current);
             return;
         }
+
+        Loading.showAll();
+
         $http.post(baseUrl + '/reportUser/getReportItem', {
             search: $scope.search,
             limit: global.limit,
@@ -77,6 +84,8 @@
           
             $scope.list = response.data;
             $scope.totalItems = response.total;
+
+            Loading.hideAll();
         });
 
     }
@@ -85,7 +94,7 @@
         $scope.search = {};
     }
     $scope.pageChanged = function () {
-        $scope.getReportItem(
+        $scope.searchUser(
              $scope.currentPage
         );
     };

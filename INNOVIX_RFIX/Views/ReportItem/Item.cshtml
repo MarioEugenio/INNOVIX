@@ -1,4 +1,8 @@
-﻿<div ng-controller="ReportItemCtrl" ng-init="init()">
+﻿@{
+    Layout = null;
+}
+
+<div ng-controller="ReportItemCtrl" ng-init="init()">
  <div>
     <div class="modal-header">
         <button  class="close"  ng-click="close()">&times;</button>
@@ -7,7 +11,7 @@
     <div class="modal-body">
         <div>
             <li class="dropdown" style="display: inline;">
-                <a href="#" class=" btn btn-primary  dropdown-toggle"  data-toggle="dropdown"><span class="glyphicon glyphicon-print"></span> Exportar <span class="caret"></span></a>
+                <a href="#" class=" btn btn-primary  dropdown-toggle"><span class="glyphicon glyphicon-print"></span> Exportar <span class="caret"></span></a>
                 <ul class="dropdown-menu " role="menu">
 			        <li> <a  download="relatorio de itens.xls" href="#" onclick="return ExcellentExport.excel(this, 'reportItenExcel', 'RelatorioExcel');">Excel</a></li>
 			        <li><a href="#/report/item/list" ng-click="exportPDF()">PDF</a></li>
@@ -58,7 +62,7 @@
           </div>
         </div>
 
-        <div ng-show="list.length == 0" class="alert alert-warning" role="alert">
+       <div ng-show="list.length == 0" class="alert alert-warning" role="alert">
             <a href="#" class="alert-link"><span class="glyphicon glyphicon-warning-sign"></span> Não houve retorno de registros</a>
         </div>
 
@@ -68,19 +72,15 @@
                 <thead>
                     <tr class="table-header">
                         <th>Local<i ng-class="sorting('local')" ng-click="sortingTable('local')" class="alingArrowRight glyphicon "></i></th>
-                        <th>Equipamento<i ng-class="sorting('equipamento')" ng-click="sortingTable('equipamento')" class="alingArrowRight glyphicon "></i></th>
-                        <th>Ação<i ng-class="sorting('acao')" ng-click="sortingTable('acao')" class="alingArrowRight glyphicon "></i></th>
-                        <th>Responsável<i ng-class="sorting('responsavel')" ng-click="sortingTable('responsavel')" class="alingArrowRight glyphicon "></i></th>
-                        <th>Ult. Atualização<i ng-class="sorting('dt_atualizacao')" ng-click="sortingTable('dt_atualizacao')" class="alingArrowRight glyphicon "></i></th>
+                        <th>Data<i ng-class="sorting('equipamento')" ng-click="sortingTable('equipamento')" class="alingArrowRight glyphicon "></i></th>
+                        <th>Operador<i ng-class="sorting('acao')" ng-click="sortingTable('acao')" class="alingArrowRight glyphicon "></i></th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr ng-repeat="item in list">
                         <td>{{ item.local }}</td>
-                        <td>{{ item.equipamento }}</td>
-                        <td>{{ item.acao }}</td>
-                        <td>{{ item.responsavel }}</td>
                         <td>{{ item.dtAtualizacao }}</td>
+                        <td>{{ item.operador }}</td>
                     </tr>
                 </tbody>
                 <tfoot>
@@ -157,21 +157,17 @@
                     </tr>
                 </tbody>
                  <thead>
-                    <tr >
-                        <th>Local</th>
-                        <th>Equipamento</th>
-                        <th>acao</th>
-                        <th>responsavel</th>
-                        <th>Ult. Atualização</th>
+                    <tr class="table-header">
+                        <th>Local<i ng-class="sorting('local')" ng-click="sortingTable('local')" class="alingArrowRight glyphicon "></i></th>
+                        <th>Data<i ng-class="sorting('equipamento')" ng-click="sortingTable('equipamento')" class="alingArrowRight glyphicon "></i></th>
+                        <th>Operador<i ng-class="sorting('acao')" ng-click="sortingTable('acao')" class="alingArrowRight glyphicon "></i></th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr ng-repeat="item in export">
                         <td>{{ item.local }}</td>
-                        <td>{{ item.equipamento }}</td>
-                        <td>{{ item.acao }}</td>
-                        <td>{{ item.responsavel }}</td>
                         <td>{{ item.dtAtualizacao }}</td>
+                        <td>{{ item.operador }}</td>
                     </tr>
                 </tbody>
             </table>

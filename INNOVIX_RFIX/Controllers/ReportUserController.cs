@@ -13,10 +13,12 @@ namespace INNOVIX_RFIX.Controllers
     public class ReportUserController : ControllerBase
     {
         private ITbLogUsuarioService service;
+        private ITbUsuarioService serviceUser;
 
-        public ReportUserController(ITbLogUsuarioService service)
+        public ReportUserController(ITbLogUsuarioService service, ITbUsuarioService serviceUser)
         {
             this.service = service;
+            this.serviceUser = serviceUser;
         }
 
         public ViewResult List()
@@ -42,15 +44,16 @@ namespace INNOVIX_RFIX.Controllers
 
         public JsonResult GetAll(int limit, int offset)
         {
-            var result = this.service
-                .Listar()
+            var result = this.serviceUser.GetLogOperador()
                 .Select(x => new
                 {
-                    Id = x.Id,
-                    dthLog = x.dthLog.ToString("dd/MM/yyyy"),
-                    noDesc = x.tbOperacao.noDesc,
-                    noUsuario = x.tbUsuario.noUsuario,
-                    codCpfCnpj = x.tbUsuario.codCpfCnpj
+                    operador = x.Operador,
+                    embarque = x.Embarque,
+                    lacre = x.Lacre,
+                    awb = x.AWB,
+                    operacao = x.Operacao,
+                    data = x.Data.ToString("d/MM/yyyy"),
+                    localidade = x.Localidade
                 });
 
             return this.returnJson(result.Skip((offset - 1) * limit).Take(limit), result.Count(), result);
@@ -58,19 +61,33 @@ namespace INNOVIX_RFIX.Controllers
 
         public JsonResult GetReportItem(searchUser search, int limit, int offset, string predicate, string order)
         {
-            var result = this.service
-                .Pesquisar(x => (x.tbUsuario.noUsuario.Contains(search.search)) 
-                    || (x.tbUsuario.codCpfCnpj == search.search) 
-                    || (x.dthLog.Date >= search.dtAction.Date && x.dthLog.Date <= search.dtAction.Date))
+            var result = this.serviceUser.GetLogOperador()
                 .Select(x => new
+                {
+                    operador = x.Operador,
+                    embarque = x.Embarque,
+                    lacre = x.Lacre,
+                    awb = x.AWB,
+                    operacao = x.Operacao,
+                    data = x.Data.ToString("d/MM/yyyy"),
+                    objData = x.Data,
+                    localidade = x.Localidade
+                });
+
+            if (search.search != null)
+                result = result.Where(x => x.operador.ToLower().Contains(search.search.ToLower()));
+
+            if (search.dtAction.Year != 1)
+                result = result.Where(x => x.objData.Date >= search.dtAction.Date && x.objData.Date <= search.dtAction.Date);
+
+            if (order == "ASC")
             {
-                Id = x.Id,
-                awb = x.dthLog,
-                noDesc = x.tbOperacao.noDesc,
-                noUsuario = x.tbUsuario.noUsuario,
-                codCpfCnpj = x.tbUsuario.codCpfCnpj,
-                dthLog = x.dthLog.ToString("dd/MM/yyyy")
-            });
+                result = result.OrderBy(x => x.GetType().GetProperty(predicate).GetValue(x, null));
+            }
+            else
+            {
+                result = result.OrderByDescending(x => x.GetType().GetProperty(predicate).GetValue(x, null));
+            }
 
             return this.returnJson(result.Skip((offset - 1) * limit).Take(limit), result.Count(), result);
         }

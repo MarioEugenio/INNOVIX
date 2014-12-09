@@ -1,10 +1,23 @@
 using Innovix.Base.Data.Repository;
+using Innovix.Base.Domain.DTO;
 using Innovix.Base.Domain.Entity;
+using System;
+using System.Collections.Generic;
 
 namespace Innovix.Base.Domain.Repository
 { 
     public interface ITbItemRepository : IRepository<TbItem>
     {
-		// Coloque aqui os métodos do serviço que se fizerem necessários. Os métodos comuns de CRUD já estão contemplados :) 
+        List<ItemDTO> GetItems();
+
+        List<ItemDetalhesDTO> GetItemDetalhes(int id);
+
+        List<ItemLacreDTO> GetItemLacre(int id);
+
+        List<ItemLoteDTO> GetItemLote(int id);
+
+        List<ItemHistoricoDTO> GetItemHistorico(int id);
+
+        List<ItemHistoricoLoteDTO> GetItemHistoricoLote(int id);
 	}
 }

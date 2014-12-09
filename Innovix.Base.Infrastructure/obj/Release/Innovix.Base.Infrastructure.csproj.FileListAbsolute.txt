@@ -1,6 +1,5 @@
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Infrastructure\bin\Innovix.Base.Infrastructure.dll
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Infrastructure\bin\Innovix.Base.Infrastructure.pdb
-C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Infrastructure\bin\Castle.Core.xml
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Infrastructure\bin\Iesi.Collections.xml
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Infrastructure\bin\NHibernate.xml
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Infrastructure\obj\Release\Innovix.Base.Infrastructure.csprojResolveAssemblyReference.cache

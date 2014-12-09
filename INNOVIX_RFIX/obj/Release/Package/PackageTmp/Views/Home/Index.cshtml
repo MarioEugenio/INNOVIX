@@ -4,34 +4,27 @@
 }
       <!-- Static navbar -->
       <!-- Fixed navbar -->
-    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation" >
       <div class="container">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">RFIX</a>
+          <a class="navbar-brand" href="#"><img src="~/Web/img/logo/RFIXLOGO.png" style="width:35px;" /> RFIX</a>
         </div>
-        <div class="collapse navbar-collapse">
+        <div class="collapse navbar-collapse" collapse="navbarCollapsed">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">Home</a></li>
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cadastros <span class="caret"></span></a>
+              <a href="#" class="dropdown-toggle">Cadastros <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
                 <li><a href="#/equipment/list">Equipamentos</a></li>
                 <li><a href="#/location/list">Localidades</a></li>
                 <li><a href="#/route/list">Rotas</a></li>
                 <li class="divider"></li>
-                <li class="dropdown-header">Acesso / Perfil</li>
                 <li><a href="#/user/list">Usuários</a></li>
               </ul>
             </li>
 
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Relatórios <span class="caret"></span></a>
+              <a href="#" class="dropdown-toggle">Relatórios <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
                 <li><a href="#/report/item/list">Itens</a></li>
                 <li><a href="#/report/seals/list">Lacres</a></li>
@@ -43,7 +36,7 @@
 
             <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> &nbsp;@ViewBag.userCurrent <span class="caret"></span></a>
+              <a href="#" class="dropdown-toggle"><span class="glyphicon glyphicon-user"></span> &nbsp;@ViewBag.userCurrent <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
                 <li><a href="~/login/Logoff">Logoff</a></li>
                
@@ -61,7 +54,8 @@
 
     <!-- Begin page content -->
     <div class="container panel">
-        <ng-view id="j-content"></ng-view>
+        <route-loading-indicator></route-loading-indicator>
+        <div ng-view="" ng-if="!isRouteLoading" id="j-content"></div>
     </div> <!-- /container -->
 
     <div class="footer">

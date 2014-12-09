@@ -1,4 +1,8 @@
-﻿<div ng-controller="ReportItemListCtrl" ng-init="init()">
+﻿@{
+    Layout = null;
+}
+
+<div ng-controller="ReportItemListCtrl" ng-init="init()">
     <ol class="breadcrumb">
       <li><a href="#/home/init">Home</a></li>
       <li class="active">Relatorio de Itens</li>
@@ -8,7 +12,7 @@
     <h3>Itens</h3>
     </div>
     <p>
-        <div class="panel panel-default">
+        <form ui-keypress="{13:'searchItem(1)'}" ng-submit="searchItem(1)" class="panel panel-default">
           <div class="panel-heading">Pesquise itens cadastrados</div>
           <div class="panel-body">
             <div class="row">
@@ -25,7 +29,7 @@
                             <label> Origem</label>
                             <select  ng-model="search.origem" class="form-control">
                                 <option value="">Selecione ...</option>
-                                <option ng-repeat="item in listLocation" value="{{ item.Id }}">{{ item.noNome }}</option>
+                                <option ng-repeat="item in listLocation" value="{{ item.noNome }}">{{ item.noNome }} ({{ item.noCidade }})</option>
                             </select>
                         </div>
                     </div>
@@ -37,12 +41,12 @@
                             <label>Destino</label>
                             <select  ng-model="search.destino"  class="form-control">
                                 <option value="">Selecione ...</option>
-                                <option ng-repeat="item in listLocation" value="{{ item.Id }}">{{ item.noNome }}</option>
+                                <option ng-repeat="item in listLocation" value="{{ item.noNome }}">{{ item.noNome }} ({{ item.noCidade }})</option>
                             </select>
                         </div>
                     </div>
                     <div class="input-group-btn">
-                        <button class="btn btn-default" ng-click="searchItem(1)" type="button"><span class="glyphicon glyphicon-search"></span> Pesquisar</button>
+                        <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span> Pesquisar</button>
                     </div>
                     <div class="input-group-btn">
                         <button class="btn btn-default" ng-click="clear()" type="button"><span class="glyphicon glyphicon-trash"></span> Limpar</button>
@@ -51,16 +55,17 @@
               </div><!-- /.col-lg-6 -->
             </div>
           </div>
-        </div>
+        </form>
 
         <div>
             <li class="dropdown" style="display: inline;">
-                <a href="#" class=" btn btn-primary  dropdown-toggle"  data-toggle="dropdown"><span class="glyphicon glyphicon-export"></span> Exportar <span class="caret"></span></a>
+                <a href="#" class=" btn btn-primary  dropdown-toggle"><span class="glyphicon glyphicon-export"></span> Exportar <span class="caret"></span></a>
                 <ul class="dropdown-menu " role="menu">
 			        <li> <a  download="relatorio de itens.xls" href="#" onclick="return ExcellentExport.excel(this, 'reportItens', 'RelatorioExcel');">Excel</a></li>
 			        <li><a href="#/report/item/list" ng-click="exportPDF()">PDF</a></li>
 		        </ul>
             </li>
+            <a class=" btn btn-primary" ng-click="getReportItem(1)"><span class="glyphicon glyphicon-refresh"></span> Atualizar</a>
         </div><br />
 
         <div ng-show="list.length == 0" class="alert alert-warning" role="alert">
@@ -72,11 +77,11 @@
                 <thead>
                     <tr class="table-header">
                         <th>AWB<i ng-class="sorting('awb')" ng-click="sortingTable('awb')" class="alingArrowRight glyphicon "></i></th>
-                        <th>Origem<i ng-class="sorting('origem')" ng-click="sortingTable('origem')" class="alingArrowRight glyphicon "></i></th>
-                        <th>Destino<i ng-class="sorting('destino')" ng-click="sortingTable('destino')" class="alingArrowRight glyphicon "></i></th>
-                        <th>Rota<i ng-class="sorting('rota')" ng-click="sortingTable('rota')" class="alingArrowRight glyphicon "></i></th>
+                        <th>Origem<i ng-class="sorting('origin')" ng-click="sortingTable('origin')" class="alingArrowRight glyphicon "></i></th>
+                        <th>Destino<i ng-class="sorting('destiny')" ng-click="sortingTable('destiny')" class="alingArrowRight glyphicon "></i></th>
+                        <th>Rota<i ng-class="sorting('route')" ng-click="sortingTable('route')" class="alingArrowRight glyphicon "></i></th>
                         <th>Status<i ng-class="sorting('status')" ng-click="sortingTable('status')" class="alingArrowRight glyphicon "></i></th>
-                        <th>Ult. Atualização<i ng-class="sorting('dt_atualizacao')" ng-click="sortingTable('dt_atualizacao')" class="alingArrowRight glyphicon "></i></th>
+                        <th>Ult. Atualização<i ng-class="sorting('dtAtualizacao')" ng-click="sortingTable('dtAtualizacao')" class="alingArrowRight glyphicon "></i></th>
                         <th></th>
                     </tr>
                 </thead>

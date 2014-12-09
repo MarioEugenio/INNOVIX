@@ -14,7 +14,7 @@ namespace Innovix.Base.Domain.Entity {
         public virtual int idLacre { get; set; }
         [NotNullNotEmpty]
         public virtual DateTime dthCriacao { get; set; }
-        public virtual int? indCodbarras { get; set; }
+        public virtual string indCodbarras { get; set; }
         public virtual IList<TbSaco> tbSaco { get; set; }
     }
 }

@@ -40,7 +40,6 @@ C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\INNOVIX_RFIX\bin\System.Web.Web
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\INNOVIX_RFIX\bin\System.Web.WebPages.Deployment.xml
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\INNOVIX_RFIX\bin\System.Web.WebPages.Razor.xml
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\INNOVIX_RFIX\bin\NHibernate.xml
-C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\INNOVIX_RFIX\bin\Castle.Core.xml
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\INNOVIX_RFIX\bin\Autofac.xml
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\INNOVIX_RFIX\bin\Autofac.Integration.Mvc.xml
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\INNOVIX_RFIX\bin\Autofac.Extras.DynamicProxy2.xml

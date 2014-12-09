@@ -56,14 +56,18 @@ namespace INNOVIX_RFIX.Controllers
 
                 if (entity.destiny > 0)
                 {
-                    RelLocalidadeRota relLocalidadeRota = new RelLocalidadeRota();
-                    relLocalidadeRota.tbLocalidade = this.serviceLocalidade.ObterPorId(entity.destiny);
-                    entity.relLocalidadeRota.Add(relLocalidadeRota);
-
                     this.service.Salvar(entity);
+                    /*
+                    RelLocalidadeRota relLocalidadeRota = new RelLocalidadeRota();
+                    relLocalidadeRota.idLocalidade = this.serviceLocalidade.ObterPorId(entity.destiny).Id;
+                    relLocalidadeRota.idRota = entity.Id;
+                    relLocalidadeRota.tbLocalidade = this.serviceLocalidade.ObterPorId(entity.destiny);
+                    relLocalidadeRota.tbRota = entity;
+                    relLocalidadeRota.intCheckpoint = 0;
+                    this.serviceRel.Salvar(relLocalidadeRota);*/
                 }
 
-                return this.returnMenssage("Cadastro realizado com sucesso", true);
+                return this.returnMenssage("Processo realizado com sucesso", true);
             } catch (ExceptionService ex) {
 
                 return this.returnMenssage(ex.Message, false);
@@ -79,8 +83,8 @@ namespace INNOVIX_RFIX.Controllers
                .Select(x => new
                {
                    Id = x.Id,
-                   noDesc = x.noDesc,
-                   noNome = x.noNome,
+                   noDesc = x.noDesc.Trim(),
+                   noNome = x.noNome.Trim(),
                    destiny = (rel.Count() > 0) ? rel.FirstOrDefault().tbLocalidade.Id : 0
                });
 
@@ -96,6 +100,15 @@ namespace INNOVIX_RFIX.Controllers
                     noDesc = x.noDesc,
                     noNome = x.noNome
                 });
+
+            if (order == "ASC")
+            {
+                result = result.OrderBy(x => x.GetType().GetProperty(predicate).GetValue(x, null));
+            }
+            else
+            {
+                result = result.OrderByDescending(x => x.GetType().GetProperty(predicate).GetValue(x, null));
+            }
 
             List<object> list = new List<object>();
 
@@ -125,6 +138,15 @@ namespace INNOVIX_RFIX.Controllers
                     noDesc = x.noDesc,
                     noNome = x.noNome
                 });
+
+            if (order == "ASC")
+            {
+                result = result.OrderBy(x => x.GetType().GetProperty(predicate).GetValue(x, null));
+            }
+            else
+            {
+                result = result.OrderByDescending(x => x.GetType().GetProperty(predicate).GetValue(x, null));
+            }
 
             return this.returnJson(result.Skip((offset - 1) * limit).Take(limit), result.Count(), result);
         }

@@ -50,7 +50,7 @@ namespace INNOVIX_RFIX.Controllers
             {
                 this.service.Salvar(entity);
 
-                return this.returnMenssage("Cadastro realizado com sucesso", true);
+                return this.returnMenssage("Processo realizado com sucesso", true);
             } catch (ExceptionService ex) {
 
                 return this.returnMenssage(ex.Message, false);
@@ -64,7 +64,8 @@ namespace INNOVIX_RFIX.Controllers
                .Select(x => new
                {
                    Id = x.Id,
-                   noEquipamento = x.noEquipamento
+                   noEquipamento = x.noEquipamento.Trim(),
+                   localidade = (x.tbLocalidade != null) ? x.tbLocalidade.Id : 0
                });
 
             return this.returnJson(result);
@@ -77,8 +78,18 @@ namespace INNOVIX_RFIX.Controllers
                 .Select(x => new {
                     Id = x.Id,
                     noEquipamento = x.noEquipamento,
-                    dtAtualizacao = (x.tbLogEpc.GetType() == typeof(TbLogEpc))? x.tbLogEpc.LastOrDefault().dthLog.ToString() : null
+                    localidade = (x.tbLocalidade != null) ? x.tbLocalidade.noNome : null,
+                    dtAtualizacao = (x.tbLogsaco.GetType() == typeof(TbLogSaco))? x.tbLogsaco.LastOrDefault().dthLog.ToString("d/MM/yyyy") : null
             });
+
+            if (order == "ASC")
+            {
+                result = result.OrderBy(x => x.GetType().GetProperty(predicate).GetValue(x, null));
+            }
+            else
+            {
+                result = result.OrderByDescending(x => x.GetType().GetProperty(predicate).GetValue(x, null));
+            }
 
             return this.returnJson(result.Skip((offset - 1) * limit).Take(limit), result.Count(), result);
         }
@@ -92,8 +103,17 @@ namespace INNOVIX_RFIX.Controllers
                 {
                     Id = x.Id,
                     noEquipamento = x.noEquipamento,
-                    dtAtualizacao = (x.tbLogEpc.GetType() == typeof(TbLogEpc)) ? x.tbLogEpc.LastOrDefault().dthLog.ToString() : null
+                    dtAtualizacao = (x.tbLogsaco.GetType() == typeof(TbLogSaco)) ? x.tbLogsaco.LastOrDefault().dthLog.ToString("d/MM/yyyy") : null
                 });
+
+            if (order == "ASC")
+            {
+                result = result.OrderBy(x => x.GetType().GetProperty(predicate).GetValue(x, null));
+            }
+            else
+            {
+                result = result.OrderByDescending(x => x.GetType().GetProperty(predicate).GetValue(x, null));
+            }
 
             return this.returnJson(result.Skip((offset - 1) * limit).Take(limit), result.Count(), result);
         }

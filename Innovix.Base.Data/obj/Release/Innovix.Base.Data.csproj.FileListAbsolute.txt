@@ -2,12 +2,9 @@ C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Data\bin\Innovix.B
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Data\bin\Innovix.Base.Data.pdb
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Data\bin\Innovix.Base.Domain.dll
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Data\bin\Innovix.Base.Infrastructure.dll
-C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Data\bin\NHibernate.dll
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Data\bin\Castle.Core.dll
-C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Data\bin\Iesi.Collections.dll
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Data\bin\Innovix.Base.Domain.pdb
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Data\bin\Innovix.Base.Infrastructure.pdb
-C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Data\bin\Castle.Core.xml
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Data\obj\Release\Innovix.Base.Data.csprojResolveAssemblyReference.cache
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Data\obj\Release\Innovix.Base.Data.dll
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Data\obj\Release\Innovix.Base.Data.pdb

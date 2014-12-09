@@ -1,7 +1,7 @@
 ﻿app.controller('UserListCtrl', function ($scope, $http) {
     $scope.listUser = [];
     $scope.search = "";
-    $scope.predicate = 'id';
+    $scope.predicate = 'Id';
     $scope.order = 'ASC';
 
     $scope.init = function () {
@@ -48,6 +48,8 @@
     }
 
     $scope.getUser = function (current) {
+        Loading.showAll();
+
         $http.post(baseUrl + '/user/GetAll', {
             limit: global.limit,
             offset: current,
@@ -57,6 +59,8 @@
         .success(function (response) {
             $scope.listUser = response.data;
             $scope.totalItems = response.total;
+
+            Loading.hideAll();
         });
 
     }
@@ -66,6 +70,8 @@
             $scope.getUser(current);
             return;
         }
+
+        Loading.showAll();
 
         $http.post(baseUrl + '/user/GetUser', {
             search: $scope.search,
@@ -77,12 +83,14 @@
         .success(function (response) {
             $scope.listUser = response.data;
             $scope.totalItems = response.total;
+
+            Loading.hideAll();
         });
 
     }
 
     $scope.pageChanged = function () {
-        $scope.getUser(
+        $scope.searchUser(
              $scope.currentPage
         );
     };

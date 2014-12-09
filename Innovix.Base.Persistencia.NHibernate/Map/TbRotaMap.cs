@@ -18,20 +18,12 @@ namespace Innovix.Base.Persistencia.NHibernate.Map {
 
 			HasMany<RelLocalidadeRota>(x => x.relLocalidadeRota)
                 .KeyColumn("id_rota")
+               .Generic()
                 .LazyLoad()
-              .Generic()
-              .Inverse()
-              .Cascade
-              .AllDeleteOrphan();
+                .Cascade
+                .SaveUpdate();
 
 			//HasMany(x => x.tbLote).KeyColumn("id_rota");
-			HasMany<TbSincRota>(x => x.tbSincRota)
-                .KeyColumn("id_rota")
-                .LazyLoad()
-              .Generic()
-              .Inverse()
-              .Cascade
-              .AllDeleteOrphan();
         }
     }
 }

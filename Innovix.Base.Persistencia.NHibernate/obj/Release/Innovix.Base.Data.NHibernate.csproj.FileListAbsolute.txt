@@ -12,7 +12,6 @@ C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Persistencia.NHibe
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Persistencia.NHibernate\bin\Iesi.Collections.xml
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Persistencia.NHibernate\bin\NHibernate.xml
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Persistencia.NHibernate\bin\Innovix.Base.Infrastructure.pdb
-C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Persistencia.NHibernate\bin\Castle.Core.xml
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Persistencia.NHibernate\obj\Release\Innovix.Base.Data.NHibernate.csprojResolveAssemblyReference.cache
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Persistencia.NHibernate\obj\Release\Innovix.Base.Persistencia.NHibernate.dll
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Persistencia.NHibernate\obj\Release\Innovix.Base.Persistencia.NHibernate.pdb
@@ -30,3 +29,7 @@ C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Persistencia.NHibe
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Persistencia.NHibernate\bin\nl\NHibernate.Validator.resources.dll
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Persistencia.NHibernate\bin\pl\NHibernate.Validator.resources.dll
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Persistencia.NHibernate\bin\pt-BR\NHibernate.Validator.resources.dll
+C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Persistencia.NHibernate\bin\Autofac.dll
+C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Persistencia.NHibernate\bin\Autofac.Integration.Mvc.dll
+C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Persistencia.NHibernate\bin\Autofac.xml
+C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Persistencia.NHibernate\bin\Autofac.Integration.Mvc.xml

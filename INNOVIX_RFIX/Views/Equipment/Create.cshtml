@@ -1,4 +1,8 @@
-﻿<div ng-controller="EquipmentCreateCtrl" ng-init="init()">
+﻿@{
+    Layout = null;
+}
+
+<div ng-controller="EquipmentCreateCtrl" ng-init="init()">
     <ol class="breadcrumb">
       <li><a href="#/home/init">Home</a></li>
       <li><a href="#/equipment/list">Equipamentos</a></li>
@@ -20,14 +24,14 @@
             <label><em>*</em> Nome</label>
             <input type="text" class="form-control" maxlength="50" ng-model="form.noEquipamento" placeholder="Digite Nome do Equipamento" required>
           </div>
-          <!--<div class="form-group">
-            <label><em>*</em> Tipo</label>
-            <select class="form-control medium" ng-model="form.idLocalidade" required>
+          <div class="form-group">
+            <label><em>*</em> Localidade</label>
+            <select ng-model="form.localidade" class="form-control">
                 <option value="">Selecione ...</option>
                 <option ng-repeat="item in listLocations" value="{{ item.Id }}">{{ item.noNome }}</option>
             </select>
-          </div>-->
-          
+          </div>
+
           <div class="form-group" ng-show="form.Id">
             <label><em>*</em> Ult. Atualização</label>
             <input type="text" class="form-control small" maxlength="50" readonly="true" ng-model="form.dtAtualizacao" ng-required="form.Id" placeholder="Digite a data de atualização">

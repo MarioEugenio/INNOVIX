@@ -21,6 +21,8 @@ C:\Users\MárioEugênio\Documents\Visual Studio 2012\Projects\INNOVIX_RFIX\Innov
 C:\Users\MárioEugênio\Documents\Visual Studio 2012\Projects\INNOVIX_RFIX\Innovix.Base.Persistencia.NHibernate\obj\Debug\Innovix.Base.Persistencia.NHibernate.pdb
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Persistencia.NHibernate\bin\Innovix.Base.Persistencia.NHibernate.dll
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Persistencia.NHibernate\bin\Innovix.Base.Persistencia.NHibernate.pdb
+C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Persistencia.NHibernate\bin\Autofac.dll
+C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Persistencia.NHibernate\bin\Autofac.Integration.Mvc.dll
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Persistencia.NHibernate\bin\FluentNHibernate.dll
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Persistencia.NHibernate\bin\Iesi.Collections.dll
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Persistencia.NHibernate\bin\Innovix.Base.Data.dll
@@ -33,11 +35,12 @@ C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Persistencia.NHibe
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Persistencia.NHibernate\bin\Innovix.Base.Data.pdb
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Persistencia.NHibernate\bin\Innovix.Base.Domain.Service.Impl.pdb
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Persistencia.NHibernate\bin\Innovix.Base.Domain.pdb
+C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Persistencia.NHibernate\bin\Autofac.xml
+C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Persistencia.NHibernate\bin\Autofac.Integration.Mvc.xml
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Persistencia.NHibernate\bin\Iesi.Collections.xml
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Persistencia.NHibernate\bin\NHibernate.xml
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Persistencia.NHibernate\bin\Innovix.Base.Infrastructure.pdb
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Persistencia.NHibernate\bin\NHibernate.Validator.xml
-C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Persistencia.NHibernate\bin\Castle.Core.xml
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Persistencia.NHibernate\bin\de\NHibernate.Validator.resources.dll
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Persistencia.NHibernate\bin\es\NHibernate.Validator.resources.dll
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Persistencia.NHibernate\bin\fa\NHibernate.Validator.resources.dll

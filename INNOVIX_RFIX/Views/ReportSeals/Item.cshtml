@@ -1,4 +1,8 @@
-﻿<div ng-controller="ReportSealsCtrl" ng-init="init()">
+﻿@{
+    Layout = null;
+}
+
+<div ng-controller="ReportSealsCtrl" ng-init="init()">
  <div>
     <div class="modal-header">
         <button  class="close"  ng-click="close()">&times;</button>
@@ -7,7 +11,7 @@
     <div class="modal-body">
      <div>
             <li class="dropdown" style="display: inline;">
-                <a href="#" class=" btn btn-primary  dropdown-toggle"  data-toggle="dropdown"><span class="glyphicon glyphicon-print"></span> Exportar <span class="caret"></span></a>
+                <a href="#" class=" btn btn-primary  dropdown-toggle"><span class="glyphicon glyphicon-print"></span> Exportar <span class="caret"></span></a>
                 <ul class="dropdown-menu " role="menu">
 			        <li> <a  download="relatorio de lacres.xls" href="#" onclick="return ExcellentExport.excel(this, 'reportItenExcel', 'RelatorioExcel');">Excel</a></li>
 			        <li><a href="#/report/seals/list" ng-click="exportPDF()">PDF</a></li>
@@ -24,22 +28,19 @@
                 </div>
                 <div >
                     <div class="painel-information-now">
-                        <div class="painel-information">Origem:</div><div class="painel-value">{{ objItem.origin }}</div>
+                        <div class="painel-information">Lacre:</div><div class="painel-value">{{ objItem.lacre }}</div>
                     </div>
                     <div class="painel-information-now">
                         <div class="painel-information">Status:</div><div class="painel-value">{{ objItem.status }}</div>
                     </div>
                     <div class="painel-information-now">
-                        <div class="painel-information">Destino:</div><div class="painel-value">{{ objItem.destiny }}</div>
+                        <div class="painel-information">Local:</div><div class="painel-value">{{ objItem.location }}</div>
                     </div>
                     <div class="painel-information-now">
-                        <div class="painel-information">Embarque:</div><div class="painel-value">{{ objItem.embarque }}</div>
+                        <div class="painel-information">Localidade:</div><div class="painel-value">{{ objItem.embarque }}</div>
                     </div>
                     <div class="painel-information-now">
                         <div class="painel-information">Rota:</div><div class="painel-value">{{ objItem.route }}</div>
-                    </div>
-                    <div class="painel-information-now">
-                        <div class="painel-information">Dt. Cadastro:</div><div class="painel-value">{{ objItem.dtCadastro }}</div>
                     </div>
                     <div class="painel-information-now">
                         <div class="painel-information">Dt. Atualização:</div><div class="painel-value">{{ objItem.dtAtualizacao }}</div>
@@ -48,7 +49,7 @@
                         <div class="painel-information">EPC:</div><div class="painel-value">{{ objItem.epc }}</div>
                     </div>
                     <div class="painel-information-now">
-                        <div class="painel-information">Responsável:</div><div class="painel-value">{{ objItem.responsavel }}</div>
+                        <div class="painel-information">Operador:</div><div class="painel-value">{{ objItem.operador }}</div>
                     </div>
                 </div>
             </div>
@@ -65,26 +66,28 @@
                 <thead>
                     <tr class="table-header">
                         <th>AWB<i ng-class="sorting('awb')" ng-click="sortingTable('awb')" class="alingArrowRight glyphicon "></i></th>
-                        <th>Origem<i ng-class="sorting('Origem')" ng-click="sortingTable('Origem')" class="alingArrowRight glyphicon "></i></th>
-                        <th>Destino<i ng-class="sorting('destino')" ng-click="sortingTable('destino')" class="alingArrowRight glyphicon "></i></th>
-                        <th>Rota<i ng-class="sorting('rota')" ng-click="sortingTable('rota')" class="alingArrowRight glyphicon "></i></th>
+                        <th>EPC<i ng-class="sorting('epc')" ng-click="sortingTable('epc')" class="alingArrowRight glyphicon "></i></th>
+                        <th>Lacre<i ng-class="sorting('lacre')" ng-click="sortingTable('lacre')" class="alingArrowRight glyphicon "></i></th>
+                        <th>Rota<i ng-class="sorting('route')" ng-click="sortingTable('route')" class="alingArrowRight glyphicon "></i></th>
                         <th>Status<i ng-class="sorting('status')" ng-click="sortingTable('status')" class="alingArrowRight glyphicon "></i></th>
-                        <th>Ult. Atualização<i ng-class="sorting('dt_atualizacao')" ng-click="sortingTable('dt_atualizacao')" class="alingArrowRight glyphicon "></i></th>
+                        <th>Ult. Atualização<i ng-class="sorting('dtAtualizacao')" ng-click="sortingTable('dtAtualizacao')" class="alingArrowRight glyphicon "></i></th>
+                        <th>Ult. Operador<i ng-class="sorting('operador')" ng-click="sortingTable('operador')" class="alingArrowRight glyphicon "></i></th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr ng-repeat="item in list">
                         <td>{{ item.awb }}</td>
-                        <td>{{ item.origin }}</td>
-                        <td>{{ item.destiny }}</td>
+                        <td>{{ item.epc }}</td>
+                        <td>{{ item.lacre }}</td>
                         <td>{{ item.route }}</td>
                         <td>{{ item.status }}</td>
                         <td>{{ item.dtAtualizacao }}</td>
+                        <td>{{ item.operador }}</td>
                     </tr>
                 </tbody>
                 <tfoot>
                     <tr>
-                        <td colspan="6" class="table-footer">
+                        <td colspan="7" class="table-footer">
                             <div class="pull-left">
                                 <pagination  previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;" total-items="totalItems" ng-model="currentPage" max-size="maxSize" ng-change="pageChanged()" boundary-links="true" rotate="false" num-pages="numPages"></pagination>
                             </div>
@@ -159,6 +162,7 @@
                         <th>Rota</th>
                         <th>Status</th>
                         <th>Ult. Atualização</th>
+                        <th>Ult. Operador</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -169,6 +173,7 @@
                         <td>{{ item.route }}</td>
                         <td>{{ item.status }}</td>
                         <td>{{ item.dtAtualizacao }}</td>
+                        <td>{{ item.operador }}</td>
                     </tr>
                 </tbody>
             </table>

@@ -2,6 +2,7 @@
     $scope.form = {};
 
     $scope.init = function () {
+
         if ($routeParams.id)
             $scope.get($routeParams.id);
     }

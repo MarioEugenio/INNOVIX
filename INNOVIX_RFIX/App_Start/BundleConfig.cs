@@ -9,13 +9,14 @@ namespace INNOVIX_RFIX
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Web/js/Externals/jquery/jquery*",
-                        "~/Web/js/Externals/jquery/noty/jquery.noty.js"));
+                        "~/Web/js/Externals/jquery/jquery*"));
 
             bundles.Add(new ScriptBundle("~/bundles/core").Include(
                         "~/Web/js/core.js",
                         "~/Web/js/bootstrap.js",
                         "~/Web/js/directives.js",
+                        "~/Web/js/loading.js",
+                        "~/Web/js/utils.js",
                         "~/Web/js/modal.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/routers").Include(
@@ -41,7 +42,7 @@ namespace INNOVIX_RFIX
                         "~/Web/js/Externals/angular/angular-select.js",
                         "~/Web/js/Externals/angular/strap/dist/angular-strap.js",
                         "~/Web/js/Externals/angular/ui/ui-bootstrap.js",
-                        "~/Web/js/Externals/angular/angular-router.js",
+                        "~/Web/js/Externals/angular/angular-router.js"/*,
                         "~/Web/js/Externals/htmltable_export/jsPDF0.9/jspdf.js",
                         "~/Web/js/Externals/htmltable_export/jsPDF0.9/jspdf.plugin.standard_fonts_metrics.js",
                         "~/Web/js/Externals/htmltable_export/jsPDF0.9/jspdf.plugin.split_text_to_size.js",
@@ -53,7 +54,7 @@ namespace INNOVIX_RFIX
                         "~/Web/js/Externals/htmltable_export/jsPDF0.9/jspdf.plugin.table.js",
                         "~/Web/js/Externals/htmltable_export/jsPDF0.9/jspdf.plugin.cell.js",
                         "~/Web/js/Externals/htmltable_export/jsPDF0.9/jspdf.debug.js",
-                        "~/Web/js/Externals/htmltable_export/excellentexport.js"));
+                        "~/Web/js/Externals/htmltable_export/excellentexport.js"*/));
 
             bundles.Add(new StyleBundle("~/Content/css").Include("~/Web/css/bootstrap.css",
                 "~/Web/css/bootstrap-theme.css",

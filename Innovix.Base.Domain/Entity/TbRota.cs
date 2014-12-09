@@ -11,7 +11,6 @@ namespace Innovix.Base.Domain.Entity {
         public TbRota() {
 			relLocalidadeRota = new List<RelLocalidadeRota>();
 			tbLote = new List<TbLote>();
-			tbSincRota = new List<TbSincRota>();
         }
         [NotNullNotEmpty]
         [Length(50)]
@@ -20,7 +19,6 @@ namespace Innovix.Base.Domain.Entity {
         public virtual string noDesc { get; set; }
         public virtual IList<RelLocalidadeRota> relLocalidadeRota { get; set; }
         public virtual IList<TbLote> tbLote { get; set; }
-        public virtual IList<TbSincRota> tbSincRota { get; set; }
         public virtual int destiny { get; set; }
     }
 }

@@ -14,7 +14,7 @@ namespace Innovix.Base.Persistencia.NHibernate.Map {
 			LazyLoad();
 			Id(x => x.Id).GeneratedBy.Identity().Column("id_item");
 			References(x => x.tbStatus).Column("id_status");
-			//References(x => x.tbRfid).Column("id_rfid");
+			References(x => x.tbRfid).Column("id_rfid");
 			References(x => x.tbSaco).Column("id_saco");
 			References(x => x.tbLote).Column("id_lote");
 			References(x => x.tbLocalidade).Column("id_localidade");

@@ -1,4 +1,8 @@
-﻿<div ng-controller="ReportBoardingCtrl" ng-init="init()">
+﻿@{
+    Layout = null;
+}
+
+<div ng-controller="ReportBoardingCtrl" ng-init="init()">
   <div>
         <div class="modal-header">
            <button  class="close"  ng-click="close()">&times;</button>
@@ -8,7 +12,7 @@
     <p>
         <div>
             <li class="dropdown" style="display: inline;">
-                <a href="#" class=" btn btn-primary  dropdown-toggle"  data-toggle="dropdown"><span class="glyphicon glyphicon-print"></span> Exportar <span class="caret"></span></a>
+                <a href="#" class=" btn btn-primary  dropdown-toggle"><span class="glyphicon glyphicon-print"></span> Exportar <span class="caret"></span></a>
                 <ul class="dropdown-menu " role="menu">
 			        <li> <a  download="relatorio de embarque.xls" href="#" onclick="return ExcellentExport.excel(this, 'reportItenExcel', 'RelatorioExcel');">Excel</a></li>
 			        <li><a href="#/report/boarding/list" ng-click="exportPDF()">PDF</a></li>
@@ -39,46 +43,46 @@
                         <div class="painel-information">Dt. Cadastro:</div><div class="painel-value">{{ objItem.dtCadastro }}</div>
                     </div>
                     <div class="painel-information-now">
-                        <div class="painel-information">Rota:</div><div class="painel-value">{{ objItem.route }}</div>
+                        <div class="painel-information">Lacre:</div><div class="painel-value">{{ objItem.lacre }}</div>
                     </div>
                     <div class="painel-information-now">
-                        <div class="painel-information">Responsável:</div><div class="painel-value">{{ objItem.responsavel }}</div>
+                        <div class="painel-information">Total Itens:</div><div class="painel-value">{{ objItem.totalItens }}</div>
+                    </div>
+                    <div class="painel-information-now">
+                        <div class="painel-information">Itens Entregues:</div><div class="painel-value">{{ objItem.totalItensEntregues }}</div>
                     </div>
                 </div>
             </div>
           </div>
         </div>
 
-        <div ng-show="list.length == 0" class="alert alert-warning" role="alert">
+        <div ng-show="listSeals.length == 0" class="alert alert-warning" role="alert">
             <a href="#" class="alert-link"><span class="glyphicon glyphicon-warning-sign"></span> Não houve retorno de registros</a>
         </div>
 
-        <div ng-show="list.length" class="panel panel-default">
-            <div class="panel-heading">Itens</div>
+        <div ng-show="listSeals.length" class="panel panel-default">
+            <div class="panel-heading">Lacres</div>
             <table class="table table-bordered table-striped">
                 <thead>
                     <tr class="table-header">
-                        <th>AWB<i ng-class="sorting('awb')" ng-click="sortingTable('awb')" class="alingArrowRight glyphicon "></i></th>
-                        <th>Origem<i ng-class="sorting('origem')" ng-click="sortingTable('origem')" class="alingArrowRight glyphicon "></i></th>
-                        <th>Destino<i ng-class="sorting('destino')" ng-click="sortingTable('destino')" class="alingArrowRight glyphicon "></i></th>
-                        <th>Rota<i ng-class="sorting('rota')" ng-click="sortingTable('rota')" class="alingArrowRight glyphicon "></i></th>
-                        <th>Status<i ng-class="sorting('status')" ng-click="sortingTable('status')" class="alingArrowRight glyphicon "></i></th>
-                        <th>Ult. Atualização<i ng-class="sorting('dt_atualizacao')" ng-click="sortingTable('dt_atualizacao')" class="alingArrowRight glyphicon "></i></th>
+                        <th>Localidade<i ng-class="sorting('localidade')" ng-click="sortingTable('localidade')" class="alingArrowRight glyphicon "></i></th>
+                        <th>Data<i ng-class="sorting('data')" ng-click="sortingTable('data')" class="alingArrowRight glyphicon "></i></th>
+                        <th>Total Itens Lidos<i ng-class="sorting('totalItensLidos')" ng-click="sortingTable('totalItensLidos')" class="alingArrowRight glyphicon "></i></th>
+                        <th>Operador<i ng-class="sorting('operador')" ng-click="sortingTable('operador')" class="alingArrowRight glyphicon "></i></th>
+                     
                     </tr>
                 </thead>
                 <tbody>
-                    <tr ng-repeat="item in list">
-                        <td>{{ item.awb }}</td>
-                        <td>{{ item.origin }}</td>
-                        <td>{{ item.destiny }}</td>
-                        <td>{{ item.route }}</td>
-                        <td>{{ item.status }}</td>
-                        <td>{{ item.dtAtualizacao }}</td>
+                    <tr ng-repeat="item in listSeals">
+                        <td>{{ item.localidade }}</td>
+                        <td>{{ item.data }}</td>
+                        <td>{{ item.totalItensLidos }}</td>
+                        <td>{{ item.operador }}</td>
                     </tr>
                 </tbody>
                 <tfoot>
                     <tr>
-                        <td colspan="6" class="table-footer">
+                        <td colspan="4" class="table-footer">
                             <div class="pull-left">
                                 <pagination  previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;" total-items="totalItems" ng-model="currentPage" max-size="maxSize" ng-change="pageChanged()" boundary-links="true" rotate="false" num-pages="numPages"></pagination>
                             </div>
@@ -91,7 +95,7 @@
             </table>
         </div>
 
-        <div ng-show="listSeals.length" class="panel panel-default">
+      <!--  <div ng-show="listSeals.length" class="panel panel-default">
             <div class="panel-heading">Lacres</div>
             <table class="table table-bordered table-striped">
                 <thead>
@@ -126,7 +130,7 @@
                         </td>
                     </tr>
                 </tfoot>
-            </table>
+            </table>-->
         </div>
         </div>
         <div class="modal-footer">

@@ -1,0 +1,1143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/Antlr3.Runtime.dll">
+      <publishTime>09/27/2014 21:50:50</publishTime>
+    </File>
+    <File Include="bin/Autofac.Configuration.dll">
+      <publishTime>09/26/2014 16:34:52</publishTime>
+    </File>
+    <File Include="bin/Autofac.dll">
+      <publishTime>09/26/2014 16:33:16</publishTime>
+    </File>
+    <File Include="bin/Autofac.Extras.DynamicProxy2.dll">
+      <publishTime>09/26/2014 16:39:45</publishTime>
+    </File>
+    <File Include="bin/Autofac.Integration.Mvc.dll">
+      <publishTime>09/26/2014 16:33:27</publishTime>
+    </File>
+    <File Include="bin/Autofac.Integration.WebApi.dll">
+      <publishTime>09/26/2014 16:35:51</publishTime>
+    </File>
+    <File Include="bin/Castle.Core.dll">
+      <publishTime>09/24/2014 17:52:31</publishTime>
+    </File>
+    <File Include="bin/Common.Logging.Core.dll">
+      <publishTime>09/26/2014 16:34:52</publishTime>
+    </File>
+    <File Include="bin/Common.Logging.dll">
+      <publishTime>09/26/2014 16:34:53</publishTime>
+    </File>
+    <File Include="bin/de/NHibernate.Validator.resources.dll">
+      <publishTime>09/27/2014 19:46:04</publishTime>
+    </File>
+    <File Include="bin/dotless.Core.dll">
+      <publishTime>09/27/2014 21:50:50</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>09/27/2014 20:31:23</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>09/27/2014 20:31:23</publishTime>
+    </File>
+    <File Include="bin/es/NHibernate.Validator.resources.dll">
+      <publishTime>09/27/2014 19:46:04</publishTime>
+    </File>
+    <File Include="bin/fa/NHibernate.Validator.resources.dll">
+      <publishTime>09/27/2014 19:46:04</publishTime>
+    </File>
+    <File Include="bin/FluentNHibernate.dll">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="bin/fr/NHibernate.Validator.resources.dll">
+      <publishTime>09/27/2014 19:46:04</publishTime>
+    </File>
+    <File Include="bin/HibernatingRhinos.Profiler.Appender.dll">
+      <publishTime>09/28/2014 00:35:07</publishTime>
+    </File>
+    <File Include="bin/hr/NHibernate.Validator.resources.dll">
+      <publishTime>09/27/2014 19:46:04</publishTime>
+    </File>
+    <File Include="bin/Iesi.Collections.dll">
+      <publishTime>09/26/2014 16:37:12</publishTime>
+    </File>
+    <File Include="bin/Innovix.Base.Data.dll">
+      <publishTime>03/12/2014 13:07:28</publishTime>
+    </File>
+    <File Include="bin/Innovix.Base.Domain.dll">
+      <publishTime>03/12/2014 12:19:14</publishTime>
+    </File>
+    <File Include="bin/Innovix.Base.Domain.Service.Impl.dll">
+      <publishTime>03/12/2014 13:46:27</publishTime>
+    </File>
+    <File Include="bin/Innovix.Base.Infrastructure.dll">
+      <publishTime>04/11/2014 20:51:00</publishTime>
+    </File>
+    <File Include="bin/Innovix.Base.Persistencia.NHibernate.dll">
+      <publishTime>03/12/2014 13:46:28</publishTime>
+    </File>
+    <File Include="bin/Innovix.Base.Web.Init.dll">
+      <publishTime>03/12/2014 13:46:29</publishTime>
+    </File>
+    <File Include="bin/INNOVIX_RFIX.dll">
+      <publishTime>12/04/2014 09:53:00</publishTime>
+    </File>
+    <File Include="bin/it/NHibernate.Validator.resources.dll">
+      <publishTime>09/27/2014 19:46:04</publishTime>
+    </File>
+    <File Include="bin/lv/NHibernate.Validator.resources.dll">
+      <publishTime>09/27/2014 19:46:04</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.EnterpriseLibrary.Common.dll">
+      <publishTime>09/26/2014 16:34:53</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.EnterpriseLibrary.Data.dll">
+      <publishTime>09/26/2014 16:34:53</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>07/19/2012 10:59:52</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Mvc.FixedDisplayModes.dll">
+      <publishTime>09/24/2014 17:22:50</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>09/26/2014 16:35:51</publishTime>
+    </File>
+    <File Include="bin/NHibernate.dll">
+      <publishTime>09/26/2014 16:37:12</publishTime>
+    </File>
+    <File Include="bin/NHibernate.Validator.dll">
+      <publishTime>09/27/2014 19:46:04</publishTime>
+    </File>
+    <File Include="bin/nl/NHibernate.Validator.resources.dll">
+      <publishTime>09/27/2014 19:46:04</publishTime>
+    </File>
+    <File Include="bin/pl/NHibernate.Validator.resources.dll">
+      <publishTime>09/27/2014 19:46:04</publishTime>
+    </File>
+    <File Include="bin/pt-BR/NHibernate.Validator.resources.dll">
+      <publishTime>09/27/2014 19:46:04</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>09/26/2014 16:35:51</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.dll">
+      <publishTime>09/26/2014 16:35:51</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.WebHost.dll">
+      <publishTime>11/12/2014 13:36:31</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>07/10/2012 21:51:54</publishTime>
+    </File>
+    <File Include="bin/System.Web.Optimization.dll">
+      <publishTime>09/27/2014 21:50:51</publishTime>
+    </File>
+    <File Include="bin/System.Web.Optimization.Less.dll">
+      <publishTime>09/27/2014 21:50:51</publishTime>
+    </File>
+    <File Include="bin/System.Web.Providers.dll">
+      <publishTime>09/24/2014 17:22:51</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>08/17/2012 11:22:26</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>07/10/2012 12:03:34</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>07/10/2012 12:03:34</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>07/10/2012 12:03:34</publishTime>
+    </File>
+    <File Include="bin/WebGrease.dll">
+      <publishTime>09/27/2014 21:50:50</publishTime>
+    </File>
+    <File Include="CodeTemplates/Scaffolders/Repository/IRepositoryTemplate.cs.t4">
+      <publishTime>10/09/2014 10:21:32</publishTime>
+    </File>
+    <File Include="CodeTemplates/Scaffolders/Repository/Repository.ps1">
+      <publishTime>10/09/2014 10:21:32</publishTime>
+    </File>
+    <File Include="CodeTemplates/Scaffolders/Repository/RepositoryImplTemplate.cs.t4">
+      <publishTime>10/09/2014 10:21:32</publishTime>
+    </File>
+    <File Include="CodeTemplates/Scaffolders/Service/IServiceTemplate.cs.t4">
+      <publishTime>10/09/2014 10:21:32</publishTime>
+    </File>
+    <File Include="CodeTemplates/Scaffolders/Service/Service.ps1">
+      <publishTime>10/09/2014 10:21:32</publishTime>
+    </File>
+    <File Include="CodeTemplates/Scaffolders/Service/ServiceImplTemplate.cs.t4">
+      <publishTime>10/09/2014 10:21:32</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>09/24/2014 17:22:44</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>10/09/2014 10:21:33</publishTime>
+    </File>
+    <File Include="Views/Boarding/List.cshtml">
+      <publishTime>01/12/2014 14:13:35</publishTime>
+    </File>
+    <File Include="Views/Equipment/Create.cshtml">
+      <publishTime>10/30/2014 22:25:12</publishTime>
+    </File>
+    <File Include="Views/Equipment/List.cshtml">
+      <publishTime>12/01/2014 20:20:33</publishTime>
+    </File>
+    <File Include="Views/Home/Index.cshtml">
+      <publishTime>03/12/2014 13:43:57</publishTime>
+    </File>
+    <File Include="Views/Location/Create.cshtml">
+      <publishTime>10/30/2014 22:47:40</publishTime>
+    </File>
+    <File Include="Views/Location/List.cshtml">
+      <publishTime>12/01/2014 20:26:04</publishTime>
+    </File>
+    <File Include="Views/Login/Index.cshtml">
+      <publishTime>10/09/2014 10:21:32</publishTime>
+    </File>
+    <File Include="Views/Login/Init.cshtml">
+      <publishTime>10/28/2014 19:37:25</publishTime>
+    </File>
+    <File Include="Views/ReportBoarding/Item.cshtml">
+      <publishTime>03/12/2014 13:45:40</publishTime>
+    </File>
+    <File Include="Views/ReportBoarding/List.cshtml">
+      <publishTime>03/12/2014 13:45:07</publishTime>
+    </File>
+    <File Include="Views/ReportItem/Item.cshtml">
+      <publishTime>03/12/2014 13:45:35</publishTime>
+    </File>
+    <File Include="Views/ReportItem/List.cshtml">
+      <publishTime>03/12/2014 13:44:58</publishTime>
+    </File>
+    <File Include="Views/ReportSeals/Item.cshtml">
+      <publishTime>03/12/2014 13:45:30</publishTime>
+    </File>
+    <File Include="Views/ReportSeals/List.cshtml">
+      <publishTime>03/12/2014 13:44:51</publishTime>
+    </File>
+    <File Include="Views/ReportUser/List.cshtml">
+      <publishTime>03/12/2014 13:45:22</publishTime>
+    </File>
+    <File Include="Views/Route/Create.cshtml">
+      <publishTime>10/28/2014 19:38:28</publishTime>
+    </File>
+    <File Include="Views/Route/List.cshtml">
+      <publishTime>12/01/2014 20:27:45</publishTime>
+    </File>
+    <File Include="Views/Shared/Error.cshtml">
+      <publishTime>09/24/2014 17:22:44</publishTime>
+    </File>
+    <File Include="Views/Shared/Login_Layout.cshtml">
+      <publishTime>10/30/2014 20:25:44</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout.cshtml">
+      <publishTime>01/12/2014 20:59:52</publishTime>
+    </File>
+    <File Include="Views/User/Create.cshtml">
+      <publishTime>10/28/2014 19:38:45</publishTime>
+    </File>
+    <File Include="Views/User/List.cshtml">
+      <publishTime>12/01/2014 20:29:13</publishTime>
+    </File>
+    <File Include="Views/Web.config">
+      <publishTime>09/24/2014 17:22:44</publishTime>
+    </File>
+    <File Include="Views/_ViewStart.cshtml">
+      <publishTime>09/24/2014 17:22:44</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>10/13/2014 15:31:42</publishTime>
+    </File>
+    <File Include="Web/bootstrap/choices.tpl.html">
+      <publishTime>10/05/2014 21:28:09</publishTime>
+    </File>
+    <File Include="Web/bootstrap/match-multiple.tpl.html">
+      <publishTime>10/05/2014 21:28:09</publishTime>
+    </File>
+    <File Include="Web/bootstrap/match.tpl.html">
+      <publishTime>10/05/2014 21:28:09</publishTime>
+    </File>
+    <File Include="Web/bootstrap/select-multiple.tpl.html">
+      <publishTime>10/05/2014 21:28:09</publishTime>
+    </File>
+    <File Include="Web/bootstrap/select.tpl.html">
+      <publishTime>10/05/2014 21:28:09</publishTime>
+    </File>
+    <File Include="Web/css/bootstrap-theme.css">
+      <publishTime>09/25/2014 22:05:39</publishTime>
+    </File>
+    <File Include="Web/css/bootstrap-theme.min.css">
+      <publishTime>09/25/2014 15:39:25</publishTime>
+    </File>
+    <File Include="Web/css/bootstrap.css">
+      <publishTime>10/30/2014 20:18:25</publishTime>
+    </File>
+    <File Include="Web/css/bootstrap.min.css">
+      <publishTime>09/25/2014 15:39:24</publishTime>
+    </File>
+    <File Include="Web/css/main.css">
+      <publishTime>12/01/2014 21:21:36</publishTime>
+    </File>
+    <File Include="Web/css/navbar.css">
+      <publishTime>10/05/2014 20:23:06</publishTime>
+    </File>
+    <File Include="Web/css/ng-grid.css">
+      <publishTime>09/25/2014 23:16:33</publishTime>
+    </File>
+    <File Include="Web/css/select.css">
+      <publishTime>10/05/2014 21:40:50</publishTime>
+    </File>
+    <File Include="Web/css/select2-spinner.gif">
+      <publishTime>03/07/2014 12:50:50</publishTime>
+    </File>
+    <File Include="Web/css/select2.png">
+      <publishTime>03/07/2014 12:50:50</publishTime>
+    </File>
+    <File Include="Web/css/select2x2.png">
+      <publishTime>03/07/2014 12:50:50</publishTime>
+    </File>
+    <File Include="Web/fonts/glyphicons-halflings-regular.eot">
+      <publishTime>09/25/2014 15:38:48</publishTime>
+    </File>
+    <File Include="Web/fonts/glyphicons-halflings-regular.svg">
+      <publishTime>09/25/2014 15:38:48</publishTime>
+    </File>
+    <File Include="Web/fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>09/25/2014 15:38:48</publishTime>
+    </File>
+    <File Include="Web/fonts/glyphicons-halflings-regular.woff">
+      <publishTime>09/25/2014 15:38:48</publishTime>
+    </File>
+    <File Include="Web/img/ajax-loader.gif">
+      <publishTime>01/12/2014 20:57:50</publishTime>
+    </File>
+    <File Include="Web/img/favicon.ico">
+      <publishTime>10/30/2014 20:25:26</publishTime>
+    </File>
+    <File Include="Web/img/logo/innovix_logosquare.png">
+      <publishTime>10/09/2014 10:21:33</publishTime>
+    </File>
+    <File Include="Web/img/logo/RFIXLOGO.png">
+      <publishTime>10/30/2014 20:12:16</publishTime>
+    </File>
+    <File Include="Web/js/bootstrap.js">
+      <publishTime>09/25/2014 15:38:27</publishTime>
+    </File>
+    <File Include="Web/js/cidades_estados.js">
+      <publishTime>10/30/2014 22:33:50</publishTime>
+    </File>
+    <File Include="Web/js/core.js">
+      <publishTime>03/12/2014 13:41:13</publishTime>
+    </File>
+    <File Include="Web/js/directives.js">
+      <publishTime>11/01/2014 22:50:00</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/angular-router.js">
+      <publishTime>09/25/2014 16:49:33</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/angular-select.js">
+      <publishTime>10/05/2014 21:40:16</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/angular.js">
+      <publishTime>10/29/2014 22:42:58</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/angular-strap.js">
+      <publishTime>09/25/2014 15:33:22</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/angular-strap.min.js">
+      <publishTime>09/25/2014 15:33:22</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/angular-strap.min.js.map">
+      <publishTime>09/25/2014 15:33:22</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/angular-strap.tpl.js">
+      <publishTime>09/25/2014 15:33:22</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/angular-strap.tpl.min.js">
+      <publishTime>09/25/2014 15:33:22</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/affix.js">
+      <publishTime>09/25/2014 15:33:22</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/affix.min.js">
+      <publishTime>09/25/2014 15:33:22</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/affix.min.js.map">
+      <publishTime>09/25/2014 15:33:22</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/alert.js">
+      <publishTime>09/25/2014 15:33:22</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/alert.min.js">
+      <publishTime>09/25/2014 15:33:22</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/alert.min.js.map">
+      <publishTime>09/25/2014 15:33:22</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/alert.tpl.js">
+      <publishTime>09/25/2014 15:33:22</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/alert.tpl.min.js">
+      <publishTime>09/25/2014 15:33:22</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/aside.js">
+      <publishTime>09/25/2014 15:33:22</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/aside.min.js">
+      <publishTime>09/25/2014 15:33:22</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/aside.min.js.map">
+      <publishTime>09/25/2014 15:33:22</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/aside.tpl.js">
+      <publishTime>09/25/2014 15:33:22</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/aside.tpl.min.js">
+      <publishTime>09/25/2014 15:33:22</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/button.js">
+      <publishTime>09/25/2014 15:33:22</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/button.min.js">
+      <publishTime>09/25/2014 15:33:22</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/button.min.js.map">
+      <publishTime>09/25/2014 15:33:22</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/collapse.js">
+      <publishTime>09/25/2014 15:33:22</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/collapse.min.js">
+      <publishTime>09/25/2014 15:33:22</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/collapse.min.js.map">
+      <publishTime>09/25/2014 15:33:22</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/date-parser.js">
+      <publishTime>09/25/2014 15:33:22</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/date-parser.min.js">
+      <publishTime>09/25/2014 15:33:22</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/date-parser.min.js.map">
+      <publishTime>09/25/2014 15:33:22</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/datepicker.js">
+      <publishTime>09/25/2014 15:33:22</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/datepicker.min.js">
+      <publishTime>09/25/2014 15:33:22</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/datepicker.min.js.map">
+      <publishTime>09/25/2014 15:33:22</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/datepicker.tpl.js">
+      <publishTime>09/25/2014 15:33:22</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/datepicker.tpl.min.js">
+      <publishTime>09/25/2014 15:33:22</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/debounce.js">
+      <publishTime>09/25/2014 15:33:23</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/debounce.min.js">
+      <publishTime>09/25/2014 15:33:23</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/debounce.min.js.map">
+      <publishTime>09/25/2014 15:33:23</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/dimensions.js">
+      <publishTime>09/25/2014 15:33:23</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/dimensions.min.js">
+      <publishTime>09/25/2014 15:33:23</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/dimensions.min.js.map">
+      <publishTime>09/25/2014 15:33:23</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/dropdown.js">
+      <publishTime>09/25/2014 15:33:23</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/dropdown.min.js">
+      <publishTime>09/25/2014 15:33:23</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/dropdown.min.js.map">
+      <publishTime>09/25/2014 15:33:23</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/dropdown.tpl.js">
+      <publishTime>09/25/2014 15:33:23</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/dropdown.tpl.min.js">
+      <publishTime>09/25/2014 15:33:23</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/modal.js">
+      <publishTime>09/25/2014 15:33:23</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/modal.min.js">
+      <publishTime>09/25/2014 15:33:23</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/modal.min.js.map">
+      <publishTime>09/25/2014 15:33:23</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/modal.tpl.js">
+      <publishTime>09/25/2014 15:33:23</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/modal.tpl.min.js">
+      <publishTime>09/25/2014 15:33:23</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/navbar.js">
+      <publishTime>09/25/2014 15:33:23</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/navbar.min.js">
+      <publishTime>09/25/2014 15:33:23</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/navbar.min.js.map">
+      <publishTime>09/25/2014 15:33:23</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/parse-options.js">
+      <publishTime>09/25/2014 15:33:23</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/parse-options.min.js">
+      <publishTime>09/25/2014 15:33:23</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/parse-options.min.js.map">
+      <publishTime>09/25/2014 15:33:23</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/popover.js">
+      <publishTime>09/25/2014 15:33:23</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/popover.min.js">
+      <publishTime>09/25/2014 15:33:23</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/popover.min.js.map">
+      <publishTime>09/25/2014 15:33:23</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/popover.tpl.js">
+      <publishTime>09/25/2014 15:33:23</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/popover.tpl.min.js">
+      <publishTime>09/25/2014 15:33:23</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/raf.js">
+      <publishTime>09/25/2014 15:33:23</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/raf.min.js">
+      <publishTime>09/25/2014 15:33:23</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/raf.min.js.map">
+      <publishTime>09/25/2014 15:33:23</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/scrollspy.js">
+      <publishTime>09/25/2014 15:33:23</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/scrollspy.min.js">
+      <publishTime>09/25/2014 15:33:23</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/scrollspy.min.js.map">
+      <publishTime>09/25/2014 15:33:23</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/select.js">
+      <publishTime>09/25/2014 15:33:23</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/select.min.js">
+      <publishTime>09/25/2014 15:33:23</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/select.min.js.map">
+      <publishTime>09/25/2014 15:33:23</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/select.tpl.js">
+      <publishTime>09/25/2014 15:33:23</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/select.tpl.min.js">
+      <publishTime>09/25/2014 15:33:23</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/tab.js">
+      <publishTime>09/25/2014 15:33:23</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/tab.min.js">
+      <publishTime>09/25/2014 15:33:23</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/tab.min.js.map">
+      <publishTime>09/25/2014 15:33:23</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/tab.tpl.js">
+      <publishTime>09/25/2014 15:33:24</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/tab.tpl.min.js">
+      <publishTime>09/25/2014 15:33:24</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/timepicker.js">
+      <publishTime>09/25/2014 15:33:24</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/timepicker.min.js">
+      <publishTime>09/25/2014 15:33:24</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/timepicker.min.js.map">
+      <publishTime>09/25/2014 15:33:24</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/timepicker.tpl.js">
+      <publishTime>09/25/2014 15:33:24</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/timepicker.tpl.min.js">
+      <publishTime>09/25/2014 15:33:24</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/tooltip.js">
+      <publishTime>09/25/2014 15:33:24</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/tooltip.min.js">
+      <publishTime>09/25/2014 15:33:24</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/tooltip.min.js.map">
+      <publishTime>09/25/2014 15:33:24</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/tooltip.tpl.js">
+      <publishTime>09/25/2014 15:33:24</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/tooltip.tpl.min.js">
+      <publishTime>09/25/2014 15:33:24</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/typeahead.js">
+      <publishTime>09/25/2014 15:33:24</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/typeahead.min.js">
+      <publishTime>09/25/2014 15:33:24</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/typeahead.min.js.map">
+      <publishTime>09/25/2014 15:33:24</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/typeahead.tpl.js">
+      <publishTime>09/25/2014 15:33:24</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/strap/dist/modules/typeahead.tpl.min.js">
+      <publishTime>09/25/2014 15:33:24</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/ui/ui-bootstrap.js">
+      <publishTime>09/25/2014 15:29:11</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/ui/ui-grid-layout.js">
+      <publishTime>09/25/2014 23:26:46</publishTime>
+    </File>
+    <File Include="Web/js/Externals/angular/ui/ui-grid.js">
+      <publishTime>09/25/2014 23:18:55</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/excellentexport.js">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/excellentexport.min.js">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/html2canvas.js">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/icons/csv.png">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/icons/json.png">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/icons/pdf.png">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/icons/png.png">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/icons/ppt.png">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/icons/sql.png">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/icons/Thumbs.db">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/icons/txt.png">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/icons/word.png">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/icons/xls.png">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/icons/xml.png">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jquery.base64.js">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jspdf/jspdf.js">
+      <publishTime>10/09/2014 23:07:16</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jspdf/libs/base64.js">
+      <publishTime>10/09/2014 23:07:16</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jspdf/libs/sprintf.js">
+      <publishTime>10/09/2014 23:07:16</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/dist/jspdf.amd.min.js">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/dist/jspdf.min.js">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/dist/jspdf.source.js">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/doc/files.html">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/doc/index.html">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/doc/symbols/FontObject.html">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/doc/symbols/jsPDF-jsPDF.html">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/doc/symbols/jsPDF-PubSub.html">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/doc/symbols/jsPDF.html">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/doc/symbols/jsPDFClass.html">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/doc/symbols/PubSub.html">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/doc/symbols/src/c__work_jsPDF_jspdf.js.html">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/doc/symbols/src/c__work_jsPDF_tools_jspdf.js.html">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/doc/symbols/src/jspdf.js.html">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/doc/symbols/_global_.html">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/index.html">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/jspdf.debug.js">
+      <publishTime>10/10/2014 13:22:44</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/jspdf.js">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/jspdf.plugin.addimage.js">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/jspdf.plugin.cell.js">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/jspdf.plugin.from_html.js">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/jspdf.plugin.ie_below_9_shim.js">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/jspdf.plugin.javascript.js">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/jspdf.plugin.sillysvgrenderer.js">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/jspdf.plugin.split_text_to_size.js">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/jspdf.plugin.standard_fonts_metrics.js">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/jspdf.plugin.table.js">
+      <publishTime>10/10/2014 13:22:44</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/jspdf.PLUGINTEMPLATE.js">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/libs/.DS_Store">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/libs/Blob.js/Blob.js">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/libs/Blob.js/BlobBuilder.js">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/libs/Blob.js/BlobBuilder.min.js">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/libs/Blob.js/LICENSE.md">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/libs/Blob.js/README.md">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/libs/Deflate/adler32cs.js">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/libs/Deflate/deflate.js">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/libs/Downloadify/images/download.png">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/libs/Downloadify/js/downloadify.min.js">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/libs/Downloadify/js/swfobject.js">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/libs/Downloadify/LICENSE.txt">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/libs/Downloadify/media/downloadify.swf">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/libs/Downloadify/README.textile">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/libs/Downloadify/src/com/dynamicflash/util/Base64.as">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/libs/Downloadify/src/com/dynamicflash/util/tests/Base64Test.as">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/libs/Downloadify/src/Downloadify.as">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/libs/Downloadify/src/downloadify.js">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/libs/Downloadify/test.html">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/libs/FileSaver.js/demo/demo.css">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/libs/FileSaver.js/demo/demo.js">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/libs/FileSaver.js/demo/demo.min.js">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/libs/FileSaver.js/demo/index.xhtml">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/libs/FileSaver.js/FileSaver.js">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/libs/FileSaver.js/FileSaver.min.js">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/libs/FileSaver.js/LICENSE.md">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/libs/FileSaver.js/README.md">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/libs/README">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/MIT-LICENSE.txt">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/README.md">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/test/001_blankpdf.pdf">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/test/002_twopagedoc.pdf">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/test/002_twopagedoc_oldapi.pdf">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/test/003_demolandscape.pdf">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/test/004_fontsizes.pdf">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/test/005_demofonttypes.pdf">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/test/006_demotestcolors.pdf">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/test/007_demometadata.pdf">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/test/008_demorectangles.pdf">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/test/009_demoliness.pdf">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/test/010_democircles.pdf">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/test/011_multilinetext.pdf">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/test/012_multiplelines.pdf">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/test/013_sillysvgrenderer.pdf">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/test/013_sillysvgrenderer.svg">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/test/014_addImage.jpeg">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/test/014_addImage.jpeg.base64.txt">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/test/014_addImage.pdf.base64.txt">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/test/014_addImage.txt">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/test/015_splittext.js">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/test/015_splittext.pdf">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/test/components_tests.js">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/test/index.htm">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/test/libs/curl-0.5.4.min.js">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/test/libs/custom_fill.js">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/test/libs/qunit.css">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/test/libs/qunit.js">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/test/pdf_generate_tests.js">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/test/test.html">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/test/test_min.html">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/tools/jsdoc_template/allclasses.tmpl">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/tools/jsdoc_template/allfiles.tmpl">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/tools/jsdoc_template/class.tmpl">
+      <publishTime>10/09/2014 23:07:16</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/tools/jsdoc_template/index.tmpl">
+      <publishTime>10/09/2014 23:07:16</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/tools/jsdoc_template/publish.js">
+      <publishTime>10/09/2014 23:07:16</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/tools/jsdoc_template/static/default.css">
+      <publishTime>10/09/2014 23:07:16</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/tools/jsdoc_template/static/header.html">
+      <publishTime>10/09/2014 23:07:16</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/tools/jsdoc_template/static/index.html">
+      <publishTime>10/09/2014 23:07:16</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/tools/jsdoc_template/symbol.tmpl">
+      <publishTime>10/09/2014 23:07:16</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/wscript.py">
+      <publishTime>10/09/2014 23:07:16</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/jsPDF0.9/__MACOSX/libs/._.DS_Store">
+      <publishTime>10/09/2014 23:07:15</publishTime>
+    </File>
+    <File Include="Web/js/Externals/htmltable_export/tableExport.js">
+      <publishTime>10/09/2014 23:07:16</publishTime>
+    </File>
+    <File Include="Web/js/Externals/jquery/jquery-mask.js">
+      <publishTime>10/09/2014 10:21:33</publishTime>
+    </File>
+    <File Include="Web/js/Externals/jquery/jquery.js">
+      <publishTime>09/25/2014 15:27:53</publishTime>
+    </File>
+    <File Include="Web/js/Externals/jquery/noty/jquery.noty.js">
+      <publishTime>10/02/2014 15:10:03</publishTime>
+    </File>
+    <File Include="Web/js/Externals/jquery/noty/layouts/bottom.js">
+      <publishTime>10/02/2014 15:10:03</publishTime>
+    </File>
+    <File Include="Web/js/Externals/jquery/noty/layouts/bottomCenter.js">
+      <publishTime>10/02/2014 15:10:03</publishTime>
+    </File>
+    <File Include="Web/js/Externals/jquery/noty/layouts/bottomLeft.js">
+      <publishTime>10/02/2014 15:10:03</publishTime>
+    </File>
+    <File Include="Web/js/Externals/jquery/noty/layouts/bottomRight.js">
+      <publishTime>10/02/2014 15:10:03</publishTime>
+    </File>
+    <File Include="Web/js/Externals/jquery/noty/layouts/center.js">
+      <publishTime>10/02/2014 15:10:04</publishTime>
+    </File>
+    <File Include="Web/js/Externals/jquery/noty/layouts/centerLeft.js">
+      <publishTime>10/02/2014 15:10:04</publishTime>
+    </File>
+    <File Include="Web/js/Externals/jquery/noty/layouts/centerRight.js">
+      <publishTime>10/02/2014 15:10:04</publishTime>
+    </File>
+    <File Include="Web/js/Externals/jquery/noty/layouts/inline.js">
+      <publishTime>10/02/2014 15:10:04</publishTime>
+    </File>
+    <File Include="Web/js/Externals/jquery/noty/layouts/top.js">
+      <publishTime>10/02/2014 15:10:04</publishTime>
+    </File>
+    <File Include="Web/js/Externals/jquery/noty/layouts/topCenter.js">
+      <publishTime>10/02/2014 15:10:04</publishTime>
+    </File>
+    <File Include="Web/js/Externals/jquery/noty/layouts/topLeft.js">
+      <publishTime>10/02/2014 15:10:04</publishTime>
+    </File>
+    <File Include="Web/js/Externals/jquery/noty/layouts/topRight.js">
+      <publishTime>10/02/2014 15:10:04</publishTime>
+    </File>
+    <File Include="Web/js/Externals/jquery/noty/packaged/jquery.noty.packaged.js">
+      <publishTime>10/02/2014 15:10:04</publishTime>
+    </File>
+    <File Include="Web/js/Externals/jquery/noty/packaged/jquery.noty.packaged.min.js">
+      <publishTime>10/02/2014 15:10:04</publishTime>
+    </File>
+    <File Include="Web/js/Externals/jquery/noty/promise.js">
+      <publishTime>10/02/2014 15:10:03</publishTime>
+    </File>
+    <File Include="Web/js/Externals/jquery/noty/themes/bootstrap.js">
+      <publishTime>10/02/2014 15:10:04</publishTime>
+    </File>
+    <File Include="Web/js/Externals/jquery/noty/themes/default.js">
+      <publishTime>10/02/2014 15:10:04</publishTime>
+    </File>
+    <File Include="Web/js/loading.js">
+      <publishTime>12/01/2014 11:23:34</publishTime>
+    </File>
+    <File Include="Web/js/modal.js">
+      <publishTime>10/09/2014 10:21:33</publishTime>
+    </File>
+    <File Include="Web/js/Routers/equipment-router.js">
+      <publishTime>10/09/2014 10:21:33</publishTime>
+    </File>
+    <File Include="Web/js/Routers/home-router.js">
+      <publishTime>10/09/2014 10:21:33</publishTime>
+    </File>
+    <File Include="Web/js/Routers/location-router.js">
+      <publishTime>10/09/2014 10:21:33</publishTime>
+    </File>
+    <File Include="Web/js/Routers/login.js">
+      <publishTime>10/09/2014 10:21:33</publishTime>
+    </File>
+    <File Include="Web/js/Routers/report-boarding-router.js">
+      <publishTime>10/09/2014 10:21:33</publishTime>
+    </File>
+    <File Include="Web/js/Routers/report-item-router.js">
+      <publishTime>10/09/2014 10:21:33</publishTime>
+    </File>
+    <File Include="Web/js/Routers/report-seals-router.js">
+      <publishTime>10/09/2014 10:21:33</publishTime>
+    </File>
+    <File Include="Web/js/Routers/report-user-router.js">
+      <publishTime>10/09/2014 10:21:33</publishTime>
+    </File>
+    <File Include="Web/js/Routers/route-router.js">
+      <publishTime>10/09/2014 10:21:33</publishTime>
+    </File>
+    <File Include="Web/js/Routers/user-router.js">
+      <publishTime>10/09/2014 10:21:33</publishTime>
+    </File>
+    <File Include="Web/js/Src/boarding-list-ctrl.js">
+      <publishTime>12/01/2014 20:17:12</publishTime>
+    </File>
+    <File Include="Web/js/Src/equipment-create-ctrl.js">
+      <publishTime>10/30/2014 22:28:57</publishTime>
+    </File>
+    <File Include="Web/js/Src/equipment-list-ctrl.js">
+      <publishTime>12/01/2014 20:23:45</publishTime>
+    </File>
+    <File Include="Web/js/Src/location-create-ctrl.js">
+      <publishTime>10/30/2014 22:43:19</publishTime>
+    </File>
+    <File Include="Web/js/Src/location-list-ctrl.js">
+      <publishTime>12/01/2014 20:25:04</publishTime>
+    </File>
+    <File Include="Web/js/Src/login-init.js">
+      <publishTime>10/28/2014 19:58:41</publishTime>
+    </File>
+    <File Include="Web/js/Src/navbar-ctrl.js">
+      <publishTime>11/06/2014 23:58:49</publishTime>
+    </File>
+    <File Include="Web/js/Src/report-boarding-ctrl.js">
+      <publishTime>03/12/2014 12:03:48</publishTime>
+    </File>
+    <File Include="Web/js/Src/report-boarding-list-ctrl.js">
+      <publishTime>12/01/2014 20:45:35</publishTime>
+    </File>
+    <File Include="Web/js/Src/report-item-ctrl.js">
+      <publishTime>12/01/2014 20:31:45</publishTime>
+    </File>
+    <File Include="Web/js/Src/report-item-list-ctrl.js">
+      <publishTime>12/01/2014 20:40:53</publishTime>
+    </File>
+    <File Include="Web/js/Src/report-seals-ctrl.js">
+      <publishTime>03/12/2014 12:18:14</publishTime>
+    </File>
+    <File Include="Web/js/Src/report-seals-list-ctrl.js">
+      <publishTime>12/01/2014 20:43:45</publishTime>
+    </File>
+    <File Include="Web/js/Src/report-user-list-ctrl.js">
+      <publishTime>12/03/2014 12:32:39</publishTime>
+    </File>
+    <File Include="Web/js/Src/route-create-ctrl.js">
+      <publishTime>10/09/2014 18:34:30</publishTime>
+    </File>
+    <File Include="Web/js/Src/route-list-ctrl.js">
+      <publishTime>12/01/2014 20:26:58</publishTime>
+    </File>
+    <File Include="Web/js/Src/user-create-ctrl.js">
+      <publishTime>10/30/2014 21:51:43</publishTime>
+    </File>
+    <File Include="Web/js/Src/user-list-ctrl.js">
+      <publishTime>12/01/2014 20:28:34</publishTime>
+    </File>
+    <File Include="Web/js/utils.js">
+      <publishTime>01/12/2014 10:19:13</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

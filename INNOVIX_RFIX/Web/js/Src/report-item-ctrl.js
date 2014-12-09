@@ -3,13 +3,20 @@
     $scope.objItem = {};
     $scope.export = [];
     $scope.search = "";
-    $scope.predicate = 'id';
+    $scope.predicate = 'dtAtualizacao';
     $scope.order = 'ASC';
 
     $scope.init = function () {
         $scope.get($routeParams.id);
         $scope.getReportHistoryItem(1);
     };
+
+    $scope.pageChanged = function () {
+        $scope.getReportHistoryItem(
+             $scope.currentPage
+        );
+    };
+
 
     $scope.exportPDF = function () {
         var doc = new jsPDF('landscape', 'pt', 'a4');
@@ -94,6 +101,8 @@
     };
 
     $scope.getReportHistoryItem = function (current) {
+        Loading.showAll();
+
         $http.post(baseUrl + '/reportItem/getAllHistory', {
             id: $routeParams.id,
             limit: global.limit,
@@ -105,15 +114,12 @@
             $scope.export = response.export;
             $scope.list = response.data;
             $scope.totalItems = response.total;
+
+            Loading.hideAll();
         });
     };
 
-    $scope.pageChanged = function () {
-        $scope.getReportItem(
-             $scope.currentPage
-        );
-    };
-
+ 
     $scope.maxSize = global.limit;
     $scope.currentPage = 1;
 

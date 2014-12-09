@@ -18,6 +18,8 @@ namespace INNOVIX_RFIX.Controllers
             if (Request.Cookies[FormsAuthentication.FormsCookieName] != null)
                 return RedirectToAction("Index", "Home/Index");
 
+            ViewBag.baseUrl = Request.Url.ToString().Replace(Request.Path, "");
+
             return View();
         }
 

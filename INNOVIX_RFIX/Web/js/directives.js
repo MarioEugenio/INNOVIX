@@ -1,4 +1,5 @@
-﻿angular.module('innovix', [])
+﻿
+angular.module('innovix', [])
     .directive('cpf', function () {
 
         return {
@@ -26,7 +27,7 @@
         return {
             scope: true,
             link: function (scope, element, attrs) {
-                element.inputmask('(99)9999-9999');
+                element.inputmask('(99)9999[9]-9999');
             }
 
         };

@@ -6,6 +6,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Reflection;
+using System.Text;
 
 namespace INNOVIX_RFIX.Controllers
 {
@@ -13,11 +15,15 @@ namespace INNOVIX_RFIX.Controllers
     public class ReportBoardingController : ControllerBase
     {
          private ITbLoteService serviceLote;
-        private ITbLogLoteService service;
-        private ITbLogSacoService serviceSaco;
+        private ITbLacreService service;
+        private ITbLogEpcService serviceEpc;
+        private ITbItemService serviceItem;
+        private ITbSacoService serviceSaco;
 
-        public ReportBoardingController(ITbLogLoteService service, ITbLoteService serviceLote, ITbLogSacoService serviceSaco)
+        public ReportBoardingController(ITbLacreService service, ITbLoteService serviceLote, ITbItemService serviceItem, ITbLogEpcService serviceEpc, ITbSacoService serviceSaco)
         {
+            this.serviceEpc = serviceEpc;
+            this.serviceItem = serviceItem;
             this.serviceLote = serviceLote;
             this.serviceSaco = serviceSaco;
             this.service = service;
@@ -36,17 +42,18 @@ namespace INNOVIX_RFIX.Controllers
         public JsonResult Get(int Id)
         {
             var result = this.serviceLote
-               .Pesquisar(x => x.Id == Id)
+               .GetLoteDetalhes(Id)
                .Select(x => new
                {
-                   Id = x.Id,
-                   embarque = x.noDesc,
-                   origin = x.tbLocalidade.noNome,
-                   destiny = x.tbLocalidadeDest.noNome,
-                   route = x.tbRota.noNome,
-                   dtCadastro = x.dthCriacao.ToString("dd/MM/yyyy"),
-                   dtAtualizacao = x.tbItem.LastOrDefault().dthCriacao.ToString("dd/MM/yyyy"),
-                   //status = x
+                   embarque = x.Embarque,
+                   origin = x.Origem,
+                   destiny = x.Destino,
+                   dtCadastro = x.DataCadastro.ToString("dd/MM/yyyy"),
+                   dtAtualizacao = x.UltimaAtualizacao.ToString("dd/MM/yyyy"),
+                   status = x.Status,
+                   lacre = x.Lacre,
+                   totalItens = x.TotalItens,
+                   totalItensEntregues = x.TotalItensEntregues
                });
 
             return this.returnJson(result);
@@ -55,16 +62,26 @@ namespace INNOVIX_RFIX.Controllers
         public JsonResult GetAll(int limit, int offset, string predicate, string order)
         {
             var result = this.serviceLote
-                .Listar()
+                .GetLotes()
                 .Select(x => new
                 {
-                    Id = x.Id,
-                    noDesc = x.Id,
-                    origin = x.tbLocalidade.noNome,
-                    destiny = x.tbLocalidadeDest.noNome,
-                    route = x.tbRota.noNome,
-                    dtAtualizacao = x.dthCriacao.ToString("dd/MM/yyyy")
+                    Id = x.ID,
+                    noDesc = x.Embarque,
+                    origin = x.Origem,
+                    destiny = x.Destino,
+                    ultimaLocalidade = x.UltimaLocalidade,
+                    dtAtualizacao = x.UltimaAtualizacao.ToString("dd/MM/yyyy"),
+                    status = x.Status
                 });
+
+            if (order == "ASC")
+            {
+                result = result.OrderBy(x => x.GetType().GetProperty(predicate).GetValue(x, null));
+            }
+            else
+            {
+                result = result.OrderByDescending(x => x.GetType().GetProperty(predicate).GetValue(x, null));
+            }
 
             return this.returnJson(result.Skip((offset - 1) * limit).Take(limit), result.Count(), result);
         }
@@ -72,62 +89,88 @@ namespace INNOVIX_RFIX.Controllers
         public JsonResult GetReportItem(searchBoarding search, int limit, int offset, string predicate, string order)
         {
             var result = this.serviceLote
-                 .Pesquisar(x => (x.Id == search.cod)
-                   || (x.dthCriacao.Date >= search.dtAtualizacao.Date && x.dthCriacao.Date <= search.dtAtualizacao.Date)
-                   || (x.tbLocalidade.Id == search.origem)
-                   || (x.tbLocalidadeDest.Id == search.destino))
+                .GetLotes()
                 .Select(x => new
                 {
-                    Id = x.Id,
-                    noDesc = x.Id,
-                    origin = x.tbLocalidade.noNome,
-                    destiny = x.tbLocalidadeDest.noNome,
-                    route = x.tbRota.noNome,
-                    dtAtualizacao = x.dthCriacao.ToString("dd/MM/yyyy")
+                    Id = x.ID,
+                    noDesc = x.Embarque,
+                    origin = x.Origem,
+                    destiny = x.Destino,
+                    dtAtualizacao = x.UltimaAtualizacao.ToString("dd/MM/yyyy"),
+                    objDtAtualizacao = x.UltimaAtualizacao,
+                    status = x.Status
                 });
+
+            if (search.cod != null)
+                result = result.Where(x => x.noDesc.Contains(search.cod));
+
+            if (search.dtAtualizacao.Year != 1)
+                result = result.Where(x => x.objDtAtualizacao.Date >= search.dtAtualizacao.Date && x.objDtAtualizacao.Date <= search.dtAtualizacao.Date);
+
+            if (search.origem != null)
+                result = result.Where(x => x.origin.Equals(search.origem));
+
+            if (search.destino != null)
+                result = result.Where(x => x.destiny.Equals(search.destino));
+
+            if (order == "ASC")
+            {
+                result = result.OrderBy(x => x.GetType().GetProperty(predicate).GetValue(x, null));
+            }
+            else
+            {
+                result = result.OrderByDescending(x => x.GetType().GetProperty(predicate).GetValue(x, null));
+            }
 
             return this.returnJson(result.Skip((offset - 1) * limit).Take(limit), result.Count(), result);
         }
 
         public JsonResult GetAllItem(int Id, int limit, int offset, string predicate, string order)
         {
-            var objEpc = this.serviceLote.ObterPorId(Id);
-
-            var result = this.service
-               .Pesquisar(x => x.noNome.Equals(objEpc.noDesc))
+            var result = this.serviceItem.GetItemLote(Id)
                .Select(x => new
                {
-                   Id = x.Id,
-                   awb = x.tbEquipamento.tbLogsaco.FirstOrDefault().codBarras,
-                   origin = x.tbEquipamento.tbLocalidade.noCidade,
-                   destiny = x.tbLocalidade.noCidade,
-                   //route = x.,
-                   dtAtualizacao = x.dthLog.ToString("dd/MM/yyyy"),
-                   responsavel = x.tbLocalidade.noResponsavel,
-                   status = x.tbOperacao.noDesc
-
+                   awb = x.AWB,
+                   epc = x.EPC,
+                   lacre = x.Lacre,
+                   ultimaAtualizacao = x.UltimaAtualizacao.ToString("d/MM/yyyy"),
+                   route = x.Rota,
+                   ultimaLocalidade = x.UltimaLocalidade,
+                   status = x.Status,
+                   operador = x.UltimoOperador
                });
+
+            if (order == "ASC")
+            {
+                result = result.OrderBy(x => x.GetType().GetProperty(predicate).GetValue(x, null));
+            }
+            else
+            {
+                result = result.OrderByDescending(x => x.GetType().GetProperty(predicate).GetValue(x, null));
+            }
 
             return this.returnJson(result.Skip((offset - 1) * limit).Take(limit), result.Count(), result);
         }
 
         public JsonResult GetAllSeals(int Id, int limit, int offset, string predicate, string order)
         {
-            var objEpc = this.serviceLote.ObterPorId(Id);
+            var result = this.serviceItem.GetItemHistoricoLote(Id)
+               .Select(x => new
+               {
+                   localidade = x.Localidade,
+                   operador = x.Operador,
+                   data = x.Data.ToString("d/MM/yyyy"),
+                   totalItensLidos = x.TotalItensLidos
+               });
 
-            var result = this.serviceSaco
-              .Listar()
-              .Select(x => new
-              {
-                  Id = x.Id,
-                  awb = x.tbEquipamento.tbLogsaco.FirstOrDefault().codBarras,
-                  origin = x.tbEquipamento.tbLocalidade.noCidade,
-                  destiny = x.tbLocalidade.noCidade,
-                  dtAtualizacao = x.dthLog.ToString("dd/MM/yyyy"),
-                  responsavel = x.tbLocalidade.noResponsavel,
-                  status = x.tbOperacao.noDesc
-
-              });
+            if (order == "ASC")
+            {
+                result = result.OrderBy(x => x.GetType().GetProperty(predicate).GetValue(x, null));
+            }
+            else
+            {
+                result = result.OrderByDescending(x => x.GetType().GetProperty(predicate).GetValue(x, null));
+            }
 
             return this.returnJson(result.Skip((offset - 1) * limit).Take(limit), result.Count(), result);
         }
@@ -135,9 +178,9 @@ namespace INNOVIX_RFIX.Controllers
 
      public class searchBoarding
      {
-         public int cod { get; set; }
-         public int destino { get; set; }
-         public int origem { get; set; }
+         public string cod { get; set; }
+         public string destino { get; set; }
+         public string origem { get; set; }
          public DateTime dtAtualizacao { get; set; }
      }
 }

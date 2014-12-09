@@ -1,4 +1,8 @@
-﻿<div ng-controller="LocationListCtrl" ng-init="init()">
+﻿@{
+    Layout = null;
+}
+
+<div ng-controller="LocationListCtrl" ng-init="init()">
     <ol class="breadcrumb">
       <li><a href="#/home/init">Home</a></li>
       <li class="active">Localidade</li>
@@ -8,7 +12,7 @@
     <h3>Localidades</h3>
     </div>
     <p>
-        <div class="panel panel-default">
+        <form ui-keypress="{13:'searchLocation(1)'}" ng-submit="searchLocation(1)" class="panel panel-default">
           <div class="panel-heading">Pesquise localidades cadastrados</div>
           <div class="panel-body">
             <div class="row">
@@ -16,7 +20,7 @@
                 <div class="input-group">
                   <input type="text" class="form-control" ng-model="search" placeholder="Nome da Localidade">
                   <span class="input-group-btn">
-                    <button class="btn btn-default" ng-click="searchLocation(1)" type="button"><span class="glyphicon glyphicon-search"></span> Pesquisar</button>
+                    <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span> Pesquisar</button>
                   </span>
                 </div><!-- /input-group -->
               </div><!-- /.col-lg-6 -->
@@ -27,7 +31,7 @@
               </div><!-- /.col-lg-6 -->
             </div>
           </div>
-        </div>
+        </form>
 
         <div ng-show="list.length == 0" class="alert alert-warning" role="alert">
             <a href="#" class="alert-link"><span class="glyphicon glyphicon-warning-sign"></span> Não houve retorno de registros</a>
@@ -37,10 +41,10 @@
             <table class="table table-bordered table-striped">
                 <thead>
                     <tr class="table-header">
-                        <th>Código<i ng-class="sorting('id_localidade')" ng-click="sortingTable('id_localidade')" class="alingArrowRight glyphicon "></i></th>
-                        <th>Nome<i ng-class="sorting('no_localidade')" ng-click="sortingTable('no_localidade')" class="alingArrowRight glyphicon "></i></th>
-                        <th>Telefone<i ng-class="sorting('telefone')" ng-click="sortingTable('telefone')" class="alingArrowRight glyphicon "></i></th>
-                        <th>Responsável<i ng-class="sorting('responsavel')" ng-click="sortingTable('responsavel')" class="alingArrowRight glyphicon "></i></th>
+                        <th>Código<i ng-class="sorting('Id')" ng-click="sortingTable('Id')" class="alingArrowRight glyphicon "></i></th>
+                        <th>Nome<i ng-class="sorting('noNome')" ng-click="sortingTable('noNome')" class="alingArrowRight glyphicon "></i></th>
+                        <th>Telefone<i ng-class="sorting('noTelefone')" ng-click="sortingTable('noTelefone')" class="alingArrowRight glyphicon "></i></th>
+                        <th>Responsável<i ng-class="sorting('noResponsavel')" ng-click="sortingTable('noResponsavel')" class="alingArrowRight glyphicon "></i></th>
                         <th></th>
                     </tr>
                 </thead>
@@ -53,7 +57,7 @@
                         
                         <td style="width:110px;">
                             <a class="btn btn-default btn-mini" href="#/location/{{ item.Id }}/alter"><span class="glyphicon glyphicon-edit"></span></a>
-                            <a class="btn btn-default btn-mini" ng-click="remove($index, item)"><span class="glyphicon glyphicon-trash"></span></a>
+                            <!--<a class="btn btn-default btn-mini" ng-click="remove($index, item)"><span class="glyphicon glyphicon-trash"></span></a>-->
                         </td>
                     </tr>
                 </tbody>

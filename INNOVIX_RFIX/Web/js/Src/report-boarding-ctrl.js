@@ -5,9 +5,9 @@
     $scope.exportSeals = [];
     $scope.objItem = {};
     $scope.search = "";
-    $scope.predicate = 'id';
+    $scope.predicate = 'embarque';
     $scope.order = 'ASC';
-    $scope.predicateSeals = 'id';
+    $scope.predicateSeals = 'localidade';
     $scope.orderSeals = 'ASC';
 
     $scope.init = function () {
@@ -122,6 +122,8 @@
     };
 
     $scope.getReportHistorySeals = function (current) {
+        Loading.showAll();
+
         $http.post(baseUrl + '/reportBoarding/getAllSeals', {
                 id: $routeParams.id,
                 limit: global.limit,
@@ -133,6 +135,8 @@
                 $scope.exportSeals = response.export;
                 $scope.listSeals = response.data;
                 $scope.totalSeals = response.total;
+
+                Loading.hideAll();
             });
     };
 

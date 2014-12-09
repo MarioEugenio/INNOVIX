@@ -1,4 +1,8 @@
-﻿<div ng-controller="ReportUserListCtrl" ng-init="init()">
+﻿@{
+    Layout = null;
+}
+
+<div ng-controller="ReportUserListCtrl" ng-init="init()">
     <ol class="breadcrumb">
       <li><a href="#/home/init">Home</a></li>
       <li class="active">Logs de Usuarios</li>
@@ -8,6 +12,7 @@
     <h3>Logs</h3>
     </div>
     <p>
+ 
         <div class="panel panel-default">
           <div class="panel-heading">Pesquise logs cadastrados</div>
           <div class="panel-body">
@@ -39,7 +44,16 @@
           </div>
         </div>
 
-        <p><button class="btn btn-primary"><span class="glyphicon glyphicon-print"></span> Exportar PDF</button></p>
+        <div>
+            <li class="dropdown" style="display: inline;">
+                <a href="#" class=" btn btn-primary  dropdown-toggle"><span class="glyphicon glyphicon-print"></span> Exportar <span class="caret"></span></a>
+                <ul class="dropdown-menu " role="menu">
+			        <li> <a  download="logs de usuario.xls" href="#" onclick="return ExcellentExport.excel(this, 'reportItens', 'RelatorioExcel');">Excel</a></li>
+			        <li><a href="#/report/user/list" ng-click="exportPDF()">PDF</a></li>
+		        </ul>
+            </li>
+        </div>
+        <br />
 
         <div ng-show="list.length == 0" class="alert alert-warning" role="alert">
             <a href="#" class="alert-link"><span class="glyphicon glyphicon-warning-sign"></span> Não houve retorno de registros</a>
@@ -49,18 +63,24 @@
             <table class="table table-bordered table-striped">
                 <thead>
                     <tr class="table-header">
-                        <th>Nome<i ng-class="sorting('nome')" ng-click="sortingTable('nome')" class="alingArrowRight glyphicon "></i></th>
-                        <th>CPF / CNPJ<i ng-class="sorting('cpf')" ng-click="sortingTable('cpf')" class="alingArrowRight glyphicon "></i></th>
-                        <th>Operação<i ng-class="sorting('operacao')" ng-click="sortingTable('operacao')" class="alingArrowRight glyphicon "></i></th>
+                        <th>Operador<i ng-class="sorting('nome')" ng-click="sortingTable('nome')" class="alingArrowRight glyphicon "></i></th>
+                        <th>Embarque<i ng-class="sorting('cpf')" ng-click="sortingTable('cpf')" class="alingArrowRight glyphicon "></i></th>
+                        <th>Lacre<i ng-class="sorting('operacao')" ng-click="sortingTable('operacao')" class="alingArrowRight glyphicon "></i></th>
+                        <th>AWB<i ng-class="sorting('dt_atualizacao')" ng-click="sortingTable('dt_atualizacao')" class="alingArrowRight glyphicon "></i></th>
+                        <th>Operação<i ng-class="sorting('dt_atualizacao')" ng-click="sortingTable('dt_atualizacao')" class="alingArrowRight glyphicon "></i></th>
                         <th>Data<i ng-class="sorting('dt_atualizacao')" ng-click="sortingTable('dt_atualizacao')" class="alingArrowRight glyphicon "></i></th>
+                        <th>Localidade<i ng-class="sorting('dt_atualizacao')" ng-click="sortingTable('dt_atualizacao')" class="alingArrowRight glyphicon "></i></th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr ng-repeat="item in list">
-                        <td>{{ item.noUsuario }}</td>
-                        <td>{{ item.codCpfCnpj }}</td>
-                        <td>{{ item.noDesc }}</td>
-                        <td>{{ item.dthLog }}</td>
+                        <td>{{ item.operador }}</td>
+                        <td>{{ item.embarque }}</td>
+                        <td>{{ item.lacre }}</td>
+                        <td>{{ item.awb }}</td>
+                        <td>{{ item.operacao }}</td>
+                        <td>{{ item.data }}</td>
+                        <td>{{ item.localidade }}</td>
                     </tr>
                 </tbody>
                 <tfoot>
@@ -77,7 +97,34 @@
                 </tfoot>
             </table>
         </div>
-       
+       <div id="tableReport">
+            <table id="reportItens" class="table table-striped" style="display:none">
+                <thead>
+                    <tr >
+                        <th>Operador</th>
+                        <th>Embarque</th>
+                        <th>Lacre</th>
+                        <th>AWB</th>
+                        <th>Operação</th>
+                        <th>Data</th>
+                        <th>Localidade</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in export">
+                        <tr ng-repeat="item in list">
+                        <td>{{ item.operador }}</td>
+                        <td>{{ item.embarque }}</td>
+                        <td>{{ item.lacre }}</td>
+                        <td>{{ item.awb }}</td>
+                        <td>{{ item.operacao }}</td>
+                        <td>{{ item.data }}</td>
+                        <td>{{ item.localidade }}</td>
+                    </tr>
+                    </tr>
+                </tbody>
+            </table>
+       </div>
     </p>
 </div>
 

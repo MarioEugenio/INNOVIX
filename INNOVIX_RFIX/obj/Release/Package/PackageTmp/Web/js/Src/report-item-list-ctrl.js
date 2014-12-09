@@ -2,7 +2,7 @@
     $scope.list = [];
     $scope.export = [];
     $scope.search = {};
-    $scope.predicate = 'id';
+    $scope.predicate = 'dtAtualizacao';
     $scope.order = 'ASC';
     $scope.listLocation = [];
 
@@ -19,6 +19,14 @@
               .success(function (response) {
                   $scope.listLocation = response.data;
               });
+    }
+
+    $scope.openModal = function (id) {
+        $routeParams.id = id
+        $modal.open({
+            templateUrl: '/ReportItem/Item'
+        });
+
     }
 
     $scope.exportPDF = function () {
@@ -55,10 +63,12 @@
             $scope.predicate = predicate;
             $scope.order = 'DESC';
         }
-        $scope.search(1);
+        $scope.searchItem(1);
     };
 
     $scope.getReportItem = function (current) {
+        Loading.showAll();
+
         $http.post(baseUrl + '/reportItem/getAll', {
             limit: global.limit,
             offset: current,
@@ -69,6 +79,8 @@
             $scope.list = response.data;
             $scope.export = response.export;
             $scope.totalItems = response.total;
+
+            Loading.hideAll();
         });
 
     }
@@ -78,6 +90,7 @@
             $scope.getReportItem(current);
             return;
         }
+        Loading.showAll();
 
         $http.post(baseUrl + '/reportItem/getReportItem', {
             search: $scope.search,
@@ -90,6 +103,8 @@
             $scope.list = response.data;
             $scope.export = response.export;
             $scope.totalItems = response.total;
+
+            Loading.hideAll();
         });
 
     }
@@ -98,7 +113,7 @@
         $scope.search = {};
     }
     $scope.pageChanged = function () {
-        $scope.getReportItem(
+        $scope.searchItem(
              $scope.currentPage
         );
     };
@@ -106,13 +121,7 @@
     $scope.maxSize = global.limit;
     $scope.currentPage = 1;
 
-    $scope.openModal = function (id) {
-        $routeParams.id = id
-        $modal.open({
-            templateUrl: '/ReportItem/Item'
-        });
-
-    }
+    
 
     // Disable weekend selection
     $scope.disabled = function (date, mode) {

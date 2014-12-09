@@ -38,6 +38,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac">
+      <HintPath>..\packages\Autofac.3.5.2\lib\net40\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.Mvc">
+      <HintPath>..\packages\Autofac.Mvc4.3.1.0\lib\net40\Autofac.Integration.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="FluentNHibernate, Version=1.4.0.0, Culture=neutral, PublicKeyToken=8aa435e3cb308880, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\FluentNHibernate.1.4.0.0\lib\net35\FluentNHibernate.dll</HintPath>
@@ -58,6 +64,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
@@ -84,11 +91,9 @@
     <Compile Include="Map\TbLoteMap.cs" />
     <Compile Include="Map\TbOperacaoMap.cs" />
     <Compile Include="Map\TbPerfilMap.cs" />
+    <Compile Include="Map\TbRfidMap.cs" />
     <Compile Include="Map\TbRotaMap.cs" />
     <Compile Include="Map\TbSacoMap.cs" />
-    <Compile Include="Map\TbSincLocalidadeMap.cs" />
-    <Compile Include="Map\TbSincRotaMap.cs" />
-    <Compile Include="Map\TbSincUsuarioMap.cs" />
     <Compile Include="Map\TbStatusMap.cs" />
     <Compile Include="Map\TbTipoUsuarioMap.cs" />
     <Compile Include="Map\TbUsuarioMap.cs" />

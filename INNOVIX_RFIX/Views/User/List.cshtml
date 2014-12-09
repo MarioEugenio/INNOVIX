@@ -1,4 +1,8 @@
-﻿<div ng-controller="UserListCtrl" ng-init="init()">
+﻿@{
+    Layout = null;
+}
+
+<div ng-controller="UserListCtrl" ng-init="init()">
     <ol class="breadcrumb">
       <li><a href="#/home/init">Home</a></li>
       <li class="active">Usuário</li>
@@ -8,7 +12,7 @@
     <h3>Usuários</h3>
     </div>
     <p>
-        <div class="panel panel-default">
+        <form ui-keypress="{13:'searchUser(1)'}" ng-submit="searchUser(1)" class="panel panel-default">
           <div class="panel-heading">Pesquise usuários cadastrados</div>
           <div class="panel-body">
             <div class="row">
@@ -16,7 +20,7 @@
                 <div class="input-group">
                   <input type="text" class="form-control" ng-model="search" placeholder="Nome do usuário">
                   <span class="input-group-btn">
-                    <button class="btn btn-default" ng-click="searchUser(1)" type="button"><span class="glyphicon glyphicon-search"></span> Pesquisar</button>
+                    <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span> Pesquisar</button>
                   </span>
                 </div><!-- /input-group -->
               </div><!-- /.col-lg-6 -->
@@ -27,7 +31,7 @@
               </div><!-- /.col-lg-6 -->
             </div>
           </div>
-        </div>
+        </form>
 
         <div ng-show="listUser.length == 0" class="alert alert-warning" role="alert">
             <a href="#" class="alert-link"><span class="glyphicon glyphicon-warning-sign"></span> Não houve retorno de registros</a>
@@ -37,11 +41,11 @@
             <table class="table table-bordered table-striped">
                 <thead>
                     <tr class="table-header">
-                        <th>Nome<i ng-class="sorting('nome')" ng-click="sortingTable('nome')" class="alingArrowRight glyphicon "></i></th>
-                        <th>CPF / CNPJ<i ng-class="sorting('cpf')" ng-click="sortingTable('cpf')" class="alingArrowRight glyphicon "></i></th>
-                        <th>E-mail<i ng-class="sorting('email')" ng-click="sortingTable('email')" class="alingArrowRight glyphicon "></i></th>
-                        <th>Telefone<i ng-class="sorting('telefone')" ng-click="sortingTable('telefone')" class="alingArrowRight glyphicon "></i></th>
-                        <th>Perfil<i ng-class="sorting('perfil')" ng-click="sortingTable('perfil')" class="alingArrowRight glyphicon "></i></th>
+                        <th>Nome<i ng-class="sorting('noUsuario')" ng-click="sortingTable('noUsuario')" class="alingArrowRight glyphicon "></i></th>
+                        <th>CPF / CNPJ<i ng-class="sorting('codCpfCnpj')" ng-click="sortingTable('codCpfCnpj')" class="alingArrowRight glyphicon "></i></th>
+                        <th>E-mail<i ng-class="sorting('noEmail')" ng-click="sortingTable('noEmail')" class="alingArrowRight glyphicon "></i></th>
+                        <th>Telefone<i ng-class="sorting('noTelefone')" ng-click="sortingTable('noTelefone')" class="alingArrowRight glyphicon "></i></th>
+                        <th>Perfil<i ng-class="sorting('noPerfil')" ng-click="sortingTable('noPerfil')" class="alingArrowRight glyphicon "></i></th>
                         <th></th>
                     </tr>
                 </thead>
@@ -54,7 +58,7 @@
                         <td>{{ item.noPerfil }}</td>
                         <td style="width:110px;">
                             <a class="btn btn-default btn-mini" href="#/user/{{ item.Id }}/alter"><span class="glyphicon glyphicon-edit"></span></a>
-                            <a class="btn btn-default btn-mini" ng-click="remove($index, item)"><span class="glyphicon glyphicon-trash"></span></a>
+                            <!--<a class="btn btn-default btn-mini" ng-click="remove($index, item)"><span class="glyphicon glyphicon-trash"></span></a>-->
                         </td>
                     </tr>
                 </tbody>

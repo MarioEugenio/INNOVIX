@@ -36,10 +36,10 @@ namespace INNOVIX_RFIX.Controllers
                {
                    Id = x.Id,
                    noDesc = x.noDesc,
-                   origin = x.tbLocalidade.noNome,
-                   destiny = x.tbLocalidadeDest.noNome,
-                   route = x.tbRota.noNome,
-                   //status = x.tbItem.FirstOrDefault().tbStatus.noDesc
+                   origin = (x.tbLocalidade != null) ? x.tbLocalidade.noNome : null,
+                   destiny = (x.tbLocalidadeDest != null) ? x.tbLocalidadeDest.noNome : null,
+                   route = (x.tbRota != null) ? x.tbRota.noNome : null,
+                   status = ((x.tbItem != null) && (x.tbItem.LastOrDefault().tbStatus != null)) ? x.tbItem.LastOrDefault().tbStatus.noDesc : null
                });
 
             return this.returnJson(result);
@@ -53,11 +53,20 @@ namespace INNOVIX_RFIX.Controllers
                 {
                     Id = x.Id,
                     noDesc = x.noDesc,
-                    origin = x.tbLocalidade.noNome,
-                    destiny = x.tbLocalidadeDest.noNome,
-                    route = x.tbRota.noNome,
-                    //status = x.tbItem.FirstOrDefault().tbStatus.noDesc
+                    origin = (x.tbLocalidade != null) ? x.tbLocalidade.noNome : null,
+                    destiny = (x.tbLocalidadeDest != null) ? x.tbLocalidadeDest.noNome : null,
+                    route = (x.tbRota != null) ? x.tbRota.noNome : null,
+                    status = ((x.tbItem.Count() > 0) && (x.tbItem.LastOrDefault().tbStatus != null)) ? x.tbItem.LastOrDefault().tbStatus.noDesc : null
                 });
+
+            if (order == "ASC")
+            {
+                result = result.OrderBy(x => x.GetType().GetProperty(predicate).GetValue(x, null));
+            }
+            else
+            {
+                result = result.OrderByDescending(x => x.GetType().GetProperty(predicate).GetValue(x, null));
+            }
 
             return this.returnJson(result.Skip((offset - 1) * limit).Take(limit), result.Count(), result);
         }

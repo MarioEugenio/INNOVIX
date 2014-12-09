@@ -69,6 +69,7 @@ C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\INNOVIX_RFIX\bin\Common.Logging
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\INNOVIX_RFIX\bin\dotless.Core.dll
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\INNOVIX_RFIX\bin\EntityFramework.dll
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\INNOVIX_RFIX\bin\EntityFramework.SqlServer.dll
+C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\INNOVIX_RFIX\bin\HibernatingRhinos.Profiler.Appender.dll
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\INNOVIX_RFIX\bin\Iesi.Collections.dll
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\INNOVIX_RFIX\bin\Innovix.Base.Data.dll
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\INNOVIX_RFIX\bin\Innovix.Base.Domain.dll
@@ -131,7 +132,6 @@ C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\INNOVIX_RFIX\bin\System.Web.Web
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\INNOVIX_RFIX\bin\System.Web.WebPages.Deployment.xml
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\INNOVIX_RFIX\bin\System.Web.WebPages.Razor.xml
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\INNOVIX_RFIX\bin\NHibernate.Validator.xml
-C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\INNOVIX_RFIX\bin\Castle.Core.xml
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\INNOVIX_RFIX\bin\de\NHibernate.Validator.resources.dll
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\INNOVIX_RFIX\bin\es\NHibernate.Validator.resources.dll
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\INNOVIX_RFIX\bin\fa\NHibernate.Validator.resources.dll
@@ -144,4 +144,3 @@ C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\INNOVIX_RFIX\bin\pl\NHibernate.
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\INNOVIX_RFIX\bin\pt-BR\NHibernate.Validator.resources.dll
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\INNOVIX_RFIX\obj\Debug\INNOVIX_RFIX.dll
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\INNOVIX_RFIX\obj\Debug\INNOVIX_RFIX.pdb
-C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\INNOVIX_RFIX\bin\HibernatingRhinos.Profiler.Appender.dll

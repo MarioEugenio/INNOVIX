@@ -18,7 +18,7 @@ namespace Innovix.Base.Persistencia.NHibernate.Map {
                 .Column("id_perfil")
                 .LazyLoad();
 
-			References(x => x.tbTipoUsuario).Column("id_tipo_usuario");
+            Map(x => x.idTipoUsuario).Column("id_tipo_usuario");
 			Map(x => x.noUsuario).Column("no_usuario").Not.Nullable().Length(50);
 			Map(x => x.codSenha).Column("cod_senha").Not.Nullable().Length(35);
 			Map(x => x.codCpfCnpj).Column("cod_cpf_cnpj").Not.Nullable().Length(18);
@@ -36,13 +36,6 @@ namespace Innovix.Base.Persistencia.NHibernate.Map {
 			//HasMany(x => x.tbLogitem).KeyColumn("id_usuario");
 			//HasMany(x => x.tbLoglote).KeyColumn("id_usuario");
 			//HasMany(x => x.tbLogsaco).KeyColumn("id_usuario");
-			HasMany<TbSincUsuario>(x => x.tbSincUsuario)
-                .KeyColumn("id_usuario")
-                .LazyLoad()
-              .Generic()
-              .Inverse()
-              .Cascade
-              .AllDeleteOrphan();
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿app.controller('RouteListCtrl', function ($scope, $http) {
     $scope.list = [];
     $scope.search = "";
-    $scope.predicate = 'id';
+    $scope.predicate = 'Id';
     $scope.order = 'ASC';
 
     $scope.init = function () {
@@ -28,6 +28,8 @@
     };
 
     $scope.getRoute = function (current) {
+        Loading.showAll();
+
         $http.post(baseUrl + '/route/GetAll', {
             limit: global.limit,
             offset: current,
@@ -37,6 +39,8 @@
         .success(function (response) {
             $scope.list = response.data;
             $scope.totalItems = response.total;
+
+            Loading.hideAll();
         });
 
     }
@@ -67,6 +71,8 @@
             return;
         }
 
+        Loading.showAll();
+
         $http.post(baseUrl + '/route/GetRoute', {
             search: $scope.search,
             limit: global.limit,
@@ -77,6 +83,8 @@
         .success(function (response) {
             $scope.list = response.data;
             $scope.totalItems = response.total;
+
+            Loading.hideAll();
         });
 
     }
@@ -86,7 +94,7 @@
     };
 
     $scope.pageChanged = function () {
-        $scope.getRoute(
+        $scope.searchRoute(
              $scope.currentPage
         );
     };

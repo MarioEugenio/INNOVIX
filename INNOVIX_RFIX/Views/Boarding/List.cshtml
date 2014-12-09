@@ -1,4 +1,8 @@
-﻿<div ng-controller="BoardingListCtrl" ng-init="init()">
+﻿@{
+    Layout = null;
+}
+
+<div ng-controller="BoardingListCtrl" ng-init="init()">
  <div  class="page-header">
     <h1>Painel Principal</h1>
     </div>
@@ -16,7 +20,7 @@
                         <th>Embarque</th>
                         <th>Origem</th>
                         <th>Destino</th>
-                        <th>Rota</th>
+                        <th>Ult. Localidade</th>
                         <th>Status</th>
                     </tr>
                 </thead>
@@ -25,7 +29,7 @@
                         <td>{{ item.noDesc }}</td>
                         <td>{{ item.origin }}</td>
                         <td>{{ item.destiny }}</td>
-                        <td>{{ item.route }}</td>
+                        <td>{{ item.ultimaLocalidade }}</td>
                         <td>{{ item.status }}</td>
                     </tr>
                 </tbody>

@@ -27,6 +27,8 @@ namespace INNOVIX_RFIX
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
+            BundleTable.EnableOptimizations = false;
+
             INNOVIX_RFIX.App_Start.Bootstrap.Run();
         }
     }

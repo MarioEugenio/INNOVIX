@@ -1,7 +1,7 @@
 ﻿app.controller('LocationListCtrl', function ($scope, $http) {
     $scope.list = [];
     $scope.search = "";
-    $scope.predicate = 'id_localidade';
+    $scope.predicate = 'Id';
     $scope.order = 'ASC';
 
     $scope.init = function () {
@@ -48,6 +48,8 @@
     };
 
     $scope.getLocation = function (current) {
+        Loading.showAll();
+
         $http.post(baseUrl + '/location/GetAll', {
             limit: global.limit,
             offset: current,
@@ -57,6 +59,8 @@
         .success(function (response) {
             $scope.list = response.data;
             $scope.totalItems = response.total;
+
+            Loading.hideAll();
         });
 
     }
@@ -66,6 +70,8 @@
             $scope.getLocation(current);
             return;
         }
+
+        Loading.showAll();
 
         $http.post(baseUrl + '/location/GetLocation', {
             search: $scope.search,
@@ -77,12 +83,14 @@
         .success(function (response) {
             $scope.list = response.data;
             $scope.totalItems = response.total;
+
+            Loading.hideAll();
         });
 
     }
 
     $scope.pageChanged = function () {
-        $scope.getLocation(
+        $scope.searchLocation(
              $scope.currentPage
         );
     };

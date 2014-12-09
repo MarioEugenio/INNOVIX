@@ -1,11 +1,13 @@
 ﻿app.controller('ReportBoardingCtrl', function ($scope, $http, $routeParams, $modal) {
     $scope.list = [];
+    $scope.export = [];
     $scope.listSeals = [];
+    $scope.exportSeals = [];
     $scope.objItem = {};
     $scope.search = "";
-    $scope.predicate = 'id';
+    $scope.predicate = 'embarque';
     $scope.order = 'ASC';
-    $scope.predicateSeals = 'id';
+    $scope.predicateSeals = 'localidade';
     $scope.orderSeals = 'ASC';
 
     $scope.init = function () {
@@ -67,6 +69,43 @@
               });
     };
 
+    $scope.exportPDF = function () {
+        var doc = new jsPDF('landscape', 'pt', 'a4');
+        doc.setFont("times", "normal");
+        doc.text(20, 20, "Embarque: " + ($scope.objItem.embarque || ''));
+        doc.text(300, 20, "Status: " + ($scope.objItem.status || ''));
+        doc.text(20, 40, "Origem: " + ($scope.objItem.origin || ''));
+        doc.text(300, 40, "Dt. Atualização: " + ($scope.objItem.dtAtualizacao  || ''));
+        doc.text(20, 60, "Destino: " + ($scope.objItem.destiny  || ''));
+        doc.text(300, 60, "Dt. Cadastro: " + ($scope.objItem.dtCadastro  || ''));
+        doc.text(20, 80, "Rota: " + ($scope.objItem.route  || ''));
+        doc.text(300, 80, "Responsável: " + ($scope.objItem.responsavel || ''));
+       
+        doc.setFontSize(12);
+        data = [];
+        data = doc.tableToJson('reportItenPDFItem');
+        data2 = [];
+        data2 = doc.tableToJson('reportItenPDFSeals');
+        if (data.length || data2.length) {
+            if (data.length) {
+                doc.text(20, 120, "Itens");
+            } else {
+                data = data2;
+                data2 = [];
+            }
+            
+            height = doc.drawTable(data, {
+                xstart: 15,
+                ystart: 40,
+                tablestart: 140,
+                marginleft: 40,
+                xOffset: 5,
+                yOffset: 15
+            }, data2);
+        }
+        doc.save('Relatorio de embarque.pdf');
+    };
+
     $scope.getReportHistoryItem = function (current) {
         $http.post(baseUrl + '/reportBoarding/getAllItem', {
             id: $routeParams.id,
@@ -76,13 +115,15 @@
             order: $scope.order
         })
         .success(function (response) {
-            
+            $scope.export = response.export;
             $scope.list = response.data;
             $scope.totalItems = response.total;
         });
     };
 
     $scope.getReportHistorySeals = function (current) {
+        Loading.showAll();
+
         $http.post(baseUrl + '/reportBoarding/getAllSeals', {
                 id: $routeParams.id,
                 limit: global.limit,
@@ -91,9 +132,11 @@
                 order: $scope.orderSeals
             })
             .success(function (response) {
-     
+                $scope.exportSeals = response.export;
                 $scope.listSeals = response.data;
                 $scope.totalSeals = response.total;
+
+                Loading.hideAll();
             });
     };
 

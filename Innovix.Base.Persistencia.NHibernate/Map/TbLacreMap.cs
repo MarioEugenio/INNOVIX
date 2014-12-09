@@ -14,7 +14,7 @@ namespace Innovix.Base.Persistencia.NHibernate.Map {
 			LazyLoad();
 			Id(x => x.Id).GeneratedBy.Identity().Column("id_lacre");
 			Map(x => x.dthCriacao).Column("dth_criacao").Not.Nullable();
-			Map(x => x.indCodbarras).Column("ind_codBarras").Precision(10);
+			Map(x => x.indCodbarras).Column("cod_barras");
 
 			HasMany<TbSaco>(x => x.tbSaco)
                 .KeyColumn("id_lacre")

@@ -2,7 +2,7 @@
     $scope.list = [];
     $scope.export = [];
     $scope.search = {};
-    $scope.predicate = 'id';
+    $scope.predicate = 'dtAtualizacao';
     $scope.order = 'ASC';
     $scope.listLocation = [];
 
@@ -55,10 +55,12 @@
             $scope.predicate = predicate;
             $scope.order = 'DESC';
         }
-        $scope.search(1);
+        $scope.searchBoarding(1);
     };
 
     $scope.getReportItem = function (current) {
+        Loading.showAll();
+
         $http.post(baseUrl + '/reportBoarding/getAll', {
             limit: global.limit,
             offset: current,
@@ -69,6 +71,8 @@
             $scope.export = response.export;
             $scope.list = response.data;
             $scope.totalItems = response.total;
+
+            Loading.hideAll();
         });
 
     }
@@ -78,6 +82,9 @@
             $scope.getReportItem(current);
             return;
         }
+
+        Loading.showAll();
+
         $http.post(baseUrl + '/reportBoarding/getReportItem', {
             search: $scope.search,
             limit: global.limit,
@@ -89,6 +96,8 @@
             $scope.export = response.export;
             $scope.list = response.data;
             $scope.totalItems = response.total;
+
+            Loading.hideAll();
         });
 
     }
@@ -97,7 +106,7 @@
         $scope.search = {};
     }
     $scope.pageChanged = function () {
-        $scope.getReportItem(
+        $scope.searchBoarding(
              $scope.currentPage
         );
     };

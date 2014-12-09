@@ -34,13 +34,14 @@ namespace INNOVIX_RFIX.Controllers
                     {
                         //let us take out the username now                
                         string roles = string.Empty;
-                        System.Security.Cryptography.MD5CryptoServiceProvider x = new System.Security.Cryptography.MD5CryptoServiceProvider();
-                        byte[] bs = System.Text.Encoding.UTF8.GetBytes(password);
-                        bs = x.ComputeHash(bs);
+                        
                         var user = service.Pesquisar(z => z.codCpfCnpj.Equals(username)).FirstOrDefault();
 
                         if (user != null) {
-                            if (this.StrToByteArray(user.codSenha) != this.StrToByteArray(bs))
+                            var str = System.Text.Encoding.Default.GetString(user.codSenha);
+                            var str2 = System.Text.Encoding.Default.GetString(this.service.GetHashAuth(password));
+
+                            if (str != str2)
                             {
                                 return this.returnMenssage("Senha inválida", false);
                             }
@@ -99,13 +100,10 @@ namespace INNOVIX_RFIX.Controllers
         {
             try
             {
-                System.Security.Cryptography.MD5CryptoServiceProvider x = new System.Security.Cryptography.MD5CryptoServiceProvider();
-                byte[] bs = System.Text.Encoding.UTF8.GetBytes(entity.password);
-                bs = x.ComputeHash(bs);
-                entity.codSenha = bs;
+                entity.codSenha = this.service.GetHashAuth(entity.password);
                 this.service.Salvar(entity);
 
-                return this.returnMenssage("Cadastro realizado com sucesso", true);
+                return this.returnMenssage("Processo realizado com sucesso", true);
             } catch (ExceptionService ex) {
 
                 return this.returnMenssage(ex.Message, false);
@@ -119,12 +117,12 @@ namespace INNOVIX_RFIX.Controllers
                .Select(x => new
                {
                    Id = x.Id,
-                   noEmail = x.noEmail,
-                   noTelefone = x.noTelefone,
-                   noUsuario = x.noUsuario,
-                   codCpfCnpj = x.codCpfCnpj,
+                   noEmail = x.noEmail.Trim(),
+                   noTelefone = x.noTelefone.Trim(),
+                   noUsuario = x.noUsuario.Trim(),
+                   codCpfCnpj = x.codCpfCnpj.Trim(),
                    idPerfil = x.tbPerfil.Id,
-                   noPerfil = x.tbPerfil.noDesc
+                   noPerfil = x.tbPerfil.noDesc.Trim()
                });
 
             return this.returnJson(result);
@@ -145,6 +143,15 @@ namespace INNOVIX_RFIX.Controllers
                     password = x.codSenha
                 });
 
+            if (order == "ASC")
+            {
+                result = result.OrderBy(x => x.GetType().GetProperty(predicate).GetValue(x, null));
+            }
+            else
+            {
+                result = result.OrderByDescending(x => x.GetType().GetProperty(predicate).GetValue(x, null));
+            }
+
             return this.returnJson(result.Skip((offset - 1) * limit).Take(limit), result.Count(), result);
         }
 
@@ -163,6 +170,15 @@ namespace INNOVIX_RFIX.Controllers
                     id_perfil = x.tbPerfil.Id,
                     no_perfil = x.tbPerfil.noDesc
                 });
+
+            if (order == "ASC")
+            {
+                result = result.OrderBy(x => x.GetType().GetProperty(predicate).GetValue(x, null));
+            }
+            else
+            {
+                result = result.OrderByDescending(x => x.GetType().GetProperty(predicate).GetValue(x, null));
+            }
 
             return this.returnJson(result.Skip((offset - 1) * limit).Take(limit), result.Count(), result);
         }

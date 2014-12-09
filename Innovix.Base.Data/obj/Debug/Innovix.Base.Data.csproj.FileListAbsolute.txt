@@ -23,7 +23,6 @@ C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Data\bin\Castle.Co
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Data\bin\Innovix.Base.Domain.pdb
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Data\bin\Innovix.Base.Infrastructure.pdb
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Data\bin\NHibernate.Validator.xml
-C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Data\bin\Castle.Core.xml
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Data\bin\de\NHibernate.Validator.resources.dll
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Data\bin\es\NHibernate.Validator.resources.dll
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Data\bin\fa\NHibernate.Validator.resources.dll
@@ -37,5 +36,3 @@ C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Data\bin\pt-BR\NHi
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Data\obj\Debug\Innovix.Base.Data.csprojResolveAssemblyReference.cache
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Data\obj\Debug\Innovix.Base.Data.dll
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Data\obj\Debug\Innovix.Base.Data.pdb
-C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Data\bin\NHibernate.dll
-C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Data\bin\Iesi.Collections.dll

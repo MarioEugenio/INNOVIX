@@ -2,7 +2,7 @@
     $scope.list = [];
     $scope.search = "";
 
-    $scope.predicate = 'id_equipamento';
+    $scope.predicate = 'Id';
     $scope.order = 'ASC';
 
     $scope.sorting = function (predicate) {
@@ -48,6 +48,8 @@
     }
 
     $scope.getEquipment = function (current) {
+        Loading.showAll();
+
         $http.post(baseUrl + '/equipment/getAll', {
             limit: global.limit,
             offset: current,
@@ -57,6 +59,8 @@
         .success(function (response) {
             $scope.list = response.data;
             $scope.totalItems = response.total;
+
+            Loading.hideAll();
         });
 
     }
@@ -66,6 +70,8 @@
             $scope.getEquipment(current);
             return;
         }
+
+        Loading.showAll();
 
         $http.post(baseUrl + '/equipment/getEquipment', {
             search: $scope.search,
@@ -77,12 +83,14 @@
         .success(function (response) {
             $scope.list = response.data;
             $scope.totalItems = response.total;
+
+            Loading.hideAll();
         });
 
     }
 
     $scope.pageChanged = function () {
-        $scope.getEquipment(
+        $scope.searchEquipment(
              $scope.currentPage
         );
     };

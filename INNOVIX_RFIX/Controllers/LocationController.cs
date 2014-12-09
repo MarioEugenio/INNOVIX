@@ -50,7 +50,7 @@ namespace INNOVIX_RFIX.Controllers
             {
                 this.service.Salvar(entity);
 
-                return this.returnMenssage("Cadastro realizado com sucesso", true);
+                return this.returnMenssage("Processo realizado com sucesso", true);
             } catch (ExceptionService ex) {
 
                 return this.returnMenssage(ex.Message, false);
@@ -64,11 +64,11 @@ namespace INNOVIX_RFIX.Controllers
                .Select(x => new
                {
                    Id = x.Id,
-                   noCidade = x.noCidade,
-                   noDesc = x.noDesc,
-                   noEstado = x.noEstado,
-                   noNome = x.noNome,
-                   noResponsavel = x.noResponsavel,
+                   noCidade = x.noCidade.Trim(),
+                   noDesc = x.noDesc.Trim(),
+                   noEstado = x.noEstado.Trim(),
+                   noNome = x.noNome.Trim(),
+                   noResponsavel = x.noResponsavel.Trim(),
                    noTelefone = x.noTelefone
                });
 
@@ -81,10 +81,10 @@ namespace INNOVIX_RFIX.Controllers
                 .Listar()
                 .Select(x => new {
                     Id = x.Id,
-                    noCidade = x.noCidade,
-                    noDesc = x.noDesc,
+                    noCidade = x.noCidade.Trim(),
+                    noDesc = x.noDesc.Trim(),
                     noEstado = x.noEstado,
-                    noNome = x.noNome,
+                    noNome = x.noNome.Trim(),
                     noResponsavel = x.noResponsavel,
                     noTelefone = x.noTelefone
             });

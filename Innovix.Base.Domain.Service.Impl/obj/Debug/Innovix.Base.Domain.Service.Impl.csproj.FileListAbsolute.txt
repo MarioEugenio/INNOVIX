@@ -28,7 +28,6 @@ C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Domain.Service.Imp
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Domain.Service.Impl\bin\Innovix.Base.Domain.pdb
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Domain.Service.Impl\bin\Innovix.Base.Infrastructure.pdb
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Domain.Service.Impl\bin\NHibernate.Validator.xml
-C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Domain.Service.Impl\bin\Castle.Core.xml
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Domain.Service.Impl\bin\de\NHibernate.Validator.resources.dll
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Domain.Service.Impl\bin\es\NHibernate.Validator.resources.dll
 C:\Users\MárioEugênio\Documents\GitHub\INNOVIX\Innovix.Base.Domain.Service.Impl\bin\fa\NHibernate.Validator.resources.dll

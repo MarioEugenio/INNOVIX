@@ -14,6 +14,7 @@ namespace Innovix.Base.Persistencia.NHibernate.Map {
 			LazyLoad();
 			CompositeId().KeyProperty(x => x.idLocalidade, "id_localidade")
 			             .KeyProperty(x => x.idRota, "id_rota");
+
             References(x => x.tbLocalidade)
                 .Column("id_localidade")
                 .LazyLoad()

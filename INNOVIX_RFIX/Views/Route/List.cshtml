@@ -1,4 +1,8 @@
-﻿<div ng-controller="RouteListCtrl" ng-init="init()">
+﻿@{
+    Layout = null;
+}
+
+<div ng-controller="RouteListCtrl" ng-init="init()">
     <ol class="breadcrumb">
       <li><a href="#/home/init">Home</a></li>
       <li class="active">Rota</li>
@@ -8,7 +12,7 @@
     <h3>Rotas</h3>
     </div>
     <p>
-        <div class="panel panel-default">
+        <form ui-keypress="{13:'searchRoute(1)'}" ng-submit="searchRoute(1)" class="panel panel-default">
           <div class="panel-heading">Pesquise rotas cadastrados</div>
           <div class="panel-body">
             <div class="row">
@@ -16,7 +20,7 @@
                 <div class="input-group">
                   <input type="text" class="form-control" ng-model="search" placeholder="Nome da rota">
                   <span class="input-group-btn">
-                    <button class="btn btn-default" ng-click="searchRoute(1)" type="button"><span class="glyphicon glyphicon-search"></span> Pesquisar</button>
+                    <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span> Pesquisar</button>
                   </span>
                 </div><!-- /input-group -->
               </div><!-- /.col-lg-6 -->
@@ -27,7 +31,7 @@
               </div><!-- /.col-lg-6 -->
             </div>
           </div>
-        </div>
+        </form>
 
         <div ng-show="list.length == 0" class="alert alert-warning" role="alert">
             <a href="#" class="alert-link"><span class="glyphicon glyphicon-warning-sign"></span> Não houve retorno de registros</a>
@@ -37,10 +41,10 @@
             <table class="table table-bordered table-striped">
                 <thead>
                     <tr class="table-header">
-                        <th>Codigo<i ng-class="sorting('codigo')" ng-click="sortingTable('codigo')" class="alingArrowRight glyphicon "></i></th>
-                        <th>Nome<i ng-class="sorting('nome')" ng-click="sortingTable('nome')" class="alingArrowRight glyphicon "></i></th>
-                        <th>Descrição<i ng-class="sorting('desc')" ng-click="sortingTable('desc')" class="alingArrowRight glyphicon "></i></th>
-                        <th>Destino<i ng-class="sorting('destino')" ng-click="sortingTable('destino')" class="alingArrowRight glyphicon "></i></th>
+                        <th>Codigo<i ng-class="sorting('Id')" ng-click="sortingTable('Id')" class="alingArrowRight glyphicon "></i></th>
+                        <th>Nome<i ng-class="sorting('noNome')" ng-click="sortingTable('noNome')" class="alingArrowRight glyphicon "></i></th>
+                        <th>Descrição<i ng-class="sorting('noDesc')" ng-click="sortingTable('noDesc')" class="alingArrowRight glyphicon "></i></th>
+                        <th>Destino<i ng-class="sorting('destiny')" ng-click="sortingTable('destiny')" class="alingArrowRight glyphicon "></i></th>
                         <th></th>
                     </tr>
                 </thead>
@@ -52,7 +56,7 @@
                         <td>{{ item.destiny }}</td>
                         <td style="width:110px;">
                             <a class="btn btn-default btn-mini" href="#/route/{{ item.Id }}/alter"><span class="glyphicon glyphicon-edit"></span></a>
-                            <a class="btn btn-default btn-mini" ng-click="remove($index, item)"><span class="glyphicon glyphicon-trash"></span></a>
+                            <!--<a class="btn btn-default btn-mini" ng-click="remove($index, item)"><span class="glyphicon glyphicon-trash"></span></a>-->
                         </td>
                     </tr>
                 </tbody>

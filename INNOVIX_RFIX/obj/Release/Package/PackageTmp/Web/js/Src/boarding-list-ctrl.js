@@ -2,7 +2,7 @@
     $scope.list = [];
     $scope.search = "";
 
-    $scope.predicate = 'id_equipamento';
+    $scope.predicate = 'noDesc';
     $scope.order = 'ASC';
 
     $scope.init = function () {
@@ -10,7 +10,9 @@
     };
 
     $scope.getEquipment = function (current) {
-        $http.post(baseUrl + '/Boarding/getAll', {
+        Loading.showAll();
+
+        $http.post(baseUrl + '/reportBoarding/getAll', {
             limit: global.limit,
             offset: current,
             predicate: $scope.predicate,
@@ -19,6 +21,8 @@
         .success(function (response) {
             $scope.list = response.data;
             $scope.totalItems = response.total;
+
+            Loading.hideAll();
         });
 
     }

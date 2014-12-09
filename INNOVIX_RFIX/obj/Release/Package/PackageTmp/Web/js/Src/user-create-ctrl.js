@@ -46,6 +46,8 @@
     $scope.save = function () {
         var form = angular.copy($scope.form);
 
+        form.idTipoUsuario = ($scope.radioCPF == 'CPF') ? 1 : 2;
+
         $http.post(baseUrl + '/user/save', form)
                .success(function (response) {
                    if (response.success) {
